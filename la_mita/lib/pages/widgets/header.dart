@@ -4,20 +4,20 @@ import 'package:flutter/material.dart';
 class HeaderWidget extends StatefulWidget {
   final double _height;
   final bool _showIcon;
-  final IconData _icon;
+  final String _text;
 
-  const HeaderWidget(this._height, this._showIcon, this._icon, {Key? key}) : super(key: key);
+  const HeaderWidget(this._height, this._showIcon, this._text, {Key? key}) : super(key: key);
 
   @override
-  _HeaderWidgetState createState() => _HeaderWidgetState(_height, _showIcon, _icon);
+  _HeaderWidgetState createState() => _HeaderWidgetState(_height, _showIcon, _text);
 }
 
 class _HeaderWidgetState extends State<HeaderWidget> {
   double _height;
   bool _showIcon;
-  IconData _icon;
+  String _text;
 
-  _HeaderWidgetState(this._height, this._showIcon, this._icon);
+  _HeaderWidgetState(this._height, this._showIcon, this._text);
 
   @override
   Widget build(BuildContext context) {
@@ -116,25 +116,25 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                   ),
                   decoration: BoxDecoration(
                     // borderRadius: BorderRadius.circular(20),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(100),
-                      topRight: Radius.circular(100),
-                      bottomLeft: Radius.circular(60),
-                      bottomRight: Radius.circular(60),
-                    ),
-                    border: Border.all(width: 5, color: Colors.white),
+           //         borderRadius: BorderRadius.only(
+                  //    topLeft: Radius.circular(500),
+                   //   topRight: Radius.circular(100),
+                   //   bottomLeft: Radius.circular(60),
+                   //   bottomRight: Radius.circular(60),
+                   // ),
+                   // border: Border.all(width: 5, color: Colors.white),
                   ),
-                  child: Icon(
-                    _icon,
-                    color: Colors.white,
-                    size: 40.0,
+                  child: Text(
+                    _text,
+                  style: TextStyle( color: Colors.white,
+                    fontSize: 40.0,
                   ),
                 ),
               ),
             ),
           ),
 
-        ],
+            )  ],
       ),
     );
   }
@@ -161,7 +161,7 @@ class ShapeClipper extends CustomClipper<Path> {
 
 
     return path;
-  }
+  }  
 
   @override
   bool shouldReclip(CustomClipper<Path> oldClipper) => false;

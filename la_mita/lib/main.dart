@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:la_mita/pages/login.dart';
+import 'package:la_mita/pages/otp.dart';
 import 'package:la_mita/pages/splash_screen.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
 import 'package:la_mita/utils/routes.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
        // "/":(context) => HomePage(),
          MyRoutes.loginRoute: (context) => loginPage(),
          MyRoutes.splashRoute: (context) => splash_screen(),
+         MyRoutes.otpRoute: (context) => otp(),
 
       },
       
