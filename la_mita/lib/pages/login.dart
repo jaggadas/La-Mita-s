@@ -42,7 +42,7 @@ class _loginPageState extends State<loginPage> {
                     children: [
                       TextFormField(
                         decoration: InputDecoration(
-                          hintText: "Enter Mobile Number",
+                          hintText: "Enter Number",
                           labelText: "Mobile Number",
                         ),
                         validator: (value) {
