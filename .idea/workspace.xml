@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="enter number">
-      <change afterPath="$PROJECT_DIR$/la_mita/lib/pages/home.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/la_mita/lib/pages/widgets/progress_dialog.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/la_mita/lib/pages/widgets/toast.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/la_mita/lib/services/Firebase.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="Firebase added&#10;Login Service added&#10;Few Ui Changes&#10;ProgressDialog added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/la_mita/lib/pages/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/pages/login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/lib/pages/otp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/pages/otp.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/lib/utils/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/utils/routes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/la_mita/lib/pages/widgets/progress_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/pages/widgets/progress_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/la_mita/lib/services/Firebase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/services/Firebase.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +38,7 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DeliveryKnight" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -67,6 +57,14 @@
       <option name="presentableId" value="Default" />
       <updated>1647929740394</updated>
     </task>
+    <task id="LOCAL-00001" summary="Firebase added&#10;Login Service added&#10;Few Ui Changes&#10;ProgressDialog added">
+      <created>1648058392193</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1648058392193</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -80,5 +78,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Firebase added&#10;Login Service added&#10;Few Ui Changes&#10;ProgressDialog added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Firebase added&#10;Login Service added&#10;Few Ui Changes&#10;ProgressDialog added" />
   </component>
 </project>

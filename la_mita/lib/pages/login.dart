@@ -115,9 +115,10 @@ class _loginPageState extends State<loginPage> {
                       child: InkWell(
                         onTap: () async {
                           //TODO: add send OTP functionality
-                          ProgressDialogService().showDialog('Please Wait', context);
+
                           var temp =
-                              await FirebaseService().sendOTP(entered_phone);
+                              await FirebaseService().sendOTP(entered_phone,context);
+
 
                           moveToOTP(context: context, confirmationResult: temp);
                         },

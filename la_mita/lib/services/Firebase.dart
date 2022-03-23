@@ -5,15 +5,20 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:la_mita/utils/routes.dart';
+import 'package:sn_progress_dialog/progress_dialog.dart';
 
 import '../pages/home.dart';
 import '../pages/login.dart';
+import '../pages/widgets/progress_dialog.dart';
+import '../pages/widgets/themes.dart';
 import '../pages/widgets/toast.dart';
 class FirebaseService{
  FirebaseAuth auth=FirebaseAuth.instance;
  String phoneNumber = "";
 
- sendOTP(String phoneNumber) async {
+ sendOTP(String phoneNumber,BuildContext context) async {
+  ProgressDialog pd = ProgressDialog(context: context);
+  pd.show(max: 100, msg: 'Please Wait',progressBgColor: MyTheme.orange2,progressValueColor: Colors.grey);
   try{
   this.phoneNumber = phoneNumber;
   ConfirmationResult confirmationResult = await auth.signInWithPhoneNumber(
@@ -22,6 +27,7 @@ class FirebaseService{
   printMessage("OTP Sent to +91 $phoneNumber");
   return confirmationResult;}
       catch(e){
+   pd.close();
    FlutterToastService().showToast(e.toString());
       }
  }
@@ -34,6 +40,8 @@ class FirebaseService{
   }
  }
  authenticateMe(ConfirmationResult confirmationResult, String otp,BuildContext context) async {
+  ProgressDialog ps = ProgressDialog(context: context);
+  ps.show(max: 100, msg: 'Please Wait',progressBgColor: MyTheme.orange2,progressValueColor: Colors.grey);
   try {
    UserCredential userCredential = await confirmationResult.confirm(otp);
    userCredential.additionalUserInfo!.isNewUser
@@ -41,6 +49,8 @@ class FirebaseService{
        : printMessage("User already exists");
    Navigator.popAndPushNamed(context, MyRoutes.homeRoute);
   }catch(e){
+   ps.close();
+   print("hello");
    FlutterToastService().showToast(e.toString());
   }
  }

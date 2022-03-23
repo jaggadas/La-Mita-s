@@ -102,7 +102,7 @@ SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () async{
-                            ProgressDialogService().showDialog('Please Wait', context);
+
                             await FirebaseService().authenticateMe(confirmationResult, enteredOTP,context);
 
                         },
