@@ -40,7 +40,7 @@ class otp extends StatelessWidget {
                 height: 24,
               ),
               Text(
-                'Verification',
+                'OTP Verification',
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
@@ -50,7 +50,7 @@ class otp extends StatelessWidget {
                 height: 10,
               ),
               Text(
-                "Enter your OTP code number",
+                "Enter the OTP sent to +91 9119394724",
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
@@ -68,7 +68,10 @@ class otp extends StatelessWidget {
                 padding: EdgeInsets.all(28),
                 decoration: BoxDecoration(
                   color: Colors.white,
+                
                   borderRadius: BorderRadius.circular(5),
+                  
+                   
                 ),
                 child: Column(
                   children: [
@@ -80,6 +83,7 @@ class otp extends StatelessWidget {
                 child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: PinInputTextField(
+              decoration: BoxLooseDecoration(strokeColorBuilder: PinListenColorBuilder(MyTheme.orange2, MyTheme.orange2 )),
               inputFormatters: <TextInputFormatter>[
                 FilteringTextInputFormatter.digitsOnly],
               onChanged: (value){
@@ -89,7 +93,8 @@ class otp extends StatelessWidget {
               onSubmit: (String pin){
               //TODO: add on submit
               }, // end onSubmit
-            ), // end PinEntryTextField()
+            ), 
+            // end PinEntryTextField()
           ), // end Padding()
         ),
       
@@ -115,9 +120,12 @@ SizedBox(
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(24.0),
+                           //   focusedBorder: OutlineInputBorder(
+                           // borderSide: BorderSide(color: MyTheme.orange2)),
                             ),
-                          ),
+                         ),
                         ),
+                        
                         child: Padding(
                           padding: EdgeInsets.all(14.0),
                           child: Text(
