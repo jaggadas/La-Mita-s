@@ -22,12 +22,14 @@ class _userdetailsState extends State<userdetails> {
                     child: Column(
               children: [
               //  Padding(padding: EdgeInsets.only(left: 20.0)),
-                Image.asset(
-                  "assets/images/disco.png",
-                 // fit: BoxFit.cover,
-                  //height: 150,
-                ),
-               ] ),
+                Image.asset('assets/images/sezz.png',
+                
+                
+                 
+                  fit: BoxFit.cover,
+                 height: 150,
+                
+                     ) ] ),
                  
                   
              ) ;
