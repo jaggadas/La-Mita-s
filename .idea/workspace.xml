@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="Firebase added&#10;Login Service added&#10;Few Ui Changes&#10;ProgressDialog added">
+    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="fixed issue with progress dialog">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/lib/pages/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/pages/login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/lib/pages/widgets/progress_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/pages/widgets/progress_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/lib/services/Firebase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/services/Firebase.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/la_mita/lib/pages/appbody.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/pages/appbody.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/la_mita/lib/pages/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/pages/home.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +63,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648058392193</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixed issue with progress dialog">
+      <created>1648060675739</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1648060675739</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -81,6 +87,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Firebase added&#10;Login Service added&#10;Few Ui Changes&#10;ProgressDialog added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Firebase added&#10;Login Service added&#10;Few Ui Changes&#10;ProgressDialog added" />
+    <MESSAGE value="fixed issue with progress dialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed issue with progress dialog" />
   </component>
 </project>

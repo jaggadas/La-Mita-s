@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:la_mita/pages/appbody.dart';
+import 'package:la_mita/pages/below_appbar.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
 
 import '../services/Firebase.dart';
@@ -49,9 +50,12 @@ class _HomeState extends State<Home> {
       ),
 
       body: SafeArea(  
-        child: Container(child: Column(children: [  
-          AppBody()
-        ],)),
+        child: SingleChildScrollView(
+          child: Column(children: [
+            below_appbar(),
+            AppBody()
+          ],),
+        ),
       )
       );
       

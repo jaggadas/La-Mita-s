@@ -8,62 +8,13 @@ class AppBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      Size size = MediaQuery.of(context).size;
-    return SingleChildScrollView(
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, 
-          children: [
-            below_appbar(),
-            Container(
-              height: 30,
-              child: Stack(
-            children: [
-              Padding(
-                  padding: const EdgeInsets.only(left: 35),
-                  child: Text(
-                    "Disco dancer(koi text)",
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                  )),
-              SizedBox(
-                height: 20,
-              ),
-             ]
-              ) 
-               ),
-               SingleChildScrollView(
-                 scrollDirection: Axis.vertical,
-                 child: Column(children: [
-                   optCards(  
-                  image: '',
-                  title: "KYC Form",
-                  product: "any details",
-                ),
-                 optCards(  
-                  image: '',
-                  title: "Visitor Entry Form",
-                  product: "any details",
-                ),
-                 optCards(  
-                  image: '',
-                  title: "Service Request Form",
-                  product: "any details",
-                ),
-                 optCards(  
-                  image: '',
-                  title: "Payment",
-                  product: "any details",
-                ),
-                 optCards(  
-                  image: '',
-                  title: "Payment History",
-                  product: "any details",
-                ),
-
-                   
-                 ]),
-               )
-          ],
-          )
-
-     );
+    return Column(children: [
+     optCards(image: 'assets/images/disco.png', title: 'KYC', product: 'PRoduct'),
+      optCards(image: 'assets/images/disco.png', title: 'KYC', product: 'PRoduct'),
+      optCards(image: 'assets/images/disco.png', title: 'KYC', product: 'PRoduct'),
+      optCards(image: 'assets/images/disco.png', title: 'KYC', product: 'PRoduct'),
+      optCards(image: 'assets/images/disco.png', title: 'KYC', product: 'PRoduct')
+    ]);
   }
 }
 
@@ -88,7 +39,7 @@ class optCards extends StatelessWidget {
         child: Column(
           children: [
             Padding(padding: EdgeInsets.only(top: 15)),
-            Image.asset(image), 
+
             GestureDetector(
               child: Container(
                 padding: EdgeInsets.all(30),
@@ -110,6 +61,7 @@ class optCards extends StatelessWidget {
 
            child: Row(
                   children: [
+                    Image.asset(image,height: 100,width: 100,),
                     RichText(
                         text: TextSpan(children: [
                       TextSpan(
