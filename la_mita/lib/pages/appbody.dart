@@ -10,21 +10,21 @@ class AppBody extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Column(children: [
       optCards(
-          image: 'assets/images/disco.png', title: 'KYC', product: 'PRoduct'),
+          image: 'assets/images/payment.png', title: 'KYC', product: 'PRoduct'),
       optCards(
-          image: 'assets/images/disco.png',
+          image: 'assets/images/visitor.png',
           title: 'Visitor Entry',
           product: 'PRoduct'),
       optCards(
-          image: 'assets/images/Asset3.png',
+          image: 'assets/images/service1.png',
           title: 'Service Request',
           product: 'PRoduct'),
       optCards(
-          image: 'assets/images/disco.png',
+          image: 'assets/images/cashless-payment.png',
           title: 'Payment',
           product: 'PRoduct'),
       optCards(
-          image: 'assets/images/disco.png',
+          image: 'assets/images/payment.png',
           title: 'Payment History',
           product: 'PRoduct')
     ]);
