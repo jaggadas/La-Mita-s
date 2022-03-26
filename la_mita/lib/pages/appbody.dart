@@ -10,23 +10,23 @@ class AppBody extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Column(children: [
       optCards(
-          image: 'assets/images/payment.png', title: 'KYC', product: 'PRoduct'),
+          image: 'assets/images/payment.png', title: '   KYC', product: ' '),
       optCards(
           image: 'assets/images/visitor.png',
-          title: 'Visitor Entry',
-          product: 'PRoduct'),
+          title: '   Visitor Entry',
+          product: ' '),
       optCards(
           image: 'assets/images/service1.png',
-          title: 'Service Request',
-          product: 'PRoduct'),
+          title: '   Service Request',
+          product: ' '),
       optCards(
           image: 'assets/images/cashless-payment.png',
-          title: 'Payment',
-          product: 'PRoduct'),
+          title: '   Payment',
+          product: ' '),
       optCards(
           image: 'assets/images/payment.png',
-          title: 'Payment History',
-          product: 'PRoduct')
+          title: '   Payment History',
+          product: ' ')
     ]);
   }
 }
@@ -50,14 +50,14 @@ class optCards extends StatelessWidget {
           bottom: 50,
         ),
         width: size.width * 0.8,
-        height: size.height * 0.2,
+        // height: size.height * 0.2,
         child: Column(children: [
           Padding(padding: EdgeInsets.only(top: 15)),
           GestureDetector(
               child: Container(
             padding: EdgeInsets.all(30),
             decoration: BoxDecoration(
-                color: MyTheme.orange2.withOpacity(0.2),
+                color: MyTheme.orange2.withOpacity(0.6),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(12),
                   topRight: Radius.circular(12),
@@ -73,18 +73,19 @@ class optCards extends StatelessWidget {
               children: [
                 Image.asset(
                   image,
-                  height: 100,
-                  width: 100,
+                  height: 70,
+                  width: 70,
                 ),
                 RichText(
                     text: TextSpan(children: [
                   TextSpan(
                     text: "$title\n",
-                    style: TextStyle(color: Colors.white, fontSize: 30),
+                    style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                   TextSpan(
                     text: "$product".toUpperCase(),
-                    style: TextStyle(color: Colors.grey, fontSize: 10),
+                    style: TextStyle(
+                        color: MyTheme.orange2.withOpacity(0.4), fontSize: 10),
                   )
                 ])),
               ],
