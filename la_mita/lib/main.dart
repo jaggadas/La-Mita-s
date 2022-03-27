@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         primaryColor: MyTheme.orange,
         accentColor: MyTheme.orange2,
       ),
-      initialRoute: MyRoutes.homeRoute,
+      initialRoute: MyRoutes.loginRoute,
       routes: {
         // "/":(context) => userdetails(),
         MyRoutes.loginRoute: (context) => loginPage(),

@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:la_mita/pages/below_appbar.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
@@ -9,23 +10,24 @@ class AppBody extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Column(children: [
+     
       optCards(
-          image: 'assets/images/payment.png', title: '   KYC', product: ' '),
+          image: 'assets/images/payment.png', title: '   KYC                ', product: ' '),
       optCards(
           image: 'assets/images/visitor.png',
-          title: '   Visitor Entry',
+          title: '   Visitor Entry        ',
           product: ' '),
       optCards(
           image: 'assets/images/service1.png',
-          title: '   Service Request',
+          title: '   Service Request    ',
           product: ' '),
       optCards(
           image: 'assets/images/cashless-payment.png',
-          title: '   Payment',
+          title: '   Payment        ',
           product: ' '),
       optCards(
           image: 'assets/images/payment.png',
-          title: '   Payment History',
+          title: '   Payment History    ',
           product: ' ')
     ]);
   }
@@ -52,9 +54,14 @@ class optCards extends StatelessWidget {
         width: size.width * 0.8,
         // height: size.height * 0.2,
         child: Column(children: [
+         // IconButton(onPressed: () {},icon: const Icon(
+               //   Icons.payment_sharp,
+                //  ),),
           Padding(padding: EdgeInsets.only(top: 15)),
           GestureDetector(
-              child: Container(
+              child:
+               Container(
+                
             padding: EdgeInsets.all(30),
             decoration: BoxDecoration(
                 color: MyTheme.orange2.withOpacity(0.6),
@@ -71,15 +78,24 @@ class optCards extends StatelessWidget {
                 ]),
             child: Row(
               children: [
+              //  InkWell(
+                 // onTap: () {
+                    
+               //   },
+              //  ),
+               
                 Image.asset(
                   image,
                   height: 70,
                   width: 70,
                 ),
                 RichText(
+                  
                     text: TextSpan(children: [
                   TextSpan(
+                    
                     text: "$title\n",
+                    recognizer: new TapGestureRecognizer()..onTap = () {},
                     style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                   TextSpan(
