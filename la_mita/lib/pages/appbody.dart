@@ -61,11 +61,16 @@ class optCards extends StatelessWidget {
                 //  ),),
           Padding(padding: EdgeInsets.only(top: 15)),
           GestureDetector(
+            
+            onTap: (() {
+              
+            }),
               child:
                Container(
                 
             padding: EdgeInsets.all(30),
             decoration: BoxDecoration(
+              
                 color: MyTheme.orange2.withOpacity(0.6),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(12),
@@ -97,7 +102,7 @@ class optCards extends StatelessWidget {
                   TextSpan(
                     
                     text: "$title\n",
-                   // recognizer: new TapGestureRecognizer()..onTap = () {},
+                    recognizer: new TapGestureRecognizer()..onTap = () {},
                     style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                   TextSpan(
