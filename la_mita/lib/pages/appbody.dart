@@ -95,7 +95,7 @@ class optCards extends StatelessWidget {
                   TextSpan(
                     
                     text: "$title\n",
-                    recognizer: new TapGestureRecognizer()..onTap = () {},
+                   // recognizer: new TapGestureRecognizer()..onTap = () {},
                     style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                   TextSpan(
