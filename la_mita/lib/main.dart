@@ -5,6 +5,7 @@ import 'package:la_mita/pages/otp.dart';
 import 'package:la_mita/pages/splash_screen.dart';
 import 'package:la_mita/pages/user_details.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
+import 'package:la_mita/services/Firebase.dart';
 import 'package:la_mita/utils/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -12,10 +13,10 @@ Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
       options: FirebaseOptions(
-          apiKey: "AIzaSyBSAaV3NeyX7rnD_UOdo7H96APjLqDVgQE",
-          appId: "1:981946317479:web:2717b1ae871a83f012f982",
-          messagingSenderId: "981946317479",
-          projectId: "lamita-s"));
+          apiKey: "AIzaSyD6su9XMXtAJh3KTF4AxXUNfYbK08o5nuc",
+          appId: "1:210896378745:web:a4dc8d20dfd73017b1eda8",
+          messagingSenderId: "210896378745",
+          projectId: "la-mitas"));
   runApp(const MyApp());
 }
 
@@ -31,7 +32,11 @@ class MyApp extends StatelessWidget {
         primaryColor: MyTheme.orange,
         accentColor: MyTheme.orange2,
       ),
+
       initialRoute: MyRoutes.loginRoute,
+
+      home: FirebaseService().getInitialScreen(),
+
       routes: {
         // "/":(context) => userdetails(),
         MyRoutes.loginRoute: (context) => loginPage(),

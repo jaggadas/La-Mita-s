@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {FirebaseService().signOut(context);},
                 icon: const Icon(
                   Icons.home,
                   size: 35,

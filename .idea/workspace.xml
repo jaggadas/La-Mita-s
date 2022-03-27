@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="fixed issue with scrollbar">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/lib/pages/appbody.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/pages/appbody.dart" afterDir="false" />
-    </list>
+    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="reset" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +33,7 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Clima-Flutter" />
     <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -76,7 +73,28 @@
       <option name="project" value="LOCAL" />
       <updated>1648133484200</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed issue with images">
+      <created>1648298895339</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1648298895339</updated>
+    </task>
+    <task id="LOCAL-00005" summary="user details page done pretty much">
+      <created>1648392066318</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1648392066318</updated>
+    </task>
+    <task id="LOCAL-00006" summary="reset">
+      <created>1648404294160</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1648404294160</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -95,6 +113,9 @@
     <MESSAGE value="Firebase added&#10;Login Service added&#10;Few Ui Changes&#10;ProgressDialog added" />
     <MESSAGE value="fixed issue with progress dialog" />
     <MESSAGE value="fixed issue with scrollbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed issue with scrollbar" />
+    <MESSAGE value="fixed issue with images" />
+    <MESSAGE value="user details page done pretty much" />
+    <MESSAGE value="reset" />
+    <option name="LAST_COMMIT_MESSAGE" value="reset" />
   </component>
 </project>

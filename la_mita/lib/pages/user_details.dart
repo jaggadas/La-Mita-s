@@ -1,7 +1,15 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:la_mita/pages/widgets/DropDownWidgetStream.dart';
 
 import 'package:la_mita/pages/widgets/themes.dart';
+import 'package:la_mita/pages/widgets/toast.dart';
+import 'package:la_mita/services/Firebase.dart';
+import 'package:la_mita/utils/Constants.dart';
 import 'package:la_mita/utils/routes.dart';
+
+import '../utils/FirebaseConstants.dart';
 
 class userdetails extends StatefulWidget {
   const userdetails({Key? key}) : super(key: key);
@@ -9,11 +17,39 @@ class userdetails extends StatefulWidget {
   @override
   State<userdetails> createState() => _userdetailsState();
 }
+  late String selected_site;
+  FirebaseFirestore firestore=FirebaseFirestore.instance;
+  class _userdetailsState extends State<userdetails> {
+  bool changeButton = false;
+  String entered_email='';
+  String entered_name='';
+  validateForm(){
 
-class _userdetailsState extends State<userdetails> {
-bool changeButton = false;
+    bool emailValid = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(entered_email);
+    if(entered_name==''&&entered_email==''&&!emailValid){
+      FlutterToastService().showToast('Please enter correct credentials');
+      return false;
+    }
+    else if(entered_name==''&&entered_email==''){
+      FlutterToastService().showToast('Please enter correct credentials2');
+      return false;
+    }
+    else if(entered_email==''||!emailValid){
+      FlutterToastService().showToast('Please enter correct email');
+      return false;
+    }
+    else if(entered_name==''){
+      FlutterToastService().showToast('Please enter correct name');
+      return false;
+    }
+    else{
+      return true;
+    }
+
+  }
 
    final _formKey = GlobalKey<FormState>();
+
 
   moveToHome(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
@@ -64,10 +100,8 @@ bool changeButton = false;
         padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 55.0),
         child: Column(children: [
           TextFormField(
-            decoration: InputDecoration(
-              hintText: "Enter Name",
-              labelText: "Username",
-            ),
+            cursorColor: MyTheme.orange2,
+            decoration:  kInputDecoration.copyWith(hintText: "Enter Name",labelText: "Username"),
             validator: (value) {
               if (value!.isEmpty) {
                 return "Name can't be empty";
@@ -76,15 +110,17 @@ bool changeButton = false;
             },
              onChanged: (value) {
                        
-                        setState(() {});
+                      entered_name=value;
                       },
           ),
           SizedBox(height: 30),
           TextFormField(
-            decoration: InputDecoration(
-              hintText: "Enter Email ID",
-              labelText: "Email ID",
-            ),
+            cursorColor: MyTheme.orange2,
+            decoration: kInputDecoration.copyWith(hintText: "Enter Email ID",labelText: "Email ID"),
+            keyboardType: TextInputType.emailAddress,
+            onChanged: (value){
+                entered_email=value;
+            },
             validator: (value) {
               if (value!.isEmpty) {
                 return "Email ID can't be empty";
@@ -93,18 +129,8 @@ bool changeButton = false;
             },
           ),
           SizedBox(height: 30),
-          TextFormField(
-            decoration: InputDecoration(
-              hintText: "Enter Site",
-              labelText: "Site",
-            ),
-            validator: (value) {
-              if (value!.isEmpty) {
-                return "Site can't be empty";
-              }
-              return null;
-            },
-          ),
+         SiteStream(),
+
 
           SizedBox(height: 40,
           ),
@@ -114,14 +140,17 @@ bool changeButton = false;
                           borderRadius:
                               BorderRadius.circular(changeButton ? 50 : 30),
                           child: InkWell(
-                            onTap: () => 
-                    Navigator.pushNamed(context, MyRoutes.homeRoute),
+                            onTap: () async {
+                              if(validateForm()){await FirebaseService().uploadUserDetails(entered_name, entered_email, SiteStream().getCurrentSite(),context);
+                              Navigator.pushNamed(context, MyRoutes.homeRoute);}
+
+                    },
                             //moveToHome(context),
                             child: AnimatedContainer(
                               duration: Duration(seconds: 1),
                               width: changeButton ? 50 : 150,
                               height: 50,
-          
+
                               alignment: Alignment.center,
                               child: changeButton
                                   ? Icon(
@@ -131,14 +160,11 @@ bool changeButton = false;
                                   : Text(
                                       "Submit",
                                       style: TextStyle(
-                                          color: Colors.black,
+                                          color: Colors.white,
                                           fontWeight: FontWeight.bold,
                                           fontSize: 20),
                                     ),
-                              // decoration: BoxDecoration(
-                              // color: MyTheme.darkgreen,
-                              // borderRadius: BorderRadius.circular(8),
-                              //  )
+
                             ),
                           )
 
@@ -147,4 +173,7 @@ bool changeButton = false;
       ),
     ]))));
   }
+
 }
+
+

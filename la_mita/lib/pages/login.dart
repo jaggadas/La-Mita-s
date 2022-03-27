@@ -6,6 +6,7 @@ import 'package:la_mita/pages/otp.dart';
 import 'package:la_mita/pages/widgets/header.dart';
 import 'package:la_mita/pages/widgets/progress_dialog.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
+import 'package:la_mita/utils/Constants.dart';
 import 'package:la_mita/utils/routes.dart';
 import 'package:sn_progress_dialog/sn_progress_dialog.dart';
 
@@ -21,7 +22,7 @@ class loginPage extends StatefulWidget {
 class _loginPageState extends State<loginPage> {
   double headerheight = 250;
   bool changeButton = false;
-  late String entered_phone;
+  String entered_phone='';
 
 
 
@@ -40,6 +41,7 @@ class _loginPageState extends State<loginPage> {
       await Navigator.push(context, MaterialPageRoute(builder: (context) {
         return otp(
           confirmationResult: confirmationResult,
+          phone: entered_phone,
         );
       }));
       setState(() {
@@ -62,7 +64,7 @@ class _loginPageState extends State<loginPage> {
                 child: HeaderWidget(
                   headerheight,
                   true,
-                  "WELCOME",
+                  "Welcome",
                 )),
             SafeArea(
               child: Column(children: [
@@ -83,14 +85,7 @@ class _loginPageState extends State<loginPage> {
                         FilteringTextInputFormatter.digitsOnly
                       ],
                       cursorColor: MyTheme.orange2,
-                      decoration: InputDecoration(
-                        focusColor: MyTheme.orange2,
-                        hintText: "Enter Mobile Number",
-                        labelText: "Mobile Number",
-                        labelStyle: TextStyle(color: MyTheme.orange3),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: MyTheme.orange2)),
-                      ),
+                      decoration: kInputDecoration,
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "Mobile Number can not be empty";
