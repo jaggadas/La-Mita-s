@@ -9,6 +9,7 @@ class AppBody extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Column(children: [
+
       optCards(
           image: 'assets/images/payment.png', title: '   KYC', product: ' '),
       optCards(

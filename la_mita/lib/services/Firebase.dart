@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -12,9 +14,11 @@ import '../pages/login.dart';
 import '../pages/widgets/progress_dialog.dart';
 import '../pages/widgets/themes.dart';
 import '../pages/widgets/toast.dart';
+import '../utils/FirebaseConstants.dart';
 class FirebaseService{
  FirebaseAuth auth=FirebaseAuth.instance;
  String phoneNumber = "";
+ FirebaseFirestore firestore=FirebaseFirestore.instance;
 
  sendOTP(String phoneNumber,BuildContext context) async {
   ProgressDialog pd = ProgressDialog(context: context);
@@ -39,6 +43,27 @@ class FirebaseService{
    return Home();
   }
  }
+
+ getNewUserScreen(BuildContext context)async {
+  var userData =await firestore.collection("users").doc(auth.currentUser?.uid).get();
+  if (userData.exists){
+    Navigator.popAndPushNamed(context, MyRoutes.homeRoute);
+  }else{
+   Navigator.popAndPushNamed(context, MyRoutes.userdetailsRoute);
+  }
+ }
+ uploadUserDetails(String username,String email,String site,BuildContext context)async{
+  ProgressDialog pu=ProgressDialog(context: context);
+  pu.show(max: 100, msg: 'Please Wait',progressBgColor: MyTheme.orange2,progressValueColor: Colors.grey);
+  try{
+  await firestore.collection(kUsers).doc(auth.currentUser?.uid).set(
+      {kName: username, kPhone: '${auth.currentUser?.phoneNumber}',kSite:site,kEmail:email});}
+      catch(e){
+   pu.close();
+   FlutterToastService().showToast('$e');
+      }
+ }
+
  authenticateMe(ConfirmationResult confirmationResult, String otp,BuildContext context) async {
   ProgressDialog ps = ProgressDialog(context: context);
   ps.show(max: 100, msg: 'Please Wait',progressBgColor: MyTheme.orange2,progressValueColor: Colors.grey);
@@ -47,7 +72,7 @@ class FirebaseService{
    userCredential.additionalUserInfo!.isNewUser
        ? printMessage("Successful Authentication")
        : printMessage("User already exists");
-   Navigator.popAndPushNamed(context, MyRoutes.homeRoute);
+   getNewUserScreen(context);
   }catch(e){
    ps.close();
    print("hello");

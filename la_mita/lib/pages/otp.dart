@@ -9,7 +9,8 @@ import '../services/Firebase.dart';
 
 class otp extends StatelessWidget {
   var confirmationResult;
-  otp({this.confirmationResult});
+  var phone;
+  otp({this.confirmationResult,this.phone});
   late String enteredOTP;
   @override
   Widget build(BuildContext context) {
@@ -50,7 +51,7 @@ class otp extends StatelessWidget {
                 height: 10,
               ),
               Text(
-                "Enter the OTP sent to +91 9119394724",
+                "Enter the OTP sent to +91 $phone",
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
@@ -143,7 +144,7 @@ SizedBox(
               ),
 
               Text(
-                "Didn't you receive any code?",
+                "Incorrect phone number?",
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
@@ -155,7 +156,7 @@ SizedBox(
                 height: 18,
               ),
               TextButton(onPressed: (){Navigator.popAndPushNamed(context,MyRoutes.loginRoute);}, child: Text(
-                "Resend New Code",
+                "Enter new number",
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
