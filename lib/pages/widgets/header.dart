@@ -4,20 +4,20 @@ import 'package:flutter/material.dart';
 class HeaderWidget extends StatefulWidget {
   final double _height;
   final bool _showIcon;
-  final String _text;
+  final String _image;
 
-  const HeaderWidget(this._height, this._showIcon, this._text, {Key? key}) : super(key: key);
+  const HeaderWidget(this._height, this._showIcon, this._image, {Key? key}) : super(key: key);
 
   @override
-  _HeaderWidgetState createState() => _HeaderWidgetState(_height, _showIcon, _text);
+  _HeaderWidgetState createState() => _HeaderWidgetState(_height, _showIcon, _image);
 }
 
 class _HeaderWidgetState extends State<HeaderWidget> {
   double _height;
   bool _showIcon;
-  String _text;
+  String _image;
 
-  _HeaderWidgetState(this._height, this._showIcon, this._text);
+  _HeaderWidgetState(this._height, this._showIcon, this._image);
 
   @override
   Widget build(BuildContext context) {
@@ -124,17 +124,18 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                    // ),
                    // border: Border.all(width: 5, color: Colors.white),
                   ),
-                  child: Text(
-                    _text,
-                  style: TextStyle( color: Colors.white,
-                    fontSize: 40.0,
+                  child:   Image.asset("assets/images/welcome.png",
+                  //(
+                   // _image,
+                 // style: TextStyle( color: Colors.white,
+                  //  fontSize: 40.0,
                   ),
                 ),
               ),
             ),
           ),
 
-            )  ],
+              ],
       ),
     );
   }
