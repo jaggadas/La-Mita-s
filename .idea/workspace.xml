@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="reset">
-      <change beforePath="$PROJECT_DIR$/.idea/la_mita.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/la_mita.iml" afterDir="false" />
-    </list>
+    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="party time" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +39,7 @@
   </component>
   <component name="RunManager">
     <configuration name="disco" type="FlutterRunConfigurationType" factoryName="Flutter">
-      <option name="filePath" value="$PROJECT_DIR$/la_mita/lib/main.dart" />
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
       <method v="2" />
     </configuration>
   </component>
@@ -103,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648405042983</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="rearrange files">
+      <created>1648445293629</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1648445293629</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,12 +124,16 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/la_mita" />
+    </ignored-roots>
     <MESSAGE value="Firebase added&#10;Login Service added&#10;Few Ui Changes&#10;ProgressDialog added" />
     <MESSAGE value="fixed issue with progress dialog" />
     <MESSAGE value="fixed issue with scrollbar" />
     <MESSAGE value="fixed issue with images" />
     <MESSAGE value="user details page done pretty much" />
     <MESSAGE value="reset" />
-    <option name="LAST_COMMIT_MESSAGE" value="reset" />
+    <MESSAGE value="rearrange files" />
+    <option name="LAST_COMMIT_MESSAGE" value="rearrange files" />
   </component>
 </project>
