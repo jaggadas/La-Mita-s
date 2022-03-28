@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="reset">
-      <change afterPath="$PROJECT_DIR$/la_mita/lib/services/getLinks.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/la_mita/lib/utils/UserModel.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/lib/pages/appbody.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/pages/appbody.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/lib/pages/drawer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/pages/drawer.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/lib/pages/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/pages/home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/lib/pages/widgets/DropDownWidgetStream.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/pages/widgets/DropDownWidgetStream.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/lib/services/Firebase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/lib/services/Firebase.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/la_mita/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/la_mita/windows/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/la_mita.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/la_mita.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +35,8 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DeliveryKnight" />
-    <property name="settings.editor.selected.configurable" value="flutter.settings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunManager">

@@ -1,0 +1,39 @@
+name: la_mita
+description: A new Flutter project.
+
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.1 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  pin_input_text_field: 4.1.2  
+
+  cupertino_icons: ^1.0.2
+  firebase_storage: ^10.2.7
+  cloud_firestore: ^3.1.6
+  firebase_auth: ^1.1.1
+  firebase_core: ^1.11.0
+  fluttertoast: ^8.0.8
+  sn_progress_dialog: ^1.0.3
+  url_launcher: ^6.0.20
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  flutter_lints: ^1.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+     - assets/images/
+  #   - images/a_dot_ham.jpeg
+
