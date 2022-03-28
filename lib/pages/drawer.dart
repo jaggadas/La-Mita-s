@@ -12,15 +12,17 @@ class MyDrawer extends StatelessWidget {
       
       child: Container(
         
-          color: MyTheme.orange2.withOpacity(0.2),
+          color: MyTheme.orange2.withOpacity(0.20),
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
               DrawerHeader(
                 padding: EdgeInsets.zero,
+
                 child: Container(
                   color: MyTheme.orange2.withOpacity(0.6),
                   child: UserAccountsDrawerHeader(
+                    decoration:  BoxDecoration(color: MyTheme.orange2),
                     margin: EdgeInsets.zero,
                     accountName: Text("LA_MITA"),
                     accountEmail: Text("lamita12@gmail.com"),
