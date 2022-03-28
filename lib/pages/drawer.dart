@@ -9,77 +9,75 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      
       child: Container(
-        
-          color: MyTheme.orange2.withOpacity(0.20),
+          color: MyTheme.orange2,
           child: ListView(
-            padding: EdgeInsets.zero,
+            padding: EdgeInsets.only(top: 30.0),
             children: [
-              DrawerHeader(
+              /*    DrawerHeader(
                 padding: EdgeInsets.zero,
-
                 child: Container(
                   color: MyTheme.orange2.withOpacity(0.6),
                   child: UserAccountsDrawerHeader(
-                    decoration:  BoxDecoration(color: MyTheme.orange2),
-                    margin: EdgeInsets.zero,
-                    accountName: Text("LA_MITA"),
-                    accountEmail: Text("lamita12@gmail.com"),
-                    currentAccountPicture: CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/disco.png'),
-                    ),
+                    decoration: BoxDecoration(color: MyTheme.orange2),
+                   // margin: EdgeInsets.zero,
+                    accountName: Text(""),
+                    accountEmail: Text(""),
                   ),
                 ),
-              ),
+              ), */
               ListTile(
                 onTap: () {},
                 leading: Icon(
                   CupertinoIcons.home,
-                  color: Colors.black,
+                  size: 35,
+                  color: Colors.white,
                 ),
                 title: Text("Home",
                     textScaleFactor: 1.2,
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,fontSize: 16
                     )),
               ),
               ListTile(
-                 onTap: () {},
+                onTap: () {},
                 leading: Icon(
                   CupertinoIcons.profile_circled,
-                  color: Colors.black,
+                  size: 35,
+                  color: Colors.white,
                 ),
                 title: Text("Profile",
                     textScaleFactor: 1.2,
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white, fontSize: 16,
                     )),
               ),
               ListTile(
-                 onTap: () {},
+                onTap: () {},
                 leading: Icon(
                   CupertinoIcons.mail,
-                  color: Colors.black,
+                  size: 35,
+                  color: Colors.white,
                 ),
                 title: Text("Contact us",
                     textScaleFactor: 1.2,
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,fontSize: 16
                     )),
               ),
               ListTile(
-                 onTap: () {
-                   FirebaseService().signOut(context);
-                 },
+                onTap: () {
+                  FirebaseService().signOut(context);
+                },
                 leading: Icon(
                   CupertinoIcons.arrow_left,
-                  color: Colors.black,
+                  size: 35,
+                  color: Colors.white,
                 ),
                 title: Text("Log out",
                     textScaleFactor: 1.2,
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,fontSize: 16
                     )),
               ),
             ],

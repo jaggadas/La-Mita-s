@@ -14,8 +14,13 @@ class below_appbar extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(left: 130, bottom: 10, right: 20),
             height: size.height * 0.2 - 40,
-            decoration: BoxDecoration(
-                color: MyTheme.orange2.withOpacity(0.8),
+            decoration: BoxDecoration( gradient: LinearGradient(
+                    colors: [MyTheme.orange4, MyTheme.orange2],
+                    begin: FractionalOffset(0, 0),
+                    end: FractionalOffset(0, 1),
+                    stops: [0, 1.0],
+                  ),
+                //color: MyTheme.orange2.withOpacity(0.8),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(36),
                   bottomRight: Radius.circular(36),
@@ -23,12 +28,12 @@ class below_appbar extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  'LA MITAS',
+                  'La Mitas',
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.normal,
-                      fontSize: 55),
+                      fontSize: 35),
                 )
               ],
             ),

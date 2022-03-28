@@ -19,13 +19,19 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.white),
-        backgroundColor: MyTheme.orange2.withOpacity(0.8),
+        backgroundColor: MyTheme.orange4,
         elevation: 0,
       ),
       bottomNavigationBar: Container(
         height: 60,
         decoration: BoxDecoration(
-          color: MyTheme.orange2.withOpacity(0.8),
+          gradient: LinearGradient(
+            colors: [MyTheme.orange4, MyTheme.orange2],
+            begin: FractionalOffset(0, 0),
+            end: FractionalOffset(0, 1),
+            stops: [0, 1.0],
+          ),
+          //color: MyTheme.orange2.withOpacity(0.8),
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(20),
             topRight: Radius.circular(20),
