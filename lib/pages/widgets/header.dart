@@ -124,7 +124,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                    // ),
                    // border: Border.all(width: 5, color: Colors.white),
                   ),
-                  child:   Image.asset("assets/images/welc.png",
+                  child:   Image.asset("assets/images/welc.png", height: 10, width: 30,
                   //(
                    // _image,
                  // style: TextStyle( color: Colors.white,
