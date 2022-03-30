@@ -44,7 +44,7 @@ class _AppBodyState extends State<AppBody> {
     // Size size = MediaQuery.of(context).size;
     return Column(children: [
       optCards(
-        image: 'assets/images/payment.png',
+        image: 'assets/images/KYC.png',
         title: '     KYC                ',
         product: ' ',
         onPressed: () async {
@@ -100,6 +100,7 @@ class optCards extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
+
           margin: EdgeInsets.only(
             left: 0,
             top: 10,
@@ -132,7 +133,7 @@ class optCards extends StatelessWidget {
                     BoxShadow(
                       color: MyTheme.orange2.withOpacity(0.5),
                       blurRadius: 40,
-                      offset: Offset(0.0, 0.75)
+                      offset: Offset(0.0, 1.5)
                     )
                   ]),
               child: Row(
@@ -145,8 +146,8 @@ class optCards extends StatelessWidget {
 
                   Image.asset(
                     image,
-                    height: 70,
-                    width: 70,
+                    height: 80,
+                    width: 80,
                   ),
                   RichText(
                       text: TextSpan(children: [

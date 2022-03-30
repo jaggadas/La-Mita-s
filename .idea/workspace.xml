@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="restructure1">
+    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="added">
+      <change afterPath="$PROJECT_DIR$/assets/images/KYC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGRcd2Vi.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGRcd2Vi.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/wel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/welcome.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/welcome.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/appbody.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/appbody.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/below_appbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/below_appbar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/widgets/header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widgets/header.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,9 +44,14 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\AndroidStudioProjects\la_mitass\la_mita\assets\images" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="disco" type="FlutterRunConfigurationType" factoryName="Flutter">
@@ -145,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648462903029</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added">
+      <created>1648478058869</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1648478058869</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,6 +196,7 @@
     <MESSAGE value="changes in drawer" />
     <MESSAGE value="restructure" />
     <MESSAGE value="restructure1" />
-    <option name="LAST_COMMIT_MESSAGE" value="restructure1" />
+    <MESSAGE value="added" />
+    <option name="LAST_COMMIT_MESSAGE" value="added" />
   </component>
 </project>

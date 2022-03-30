@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
 
       initialRoute: MyRoutes.loginRoute,
 
-      home: FirebaseService().getInitialScreen(),
+      home: loginPage(),
 
       routes: {
         // "/":(context) => userdetails(),

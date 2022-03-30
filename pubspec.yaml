@@ -35,5 +35,7 @@ flutter:
 
   assets:
      - assets/images/
+     - assets/images/welcome.png
+     - assets/images/KYC.png
   #   - images/a_dot_ham.jpeg
 
