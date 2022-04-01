@@ -4,16 +4,25 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="added">
-      <change afterPath="$PROJECT_DIR$/assets/images/KYC.png" afterDir="false" />
+    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="first show up">
+      <change afterPath="$PROJECT_DIR$/lib/easy_web_view.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/kyc_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/payment_history_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/payment_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/service_request_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/visitor_entry_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/impl.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/mobile.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/unsupported.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/web.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGRcd2Vi.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGRcd2Vi.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/wel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/welcome.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/welcome.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/appbody.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/appbody.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/below_appbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/below_appbar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/widgets/header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widgets/header.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/services/getLinks.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/getLinks.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +40,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="26jGmTCq6JoV28AWeOh7tkeDHnr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -44,7 +61,7 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../embed_google_forms" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -166,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648478058869</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="first show up">
+      <created>1648662371258</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1648662371258</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,6 +221,7 @@
     <MESSAGE value="restructure" />
     <MESSAGE value="restructure1" />
     <MESSAGE value="added" />
-    <option name="LAST_COMMIT_MESSAGE" value="added" />
+    <MESSAGE value="first show up" />
+    <option name="LAST_COMMIT_MESSAGE" value="first show up" />
   </component>
 </project>

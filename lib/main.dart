@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:la_mita/pages/home.dart';
+import 'package:la_mita/pages/kyc_page.dart';
 import 'package:la_mita/pages/login.dart';
 import 'package:la_mita/pages/otp.dart';
+import 'package:la_mita/pages/payment_history_page.dart';
+import 'package:la_mita/pages/payment_page.dart';
+import 'package:la_mita/pages/service_request_page.dart';
 import 'package:la_mita/pages/splash_screen.dart';
 import 'package:la_mita/pages/user_details.dart';
+import 'package:la_mita/pages/visitor_entry_page.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
 import 'package:la_mita/services/Firebase.dart';
 import 'package:la_mita/utils/routes.dart';
@@ -44,6 +49,11 @@ class MyApp extends StatelessWidget {
         MyRoutes.otpRoute: (context) => otp(),
         MyRoutes.homeRoute: (context) => Home(),
         MyRoutes.userdetailsRoute: (context) => userdetails(),
+        MyRoutes.kycRoute:(context) => KycPage(),
+        MyRoutes.visitorEntryRoute:(context) => VisitorEntryPage(),
+        MyRoutes.serviceRequestRoute:(context) => ServiceRequestPage(),
+        MyRoutes.paymentRoute:(context) => Payment(),
+        MyRoutes.paymentHistoryRoute:(context) => PaymentHistory(),
       },
     );
   }

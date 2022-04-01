@@ -4,6 +4,7 @@ import 'package:la_mita/pages/below_appbar.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
 import 'package:la_mita/services/Firebase.dart';
 import 'package:la_mita/services/getLinks.dart';
+import 'package:la_mita/utils/routes.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../utils/UserModel.dart';
@@ -48,7 +49,7 @@ class _AppBodyState extends State<AppBody> {
         title: '     KYC                ',
         product: ' ',
         onPressed: () async {
-          await launch(GetLinks().getKYClink(email, name, site));
+          Navigator.pushNamed(context, MyRoutes.kycRoute);
         },
       ),
       optCards(
@@ -56,7 +57,7 @@ class _AppBodyState extends State<AppBody> {
         title: '     Visitor Entry        ',
         product: ' ',
         onPressed: () async {
-          await launch(GetLinks().getVisitorEntryLink(name));
+          Navigator.pushNamed(context, MyRoutes.visitorEntryRoute);
         },
       ),
       optCards(
@@ -64,20 +65,24 @@ class _AppBodyState extends State<AppBody> {
         title: '     Service Request    ',
         product: ' ',
         onPressed: () async {
-          await launch(GetLinks().getServiceRequestLink(name, email));
+          Navigator.pushNamed(context, MyRoutes.serviceRequestRoute);
         },
       ),
       optCards(
         image: 'assets/images/cashless-payment.png',
         title: '     Payment        ',
         product: ' ',
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, MyRoutes.paymentRoute);
+        },
       ),
       optCards(
         image: 'assets/images/payment.png',
         title: '     Payment History    ',
         product: ' ',
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, MyRoutes.paymentHistoryRoute);
+        },
       )
     ]);
   }
