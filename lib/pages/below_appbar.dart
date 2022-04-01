@@ -12,7 +12,7 @@ class below_appbar extends StatelessWidget {
         height: size.height * 0.2,
         child: Stack(children: [
           Container(
-            padding: EdgeInsets.only(left: 20, bottom: 10, right: 20),
+            padding: EdgeInsets.only(left: 20, bottom: 25, right: 20),
             height: size.height * 0.2 - 40,
             decoration: BoxDecoration( gradient: LinearGradient(
                     colors: [MyTheme.orange4, MyTheme.orange2],
@@ -29,18 +29,11 @@ class below_appbar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               children: [
-                Text(
-                  'La Mitas',
-
-                  style: Theme.of(context).textTheme.headline5!.copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.normal,
-                      fontSize: 35),
-                )
+               Image.asset('assets/images/homepagelogo.png',)
               ],
             ),
 
-            // child: AppBody(),
+
           )
         ]));
   }
