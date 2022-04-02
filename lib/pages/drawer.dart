@@ -10,26 +10,17 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-        
+
       child: Container(
           color: MyTheme.orange2,
           child: ListView(
             padding: EdgeInsets.only(top: 30.0),
             children: [
-              /*    DrawerHeader(
-                padding: EdgeInsets.zero,
-                child: Container(
-                  color: MyTheme.orange2.withOpacity(0.6),
-                  child: UserAccountsDrawerHeader(
-                    decoration: BoxDecoration(color: MyTheme.orange2),
-                   // margin: EdgeInsets.zero,
-                    accountName: Text(""),
-                    accountEmail: Text(""),
-                  ),
-                ),
-              ), */
+
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                },
                 leading: Icon(
                   CupertinoIcons.home,
                   size: 35,
