@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
 import 'package:la_mita/services/Firebase.dart';
+import 'package:la_mita/utils/routes.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -41,7 +42,9 @@ class MyDrawer extends StatelessWidget {
                     )),
               ),
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, MyRoutes.myprofileRoute);
+                },
                 leading: Icon(
                   CupertinoIcons.profile_circled,
                   size: 35,

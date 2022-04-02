@@ -39,7 +39,8 @@ class _myprofileState extends State<myprofile> {
               padding: EdgeInsets.only(left: 60, right: 60, top: 30),
               child: Column(children: [
                  Image.asset(
-                    'assets/images/disco.png',
+                    'assets/images/profile.png',
+                   height: 200,
                   ),
                 SizedBox(
                   height: 1,
