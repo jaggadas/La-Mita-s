@@ -77,6 +77,25 @@ class FirebaseService{
    FlutterToastService().showToast('$e');
       }
  }
+ verifyUserExistence(String phone)async{
+  String entered_phone='+91$phone';
+  try{
+  bool numberExists=false;
+  var userData =
+      await firestore.collection(kNumber).doc('QKLKZkSNh4tZcqdOgCQ0').get();
+  var listOfNumbers=userData.get(kNumber);
+  for(String number in listOfNumbers){
+    if (entered_phone==number){
+     numberExists=true;
+     break;
+    }
+  }
+  return numberExists;}
+      catch(e){
+   print(e);
+      }
+
+ }
  getUserDetails()async{
   var userData =
       await firestore.collection(kUsers).doc(auth.currentUser?.uid).get();

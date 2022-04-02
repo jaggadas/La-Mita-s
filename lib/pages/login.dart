@@ -6,6 +6,7 @@ import 'package:la_mita/pages/otp.dart';
 import 'package:la_mita/pages/widgets/header.dart';
 import 'package:la_mita/pages/widgets/progress_dialog.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
+import 'package:la_mita/pages/widgets/toast.dart';
 import 'package:la_mita/utils/Constants.dart';
 import 'package:la_mita/utils/routes.dart';
 import 'package:sn_progress_dialog/sn_progress_dialog.dart';
@@ -110,12 +111,15 @@ class _loginPageState extends State<loginPage> {
                       child: InkWell(
                         onTap: () async {
                           //TODO: add send OTP functionality
+                          var userExists=await FirebaseService().verifyUserExistence(entered_phone);
+                          if(userExists){
+                            var temp =
+                            await FirebaseService().sendOTP(entered_phone,context);
+                            moveToOTP(context: context, confirmationResult: temp);
+                          }else{
+                            FlutterToastService().showToast('You are not authorized to use this app');
+                          }
 
-                          var temp =
-                              await FirebaseService().sendOTP(entered_phone,context);
-
-
-                          moveToOTP(context: context, confirmationResult: temp);
                         },
                         child: AnimatedContainer(
                           duration: Duration(seconds: 1),
