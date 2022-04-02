@@ -9,4 +9,5 @@ class MyRoutes{
   static String paymentRoute='/payment';
   static String paymentHistoryRoute='/paymenthistory';
   static String visitorEntryRoute='/visitorentry';
+  static String myprofileRoute='/myprofile';
 }

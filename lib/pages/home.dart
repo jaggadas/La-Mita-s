@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:la_mita/pages/appbody.dart';
 import 'package:la_mita/pages/below_appbar.dart';
 import 'package:la_mita/pages/drawer.dart';
+import 'package:la_mita/pages/profile.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
+import 'package:la_mita/utils/routes.dart';
 
 import '../services/Firebase.dart';
 
@@ -55,7 +57,7 @@ class _HomeState extends State<Home> {
                   color: Colors.white,
                 )),
             IconButton(
-                onPressed: () {},
+                onPressed: () => Navigator.popAndPushNamed(context, MyRoutes.myprofileRoute) ,
                 icon: const Icon(
                   Icons.person,
                   size: 35,

@@ -5,6 +5,7 @@ import 'package:la_mita/pages/login.dart';
 import 'package:la_mita/pages/otp.dart';
 import 'package:la_mita/pages/payment_history_page.dart';
 import 'package:la_mita/pages/payment_page.dart';
+import 'package:la_mita/pages/profile.dart';
 import 'package:la_mita/pages/service_request_page.dart';
 import 'package:la_mita/pages/splash_screen.dart';
 import 'package:la_mita/pages/user_details.dart';
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.serviceRequestRoute:(context) => ServiceRequestPage(),
         MyRoutes.paymentRoute:(context) => Payment(),
         MyRoutes.paymentHistoryRoute:(context) => PaymentHistory(),
+        MyRoutes.myprofileRoute:(context) => myprofile(),
       },
     );
   }
