@@ -5,6 +5,7 @@ import 'package:la_mita/services/getLinks.dart';
 
 import '../services/Firebase.dart';
 import '../utils/UserModel.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class KycPage extends StatefulWidget {
   @override
@@ -14,6 +15,7 @@ class KycPage extends StatefulWidget {
 class _KycPageState extends State<KycPage> {
   late String name,email,site,phone;
   bool isNotLoaded=true;
+  bool showSpinner=true;
 
   static ValueKey key = ValueKey('key_0');
   bool _isHtml = false;
@@ -37,13 +39,13 @@ class _KycPageState extends State<KycPage> {
       site = user.site;
       phone = user.phone;
       isNotLoaded=false;
-      print(isNotLoaded);
+      //print(isNotLoaded);
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    initialiseDetails();
+    //initialiseDetails();
     return Scaffold(
         appBar: AppBar(
           title: Text('KYC'),
@@ -51,16 +53,19 @@ class _KycPageState extends State<KycPage> {
 
 
         ),
-        body: isNotLoaded? Center(child: CircularProgressIndicator(),):Stack(
+        body: isNotLoaded? Center(child: CircularProgressIndicator(),):
+        Stack(
           children: <Widget>[
             Column(
               children: <Widget>[
-
                 Expanded(
                     flex: 1,
                     child: EasyWebView(
                       src:  GetLinks().getKYClink(email, name, site),
                       onLoaded: () {
+                        print('hi');
+
+
 
                       },
                       isHtml: _isHtml,

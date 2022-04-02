@@ -43,7 +43,7 @@ class _VisitorEntryPageState extends State<VisitorEntryPage> {
 
   @override
   Widget build(BuildContext context) {
-    initialiseDetails();
+
     return Scaffold(
         appBar: AppBar(
           title: Text('Visitor Entry'),

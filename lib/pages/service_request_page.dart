@@ -43,7 +43,7 @@ class _ServiceRequestPageState extends State<ServiceRequestPage> {
 
   @override
   Widget build(BuildContext context) {
-    initialiseDetails();
+
     return Scaffold(
         appBar: AppBar(
           title: Text('Service Request'),
