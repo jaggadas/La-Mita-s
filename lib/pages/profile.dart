@@ -22,6 +22,7 @@ class _myprofileState extends State<myprofile> {
   String phone = '111111';
   TextEditingController nameController=TextEditingController();
   TextEditingController emailController=TextEditingController();
+  TextEditingController phoneController=TextEditingController();
 
   @override
   void initState() {
@@ -40,6 +41,7 @@ class _myprofileState extends State<myprofile> {
     });
     nameController.text=name;
     emailController.text=email;
+    phoneController.text=phone;
 
   }
   @override
@@ -95,11 +97,28 @@ class _myprofileState extends State<myprofile> {
                   child: Row()
                 ),
                 TextField(
+                  controller: phoneController,
+                  enabled: false,
+                  decoration: kInputDecoration.copyWith(
+                      labelText: "Phone",
+                      hintText: 'Enter Phone',
+                      // hintText: "Sejal Kothari",
+                      hintStyle: TextStyle(
+                        fontSize: 18,
+                        color: Colors.grey,
+                      )
+                  ),
+
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                TextField(
                   controller: nameController,
                  enabled: edit,
                   decoration: kInputDecoration.copyWith(
                   labelText: "Name",
-
+                 hintText: 'Enter Name',
                  // hintText: "Sejal Kothari",
                   hintStyle: TextStyle(  
                     fontSize: 18,
@@ -116,6 +135,7 @@ class _myprofileState extends State<myprofile> {
                  enabled: edit,
                  decoration:kInputDecoration.copyWith(
                   labelText: "Email ID",
+                 hintText: 'Enter Email',
                  // hintText: "Sejal Kothari",
                   hintStyle: TextStyle(  
                     fontSize: 18,
