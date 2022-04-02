@@ -23,6 +23,8 @@ class _myprofileState extends State<myprofile> {
   TextEditingController nameController=TextEditingController();
   TextEditingController emailController=TextEditingController();
   TextEditingController phoneController=TextEditingController();
+  TextEditingController siteController=TextEditingController();
+
 
   @override
   void initState() {
@@ -42,6 +44,7 @@ class _myprofileState extends State<myprofile> {
     nameController.text=name;
     emailController.text=email;
     phoneController.text=phone;
+    siteController.text=site;
 
   }
   @override
@@ -50,22 +53,7 @@ class _myprofileState extends State<myprofile> {
 
         backgroundColor: Colors.white,
         appBar: AppBar(
-          actions: [!edit?IconButton(onPressed: (){
-            setState(() {
-              edit=true;
-            });
-          }, icon: Icon(Icons.edit)):
-          IconButton(onPressed: ()async{
-            var selected_site=await SiteStream().getCurrentSite();
-            await FirebaseService().updateDetails(nameController.text, emailController.text, selected_site, context);
-            setState(() {
-              edit=false;
-            });
-            initialiseDetails();
 
-
-          }, icon: Icon(Icons.done),)
-          ],
           
           title: 
           Text("My Profile"),
@@ -115,7 +103,7 @@ class _myprofileState extends State<myprofile> {
                 ),
                 TextField(
                   controller: nameController,
-                 enabled: edit,
+                 enabled: false,
                   decoration: kInputDecoration.copyWith(
                   labelText: "Name",
                  hintText: 'Enter Name',
@@ -132,7 +120,7 @@ class _myprofileState extends State<myprofile> {
               ),
                TextField(
                  controller: emailController,
-                 enabled: edit,
+                 enabled: false,
                  decoration:kInputDecoration.copyWith(
                   labelText: "Email ID",
                  hintText: 'Enter Email',
@@ -146,8 +134,20 @@ class _myprofileState extends State<myprofile> {
                SizedBox(
                 height: 40,
               ),
+                TextField(
+                  controller: siteController,
+                  enabled: false,
+                  decoration:kInputDecoration.copyWith(
+                      labelText: "Site",
+                      hintText: 'Enter Site',
+                      // hintText: "Sejal Kothari",
+                      hintStyle: TextStyle(
+                        fontSize: 18,
+                        color: Colors.grey,
+                      )
+                  ),
+                ),
 
-           SiteStream(enabled: edit,value: site,)
 
               ]
               ),
