@@ -44,6 +44,19 @@ class FirebaseService{
    return Home();
   }
  }
+ updateDetails(String username,String email,String site,BuildContext context)async{
+  ProgressDialog pd=ProgressDialog(context: context);
+  pd.show(max: 100, msg: 'Please Wait',progressBgColor: MyTheme.orange2,progressValueColor: Colors.grey);
+  try{
+   await firestore.collection(kUsers).doc(auth.currentUser?.uid).update(
+       {kName: username, kPhone: '${auth.currentUser?.phoneNumber}',kSite:site,kEmail:email});
+  pd.close();
+  }
+  catch(e){
+   pd.close();
+   FlutterToastService().showToast('$e');
+  }
+ }
 
  getNewUserScreen(BuildContext context)async {
   var userData =await firestore.collection("users").doc(auth.currentUser?.uid).get();

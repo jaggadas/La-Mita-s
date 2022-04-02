@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:la_mita/pages/widgets/DropDownWidgetStream.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
+import 'package:la_mita/utils/Constants.dart';
+
+import '../services/Firebase.dart';
+import '../utils/UserModel.dart';
 
 class myprofile extends StatefulWidget {
   const myprofile({Key? key}) : super(key: key);
@@ -10,20 +15,55 @@ class myprofile extends StatefulWidget {
 }
 
 class _myprofileState extends State<myprofile> {
-  
+  bool edit=false;
+  String name = 'Username';
+  String email = 'username@email.com';
+  String site = 'BKC';
+  String phone = '111111';
+  TextEditingController nameController=TextEditingController();
+  TextEditingController emailController=TextEditingController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    initialiseDetails();
+  }
+
+  void initialiseDetails() async {
+    UserModel user = await FirebaseService().getUserDetails();
+    setState(() {
+      name = user.name;
+      email = user.email;
+      site = user.site;
+      phone = user.phone;
+    });
+    nameController.text=name;
+    emailController.text=email;
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {
-    },
-    backgroundColor: MyTheme.orange4,
-    child: Icon( CupertinoIcons.pencil
-    ,
-    size: 35, color: Colors.white,  
 
-    ),),
         backgroundColor: Colors.white,
         appBar: AppBar(
+          actions: [!edit?IconButton(onPressed: (){
+            setState(() {
+              edit=true;
+            });
+          }, icon: Icon(Icons.edit)):
+          IconButton(onPressed: ()async{
+            var selected_site=await SiteStream().getCurrentSite();
+            await FirebaseService().updateDetails(nameController.text, emailController.text, selected_site, context);
+            setState(() {
+              edit=false;
+            });
+            initialiseDetails();
+
+
+          }, icon: Icon(Icons.done),)
+          ],
           
           title: 
           Text("My Profile"),
@@ -54,19 +94,27 @@ class _myprofileState extends State<myprofile> {
                   ),
                   child: Row()
                 ),
-                TextField( decoration: InputDecoration(  
+                TextField(
+                  controller: nameController,
+                 enabled: edit,
+                  decoration: kInputDecoration.copyWith(
                   labelText: "Name",
+
                  // hintText: "Sejal Kothari",
                   hintStyle: TextStyle(  
                     fontSize: 18,
                     color: Colors.grey,
                   ) 
                 ),
+
               ),
               SizedBox(
                 height: 40,
               ),
-               TextField( decoration: InputDecoration(  
+               TextField(
+                 controller: emailController,
+                 enabled: edit,
+                 decoration:kInputDecoration.copyWith(
                   labelText: "Email ID",
                  // hintText: "Sejal Kothari",
                   hintStyle: TextStyle(  
@@ -78,30 +126,12 @@ class _myprofileState extends State<myprofile> {
                SizedBox(
                 height: 40,
               ),
-               TextField( 
-                  decoration: InputDecoration(  
-                  labelText: "Site",
-                 // hintText: "Sejal Kothari",
-                  hintStyle: TextStyle(  
-                    fontSize: 18,
-                    color: Colors.grey,
-                  ) 
-                ),
-              ),
 
-           //   Icon( CupertinoIcons.pencil,
-             // color: Colors.grey,
-             // size: 30, ),
-             //  Padding(padding: EdgeInsets.only(right: 18))
-                
-               
+           SiteStream(enabled: edit,value: site,)
+
               ]
               ),
           ),
-              
-             
-                
-               
         ]
         )
         )
