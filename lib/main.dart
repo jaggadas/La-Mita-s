@@ -25,6 +25,7 @@ Future main() async {
           projectId: "la-mitas"));
   runApp(const MyApp());
 }
+
 //party time
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -38,11 +39,8 @@ class MyApp extends StatelessWidget {
         primaryColor: MyTheme.orange,
         accentColor: MyTheme.orange2,
       ),
-
-      initialRoute: MyRoutes.loginRoute,
-
+      initialRoute: MyRoutes.paymentRoute,
       home: loginPage(),
-
       routes: {
         // "/":(context) => userdetails(),
         MyRoutes.loginRoute: (context) => loginPage(),
@@ -50,12 +48,12 @@ class MyApp extends StatelessWidget {
         MyRoutes.otpRoute: (context) => otp(),
         MyRoutes.homeRoute: (context) => Home(),
         MyRoutes.userdetailsRoute: (context) => userdetails(),
-        MyRoutes.kycRoute:(context) => KycPage(),
-        MyRoutes.visitorEntryRoute:(context) => VisitorEntryPage(),
-        MyRoutes.serviceRequestRoute:(context) => ServiceRequestPage(),
-        MyRoutes.paymentRoute:(context) => Payment(),
-        MyRoutes.paymentHistoryRoute:(context) => PaymentHistory(),
-        MyRoutes.myprofileRoute:(context) => myprofile(),
+        MyRoutes.kycRoute: (context) => KycPage(),
+        MyRoutes.visitorEntryRoute: (context) => VisitorEntryPage(),
+        MyRoutes.serviceRequestRoute: (context) => ServiceRequestPage(),
+        MyRoutes.paymentRoute: (context) => Payment(),
+        MyRoutes.paymentHistoryRoute: (context) => PaymentHistory(),
+        MyRoutes.myprofileRoute: (context) => myprofile(),
       },
     );
   }

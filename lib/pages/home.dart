@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
                   color: Colors.white,
                 )),
             IconButton(
-                onPressed: () {},
+                onPressed: () => Navigator.popAndPushNamed(context, MyRoutes.paymentRoute),
                 icon: const Icon(
                   Icons.payment_sharp,
                   size: 35,

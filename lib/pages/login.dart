@@ -144,16 +144,39 @@ class _loginPageState extends State<loginPage> {
                     SizedBox(
                       height: 75.0,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 16.0, horizontal: 32.0),
-                      child: Column(
-                        children: [
-                          Image.asset("assets/images/disco.png",
-                              fit: BoxFit.cover)
-                        ],
-                      ),
-                    )
+                    Material(
+                          color: Colors.white,
+                          borderRadius:
+                              BorderRadius.circular(changeButton ? 50 : 30),
+                          child: InkWell(
+                            onTap: () => 
+                    Navigator.pushNamed(context, MyRoutes.homeRoute),
+                            //moveToHome(context),
+                            child: AnimatedContainer(
+                              duration: Duration(seconds: 1),
+                              width: changeButton ? 50 : 150,
+                              height: 50,
+          
+                              alignment: Alignment.center,
+                              child: changeButton
+                                  ? Icon(
+                                      Icons.done,
+                                      color: MyTheme.orange4,
+                                    )
+                                  : Text(
+                                      "Sumit",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20),
+                                    ),
+                              // decoration: BoxDecoration(
+                              // color: MyTheme.darkgreen,
+                              // borderRadius: BorderRadius.circular(8),
+                              //  )
+                            ),
+                          ))
+                    
                   ]),
                 ),
               ]),

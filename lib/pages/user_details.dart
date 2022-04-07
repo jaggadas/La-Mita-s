@@ -116,7 +116,8 @@ class userdetails extends StatefulWidget {
           SizedBox(height: 30),
           TextFormField(
             cursorColor: MyTheme.orange2,
-            decoration: kInputDecoration.copyWith(hintText: "Enter Email ID",labelText: "Email ID"),
+            decoration: kInputDecoration.copyWith(hintText: "Enter Email ID",
+            labelText: "Email ID"),
             keyboardType: TextInputType.emailAddress,
             onChanged: (value){
                 entered_email=value;
