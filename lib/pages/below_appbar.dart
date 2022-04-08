@@ -29,7 +29,7 @@ class below_appbar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               children: [
-               Image.asset('assets/images/homepagelogo.png',)
+               Image.asset('assets/images/Accomodation.png',)
               ],
             ),
 

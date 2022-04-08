@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
+import 'package:la_mita/pages/widgets/toast.dart';
+import 'package:la_mita/services/Firebase.dart';
 import 'package:la_mita/utils/routes.dart';
 import 'package:la_mita/utils/Constants.dart';
+import 'package:date_field/date_field.dart';
+import 'package:flutter/services.dart';
 
 class Payment extends StatefulWidget {
   const Payment({Key? key}) : super(key: key);
@@ -35,9 +39,42 @@ class _MypaymentformState extends State<Mypaymentform> {
   var _result;
   var _result1;
   var _result2;
+  String date='';
+  String paymentType='';
+  String paymentMonth='';
+  String year='';
+  String paymentMode='';
+  String paymentAmount='';
+  String paymentRemarks='';
+  String authId=FirebaseService().getAuthId().toString();
 
   bool changeButton = true;
   String dropdownValue = 'January';
+  validateForm(){
+    if(date==''){
+      FlutterToastService().showToast('Please Enter Valid Date');
+      return false;}
+    else if(paymentType==''){
+      FlutterToastService().showToast('Please Enter Valid Payment Type');
+      return false;}
+    else if(paymentMonth==''){
+      FlutterToastService().showToast('Please Enter Valid Payment Month');
+      return false;}
+    else if(year==''){
+      FlutterToastService().showToast('Please Enter Valid Payment year');
+      return false;}
+    else if(paymentMode==''){
+      FlutterToastService().showToast('Please Enter Valid Payment Mode');
+      return false;}
+    else if(paymentRemarks==''){
+      FlutterToastService().showToast('Please Enter Valid Payment Remarks');
+      return false;}
+    else if(paymentAmount==''){
+      FlutterToastService().showToast('Please Enter Valid Payment Amount');
+      return false;}
+    else{return true;}
+  }
+
 
   String? value;
   final _formKey = GlobalKey<FormState>();
@@ -53,21 +90,25 @@ class _MypaymentformState extends State<Mypaymentform> {
 
             SizedBox(height: 20),
 
-            TextFormField(
-              cursorColor: MyTheme.orange4,
-              decoration: kInputDecoration.copyWith(
-                hintText: "Date of Payment",
+                DateTimeFormField(
+                  initialDate: DateTime.now(),
+                  decoration: InputDecoration(
+                    hintStyle: TextStyle(color: MyTheme.orange2),
+                    errorStyle: TextStyle(color: Colors.redAccent),
+                    border: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 1.0),
+                      borderRadius: BorderRadius.all(Radius.circular(14)),),
+                    suffixIcon: Icon(Icons.event_note),
+                    labelText: 'Date',
+                  ),
 
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black, width: 1.0),
-                  borderRadius: BorderRadius.all(Radius.circular(14)),
+                  mode: DateTimeFieldPickerMode.date,
+
+                  autovalidateMode: AutovalidateMode.always,
+                  validator: (e) => (e?.day ?? 0) == 1 ? 'Please not the first day' : null,
+                  onDateSelected: (DateTime value) {
+                    date=value.toString().split(' ')[0];
+                  },
                 ),
-                // icon: const Icon(Icons.calendar_month),
-                // iconColor: Colors.black,
-
-                labelText: "dd/mm/yyyy",
-              ),
-            ),
             SizedBox(
               height: 40,
             ),
@@ -75,33 +116,37 @@ class _MypaymentformState extends State<Mypaymentform> {
             // ListTile(
             // title:
             const Text('Payment Type', style: TextStyle(fontSize: 22)),
+
             RadioListTile(
                 title: const Text('Rent'),
-                value: 1,
+                value: 'Rent',
                 groupValue: _result,
                 onChanged: (value) {
                   setState(() {
                     _result = value;
+                    paymentType=value.toString();
                   });
                 }),
 
             RadioListTile(
                 title: const Text('Security Deposit'),
-                value: 2,
+                value: 'Security Deposit',
                 groupValue: _result,
                 onChanged: (value) {
                   setState(() {
                     _result = value;
+                    paymentType=value.toString();
                   });
                 }),
 
             RadioListTile(
                 title: const Text('Token Amount'),
-                value: 3,
+                value: 'Token Amount',
                 groupValue: _result,
                 onChanged: (value) {
                   setState(() {
                     _result = value;
+                    paymentType=value.toString();
                   });
                 }),
 
@@ -128,6 +173,7 @@ class _MypaymentformState extends State<Mypaymentform> {
                     onChanged: (String? newValue) {
                       setState(() {
                         dropdownValue = newValue!;
+                        paymentMonth=newValue.toString();
                       });
                     },
                     items: <String>[
@@ -160,49 +206,55 @@ class _MypaymentformState extends State<Mypaymentform> {
             const Text('Year', style: TextStyle(fontSize: 22)),
             RadioListTile(
                 title: const Text('2020'),
-                value: 4,
+                value: '2020',
                 groupValue: _result1,
                 onChanged: (value) {
                   setState(() {
                     _result1 = value;
+                    year=value.toString();
                   });
                 }),
 
             RadioListTile(
                 title: const Text('2021'),
-                value: 5,
+                value: '2021',
                 groupValue: _result1,
                 onChanged: (value) {
                   setState(() {
                     _result1 = value;
+                    year=value.toString();
                   });
                 }),
 
             RadioListTile(
                 title: const Text('2022'),
-                value: 6,
+                value: '2022',
+
                 groupValue: _result1,
                 onChanged: (value) {
                   setState(() {
                     _result1 = value;
+                    year=value.toString();
                   });
                 }),
             RadioListTile(
                 title: const Text('2023'),
-                value: 7,
+                value: '2023',
                 groupValue: _result1,
                 onChanged: (value) {
                   setState(() {
                     _result1 = value;
+                    year=value.toString();
                   });
                 }),
             RadioListTile(
                 title: const Text('2024'),
-                value: 8,
+                value: '2024',
                 groupValue: _result1,
                 onChanged: (value) {
                   setState(() {
                     _result1 = value;
+                    year=value.toString();
                   });
                 }),
 
@@ -213,48 +265,53 @@ class _MypaymentformState extends State<Mypaymentform> {
             const Text('Mode of Payment', style: TextStyle(fontSize: 22)),
             RadioListTile(
                 title: const Text('Cash'),
-                value: 9,
+                value: 'Cash',
                 groupValue: _result2,
                 onChanged: (value) {
                   setState(() {
                     _result2 = value;
+                    paymentMode=value.toString();
                   });
                 }),
 
             RadioListTile(
                 title: const Text('Cheque'),
-                value: 10,
+                value: 'Cheque',
                 groupValue: _result2,
                 onChanged: (value) {
                   setState(() {
                     _result2 = value;
+                    paymentMode=value.toString();
                   });
                 }),
             RadioListTile(
                 title: const Text('Gpay'),
-                value: 11,
+                value: 'Gpay',
                 groupValue: _result2,
                 onChanged: (value) {
                   setState(() {
                     _result2 = value;
+                    paymentMode=value.toString();
                   });
                 }),
             RadioListTile(
                 title: const Text('PhonePay'),
-                value: 12,
+                value: 'PhonePay',
                 groupValue: _result2,
                 onChanged: (value) {
                   setState(() {
                     _result2 = value;
+                    paymentMode=value.toString();
                   });
                 }),
             RadioListTile(
                 title: const Text('Paytm'),
-                value: 13,
+                value:'Paytm',
                 groupValue: _result2,
                 onChanged: (value) {
                   setState(() {
                     _result2 = value;
+                    paymentMode=value.toString();
                   });
                 }),
 
@@ -262,6 +319,10 @@ class _MypaymentformState extends State<Mypaymentform> {
 
             TextFormField(
               cursorColor: MyTheme.orange2,
+              keyboardType: TextInputType.number,
+              inputFormatters: <TextInputFormatter>[
+                FilteringTextInputFormatter.digitsOnly
+              ],
               decoration: kInputDecoration.copyWith(
                 hintText: "Enter Amount",
 
@@ -275,6 +336,12 @@ class _MypaymentformState extends State<Mypaymentform> {
 
                 labelText: "Amount",
               ),
+              onChanged: (value){
+                setState(() {
+                  paymentAmount=value;
+                });
+
+              },
             ),
 
             SizedBox(height: 40),
@@ -292,6 +359,12 @@ class _MypaymentformState extends State<Mypaymentform> {
 
                 labelText: "Remarks",
               ),
+              onChanged: (value){
+                setState(() {
+                  paymentRemarks=value;
+                });
+
+              },
             ),
 
             SizedBox(height: 45),
@@ -304,7 +377,12 @@ class _MypaymentformState extends State<Mypaymentform> {
                     MaterialStateProperty.all<Color>(MyTheme.orange4),
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
               ),
-              onPressed: () {},
+              onPressed: () async{
+                print("$date\n$paymentType\n$paymentMonth\n$year\n$paymentMode\n$paymentAmount\n$paymentRemarks");
+                if (validateForm()){
+                await FirebaseService().sendPaymentForVerification(date, paymentType, paymentMonth, year, paymentMode, paymentAmount, paymentRemarks, authId, context);}
+
+              },
               child: Text('Submit'),
             )
           ]),

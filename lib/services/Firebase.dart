@@ -36,12 +36,28 @@ class FirebaseService{
    FlutterToastService().showToast(e.toString());
       }
  }
+ getAuthId(){
+  return (auth.currentUser?.uid);
+ }
  getInitialScreen(){
   User? currentUser=auth.currentUser;
   if(currentUser==null){
    return loginPage();
   }else{
    return Home();
+  }
+ }
+ sendPaymentForVerification(String date, String type, String month, String year,String mode,String amount,String remarks,String uid,BuildContext context)async{
+  ProgressDialog pu=ProgressDialog(context: context);
+  pu.show(max: 100, msg: 'Please Wait',progressBgColor: MyTheme.orange2,progressValueColor: Colors.grey);
+  try{
+   await firestore.collection(kVerification).doc(auth.currentUser?.uid).set(
+       {kPaymentDate:date,kPaymentAmount:amount,kPaymentMode:mode,kPaymentMonth:month,kPaymentRemarks:remarks,kPaymentType:type,kPaymentYear:year,kUserId:'${auth.currentUser?.uid}'});
+   pu.close();
+  }
+  catch(e){
+   pu.close();
+   FlutterToastService().showToast('$e');
   }
  }
  updateDetails(String username,String email,String site,BuildContext context)async{

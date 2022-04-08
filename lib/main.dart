@@ -39,8 +39,8 @@ class MyApp extends StatelessWidget {
         primaryColor: MyTheme.orange,
         accentColor: MyTheme.orange2,
       ),
-      initialRoute: MyRoutes.paymentRoute,
-      home: loginPage(),
+
+      home: FirebaseService().getInitialScreen(),
       routes: {
         // "/":(context) => userdetails(),
         MyRoutes.loginRoute: (context) => loginPage(),
