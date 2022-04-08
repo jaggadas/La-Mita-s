@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:la_mita/pages/payments.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
 import 'package:la_mita/pages/widgets/toast.dart';
 import 'package:la_mita/services/Firebase.dart';
@@ -41,10 +42,11 @@ class _MypaymentformState extends State<Mypaymentform> {
   var _result2;
   String date='';
   String paymentType='';
-  String paymentMonth='';
+  String paymentMonth='January';
   String year='';
   String paymentMode='';
   String paymentAmount='';
+  String webAmount='';
   String paymentRemarks='';
   String authId=FirebaseService().getAuthId().toString();
   var amountController=TextEditingController();
@@ -329,6 +331,26 @@ class _MypaymentformState extends State<Mypaymentform> {
                     paymentMode=value.toString();
                   });
                 }),
+                RadioListTile(
+                    title: const Text('Netbanking'),
+                    value:'Netbanking',
+                    groupValue: _result2,
+                    onChanged: (value) {
+                      setState(() {
+                        _result2 = value;
+                        paymentMode=value.toString();
+                      });
+                    }),
+                RadioListTile(
+                    title: const Text('Security Deposit Use up'),
+                    value:'Security Deposit Use up',
+                    groupValue: _result2,
+                    onChanged: (value) {
+                      setState(() {
+                        _result2 = value;
+                        paymentMode=value.toString();
+                      });
+                    }),
 
             SizedBox(height: 40),
 
@@ -355,6 +377,9 @@ class _MypaymentformState extends State<Mypaymentform> {
               onChanged: (value){
                 setState(() {
                   paymentAmount=value;
+
+                  webAmount=value+'00';
+
                 });
 
               },
@@ -395,10 +420,20 @@ class _MypaymentformState extends State<Mypaymentform> {
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
               ),
               onPressed: () async{
-                print("$date\n$paymentType\n$paymentMonth\n$year\n$paymentMode\n$paymentAmount\n$paymentRemarks");
+
                 if (validateForm()){
-                await FirebaseService().sendPaymentForVerification(date, paymentType, paymentMonth, year, paymentMode, paymentAmount, paymentRemarks, authId, context);}
+                await FirebaseService().sendPaymentForVerification(date, paymentType, paymentMonth, year, paymentMode, paymentAmount, paymentRemarks, authId, context);
+                FlutterToastService().showToast('Payment Sent for verification');
+                print('webamoutn $webAmount');
+                print(paymentMode);
+                if(paymentMode!='Cash'&&paymentMode!='Cheque'&&paymentMode!='Security Deposit Use up'){
+                Navigator.pop(context);
+                await Navigator.push(context,MaterialPageRoute(builder: (context){
+                  return Webpayment(name: paymentType,image: '',price: webAmount,);
+                }));}
                 resetForm();
+                }
+
               },
               child: Text('Submit'),
             )
