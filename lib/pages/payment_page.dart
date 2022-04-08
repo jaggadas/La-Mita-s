@@ -33,6 +33,9 @@ class Mypaymentform extends StatefulWidget {
 
 class _MypaymentformState extends State<Mypaymentform> {
   var _result;
+  var _result1;
+  var _result2;
+
   bool changeButton = true;
   String dropdownValue = 'January';
 
@@ -84,7 +87,7 @@ class _MypaymentformState extends State<Mypaymentform> {
 
             RadioListTile(
                 title: const Text('Security Deposit'),
-                value: 1,
+                value: 2,
                 groupValue: _result,
                 onChanged: (value) {
                   setState(() {
@@ -94,7 +97,7 @@ class _MypaymentformState extends State<Mypaymentform> {
 
             RadioListTile(
                 title: const Text('Token Amount'),
-                value: 1,
+                value: 3,
                 groupValue: _result,
                 onChanged: (value) {
                   setState(() {
@@ -157,49 +160,49 @@ class _MypaymentformState extends State<Mypaymentform> {
             const Text('Year', style: TextStyle(fontSize: 22)),
             RadioListTile(
                 title: const Text('2020'),
-                value: 1,
-                groupValue: _result,
+                value: 4,
+                groupValue: _result1,
                 onChanged: (value) {
                   setState(() {
-                    _result = value;
+                    _result1 = value;
                   });
                 }),
 
             RadioListTile(
                 title: const Text('2021'),
-                value: 1,
-                groupValue: _result,
+                value: 5,
+                groupValue: _result1,
                 onChanged: (value) {
                   setState(() {
-                    _result = value;
+                    _result1 = value;
                   });
                 }),
 
             RadioListTile(
                 title: const Text('2022'),
-                value: 1,
-                groupValue: _result,
+                value: 6,
+                groupValue: _result1,
                 onChanged: (value) {
                   setState(() {
-                    _result = value;
+                    _result1 = value;
                   });
                 }),
             RadioListTile(
                 title: const Text('2023'),
-                value: 1,
-                groupValue: _result,
+                value: 7,
+                groupValue: _result1,
                 onChanged: (value) {
                   setState(() {
-                    _result = value;
+                    _result1 = value;
                   });
                 }),
             RadioListTile(
                 title: const Text('2024'),
-                value: 1,
-                groupValue: _result,
+                value: 8,
+                groupValue: _result1,
                 onChanged: (value) {
                   setState(() {
-                    _result = value;
+                    _result1 = value;
                   });
                 }),
 
@@ -210,48 +213,48 @@ class _MypaymentformState extends State<Mypaymentform> {
             const Text('Mode of Payment', style: TextStyle(fontSize: 22)),
             RadioListTile(
                 title: const Text('Cash'),
-                value: 1,
-                groupValue: _result,
+                value: 9,
+                groupValue: _result2,
                 onChanged: (value) {
                   setState(() {
-                    _result = value;
+                    _result2 = value;
                   });
                 }),
 
             RadioListTile(
                 title: const Text('Cheque'),
-                value: 1,
-                groupValue: _result,
+                value: 10,
+                groupValue: _result2,
                 onChanged: (value) {
                   setState(() {
-                    _result = value;
+                    _result2 = value;
                   });
                 }),
             RadioListTile(
                 title: const Text('Gpay'),
-                value: 1,
-                groupValue: _result,
+                value: 11,
+                groupValue: _result2,
                 onChanged: (value) {
                   setState(() {
-                    _result = value;
+                    _result2 = value;
                   });
                 }),
             RadioListTile(
                 title: const Text('PhonePay'),
-                value: 1,
-                groupValue: _result,
+                value: 12,
+                groupValue: _result2,
                 onChanged: (value) {
                   setState(() {
-                    _result = value;
+                    _result2 = value;
                   });
                 }),
             RadioListTile(
                 title: const Text('Paytm'),
-                value: 1,
-                groupValue: _result,
+                value: 13,
+                groupValue: _result2,
                 onChanged: (value) {
                   setState(() {
-                    _result = value;
+                    _result2 = value;
                   });
                 }),
 

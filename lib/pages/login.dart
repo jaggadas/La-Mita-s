@@ -144,39 +144,7 @@ class _loginPageState extends State<loginPage> {
                     SizedBox(
                       height: 75.0,
                     ),
-                    Material(
-                          color: Colors.white,
-                          borderRadius:
-                              BorderRadius.circular(changeButton ? 50 : 30),
-                          child: InkWell(
-                            onTap: () => 
-                    Navigator.pushNamed(context, MyRoutes.homeRoute),
-                            //moveToHome(context),
-                            child: AnimatedContainer(
-                              duration: Duration(seconds: 1),
-                              width: changeButton ? 50 : 150,
-                              height: 50,
-          
-                              alignment: Alignment.center,
-                              child: changeButton
-                                  ? Icon(
-                                      Icons.done,
-                                      color: MyTheme.orange4,
-                                    )
-                                  : Text(
-                                      "Sumit",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20),
-                                    ),
-                              // decoration: BoxDecoration(
-                              // color: MyTheme.darkgreen,
-                              // borderRadius: BorderRadius.circular(8),
-                              //  )
-                            ),
-                          ))
-                    
+                   
                   ]),
                 ),
               ]),
