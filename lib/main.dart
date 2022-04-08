@@ -1,10 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:la_mita_admin/pages/home.dart';
 import 'package:la_mita_admin/pages/login.dart';
 import 'package:la_mita_admin/pages/widgets/themes.dart';
+import 'package:la_mita_admin/services/Firebase.dart';
 import 'package:la_mita_admin/utils/routes.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -21,8 +25,8 @@ class MyApp extends StatelessWidget {
         primaryColor: MyTheme.orange,
         accentColor: MyTheme.orange2,
       ),
-      initialRoute: MyRoutes.loginRoute,
-      home: loginPage(),
+
+      home: FirebaseService().getInitialScreen(),
       routes: {
         // "/":(context) => userdetails(),
         MyRoutes.loginRoute: (context) => loginPage(),

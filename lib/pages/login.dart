@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:la_mita_admin/pages/widgets/header.dart';
 import 'package:la_mita_admin/pages/widgets/themes.dart';
+import 'package:la_mita_admin/services/Firebase.dart';
 import 'package:la_mita_admin/utils/constrants.dart';
 
 
@@ -16,6 +17,8 @@ class _loginPageState extends State<loginPage> {
   bool changeButton = false;
    double headerheight = 250;
     String entered_phone='';
+    String entered_email='';
+    String entered_password='';
 
   
   @override
@@ -62,7 +65,7 @@ class _loginPageState extends State<loginPage> {
                       },
                       onChanged: (value) {
                         setState(() {
-                         // entered_phone = value;
+                         entered_email=value;
                         });
                       },
                     ),
@@ -86,7 +89,7 @@ class _loginPageState extends State<loginPage> {
                       },
                       onChanged: (value) {
                         setState(() {
-                         // entered_phone = value;
+                         entered_password=value;
                         });
                       },
                     ),
@@ -99,15 +102,7 @@ class _loginPageState extends State<loginPage> {
                           BorderRadius.circular(changeButton ? 70 : 30),
                       child: InkWell(
                         onTap: () async {
-                          //TODO: add send OTP functionality
-                         // var userExists=await FirebaseService().verifyUserExistence(entered_phone);
-                         // if(userExists){
-                         //   var temp =
-                           // await FirebaseService().sendOTP(entered_phone,context);
-                         //   moveToOTP(context: context, confirmationResult: temp);
-                        //  }else{
-                          //  FlutterToastService().showToast('You are not authorized to use this app');
-                        //  }
+                          await FirebaseService().signIn(entered_email, entered_password, context);
 
                         },
                         child: AnimatedContainer(

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "210896378745",
+    "project_id": "la-mitas",
+    "storage_bucket": "la-mitas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210896378745:android:bd3e44294a85bbc9b1eda8",
+        "android_client_info": {
+          "package_name": "com.example.la_mita_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210896378745-aevcs9gr4usguhc3a81lhqqe09boed8f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.la_mita_admin",
+            "certificate_hash": "bdad0217e79073b34e1db7f81a8fb083854ed1a9"
+          }
+        },
+        {
+          "client_id": "210896378745-n2nqc7mthhm3rp5h7rtiushau35ie9jj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDImrdf-J4Mhp5FWdnUoeHVs4Of1rmhBMk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210896378745-n2nqc7mthhm3rp5h7rtiushau35ie9jj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

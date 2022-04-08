@@ -1,0 +1,17 @@
+import 'package:flutter/material.dart';
+const kSites='sites';
+const kUsers='users';
+const kName='name';
+const kEmail='email';
+const kSite='site';
+const kPhone='phone_number';
+const kNumber='numbers';
+const kVerification='payment_verification';
+const kPaymentDate='date';
+const kPaymentType='payment_type';
+const kPaymentMonth='payment_month';
+const kPaymentYear='payment_year';
+const kPaymentMode='payment_mode';
+const kPaymentAmount='payment_amount';
+const kPaymentRemarks='payment_remarks';
+const kUserId='user_id';
