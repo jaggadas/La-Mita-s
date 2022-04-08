@@ -47,6 +47,8 @@ class _MypaymentformState extends State<Mypaymentform> {
   String paymentAmount='';
   String paymentRemarks='';
   String authId=FirebaseService().getAuthId().toString();
+  var amountController=TextEditingController();
+  var remarksController=TextEditingController();
 
   bool changeButton = true;
   String dropdownValue = 'January';
@@ -74,6 +76,17 @@ class _MypaymentformState extends State<Mypaymentform> {
       return false;}
     else{return true;}
   }
+  resetForm(){
+    setState(() {
+      _result='';
+      _result1='';
+      _result2='';
+      amountController.text='';
+      remarksController.text='';
+
+    });
+
+  }
 
 
   String? value;
@@ -91,6 +104,7 @@ class _MypaymentformState extends State<Mypaymentform> {
             SizedBox(height: 20),
 
                 DateTimeFormField(
+
                   initialDate: DateTime.now(),
                   decoration: InputDecoration(
                     hintStyle: TextStyle(color: MyTheme.orange2),
@@ -295,6 +309,7 @@ class _MypaymentformState extends State<Mypaymentform> {
                   });
                 }),
             RadioListTile(
+
                 title: const Text('PhonePay'),
                 value: 'PhonePay',
                 groupValue: _result2,
@@ -319,6 +334,7 @@ class _MypaymentformState extends State<Mypaymentform> {
 
             TextFormField(
               cursorColor: MyTheme.orange2,
+              controller: amountController,
               keyboardType: TextInputType.number,
               inputFormatters: <TextInputFormatter>[
                 FilteringTextInputFormatter.digitsOnly
@@ -347,6 +363,7 @@ class _MypaymentformState extends State<Mypaymentform> {
             SizedBox(height: 40),
 
             TextFormField(
+              controller: remarksController,
               cursorColor: MyTheme.orange2,
               decoration: kInputDecoration.copyWith(
                 hintText: "Enter Remarks",
@@ -381,7 +398,7 @@ class _MypaymentformState extends State<Mypaymentform> {
                 print("$date\n$paymentType\n$paymentMonth\n$year\n$paymentMode\n$paymentAmount\n$paymentRemarks");
                 if (validateForm()){
                 await FirebaseService().sendPaymentForVerification(date, paymentType, paymentMonth, year, paymentMode, paymentAmount, paymentRemarks, authId, context);}
-
+                resetForm();
               },
               child: Text('Submit'),
             )

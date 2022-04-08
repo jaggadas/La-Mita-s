@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="changed editable">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="final">
+      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGRcd2Vi.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGRcd2Vi.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/below_appbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/below_appbar.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/payment_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/payment_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/profile.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/widgets/themes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widgets/themes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/services/Firebase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/Firebase.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/FirebaseConstants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/FirebaseConstants.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +45,7 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../la_mita_admin" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -262,7 +254,28 @@
       <option name="project" value="LOCAL" />
       <updated>1649221310830</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="configured payment page">
+      <created>1649449453910</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1649449453910</updated>
+    </task>
+    <task id="LOCAL-00028" summary="added image">
+      <created>1649449474330</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1649449474330</updated>
+    </task>
+    <task id="LOCAL-00029" summary="final">
+      <created>1649449512157</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1649449512157</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,13 +310,15 @@
     <MESSAGE value="formfacade" />
     <MESSAGE value="formfaca" />
     <MESSAGE value="image" />
-    <MESSAGE value="final" />
     <MESSAGE value="image_added" />
     <MESSAGE value="my_profile_page implemented" />
     <MESSAGE value="restricts access" />
     <MESSAGE value="drawer home button" />
     <MESSAGE value="changed editable" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed editable" />
+    <MESSAGE value="configured payment page" />
+    <MESSAGE value="added image" />
+    <MESSAGE value="final" />
+    <option name="LAST_COMMIT_MESSAGE" value="final" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
