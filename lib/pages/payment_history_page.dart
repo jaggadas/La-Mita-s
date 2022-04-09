@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
+
 class PaymentHistory extends StatefulWidget {
   const PaymentHistory({Key? key}) : super(key: key);
 
@@ -9,7 +10,30 @@ class PaymentHistory extends StatefulWidget {
 
 class _PaymentHistoryState extends State<PaymentHistory> {
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(backgroundColor: MyTheme.orange2,title: Text('Payment History'),),);
-  }
+   
+  Widget build(BuildContext context) => DefaultTabController(
+    length: 2, 
+    child:  Scaffold(
+      appBar: AppBar(
+        backgroundColor: MyTheme.orange2,
+        title: Text('Payment History'),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.search),
+            iconSize: 28,
+          )
+        ],
+        bottom: TabBar(
+           indicatorColor: Colors.white,
+  labelColor: Colors.white,
+  unselectedLabelColor: Colors.white70,
+          tabs: [
+            Tab(icon: Icon(Icons.verified_user), text: 'Verified'),
+            Tab(icon: Icon(Icons.no_accounts), text: 'Non-Verified')],
+        ),
+      ),
+    )
+  );
+  
 }
