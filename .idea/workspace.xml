@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="minor changes">
-      <change afterPath="$PROJECT_DIR$/lib/UiFake.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/payments.dart" afterDir="false" />
+    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="payment gateway added">
+      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGRcd2Vi.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGRcd2Vi.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/payment_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/payment_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/payments.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/payments.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649450326302</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="payment gateway added">
+      <created>1649457403042</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1649457403042</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -302,7 +308,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/la_mita" />
     </ignored-roots>
-    <MESSAGE value="Firebase added&#10;Login Service added&#10;Few Ui Changes&#10;ProgressDialog added" />
     <MESSAGE value="fixed issue with progress dialog" />
     <MESSAGE value="fixed issue with scrollbar" />
     <MESSAGE value="fixed issue with images" />
@@ -327,7 +332,8 @@
     <MESSAGE value="added image" />
     <MESSAGE value="final" />
     <MESSAGE value="minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor changes" />
+    <MESSAGE value="payment gateway added" />
+    <option name="LAST_COMMIT_MESSAGE" value="payment gateway added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

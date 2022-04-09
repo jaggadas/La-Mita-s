@@ -32,9 +32,9 @@ class Webpayment extends StatelessWidget{
         }
       });
 
-      element.requestFullscreen();
+      //element.requestFullscreen();
       //element.src='assets/payments.html?name=$name&price=$price&image=$image';
-      element.srcdoc = '<html><p><meta name="viewport" content="width=device-width"><head><title>RazorPay Web Payment</title></head><body><script src="https://checkout.razorpay.com/v1/checkout.js"></script><script>var options = {"key": "rzp_test_uC3ZnPLYZDPxSI","amount": "$price", "currency": "INR","name": "La Mita\'s","description": "$name","image": "$image","handler": function (response){window.parent.postMessage("SUCCESS","*");},"prefill": {"name": "","email": "","contact": ""},"notes": {"address": "Autofy" },"theme": {"color": "#F56032"},"modal": {"ondismiss": function(){window.parent.postMessage("MODAL_CLOSED","*");}}}; var rzp1 = new Razorpay(options);window.onload = function(e){rzp1.open();e.preventDefault();}</script></body></p></html>';
+      element.srcdoc = '<html><p><meta name="viewport" content="width=device-width"><head><title>RazorPay Web Payment</title></head><body><script src="https://checkout.razorpay.com/v1/checkout.js"></script><script>var options = { config:{},"key": "rzp_test_uC3ZnPLYZDPxSI","amount": "$price", "currency": "INR","name": "La Mita\'s","description": "$name","image": "$image","handler": function (response){window.parent.postMessage("SUCCESS","*");},"prefill": {"name": "","email": "","contact": ""},config: {display: {hide: [{ method: "netbanking" },{ method: "card" },{ method: "wallet" },{ method: "paylater" },{ method: "emi" },] } },"notes": {"address": "Autofy" },"theme": {"color": "#F56032"},"modal": {"ondismiss": function(){window.parent.postMessage("MODAL_CLOSED","*");}}}; var rzp1 = new Razorpay(options);window.onload = function(e){rzp1.open();e.preventDefault();}</script></body></p></html>';
       element.style.border = 'none';
       return element;
     });
