@@ -64,9 +64,6 @@ class _KycPageState extends State<KycPage> {
                       src:  GetLinks().getKYClink(email, name, site),
                       onLoaded: () {
                         print('hi');
-
-
-
                       },
                       isHtml: _isHtml,
                       isMarkdown: _isMarkdown,
@@ -83,8 +80,7 @@ class _KycPageState extends State<KycPage> {
                               print('Event message: $eventMessage');
                             }),
                       ],
-                      // width: 100,
-                      // height: 100,
+
                     )),
 
               ],

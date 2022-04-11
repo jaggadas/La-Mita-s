@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="payment gateway added">
-      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGRcd2Vi.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGRcd2Vi.cache" afterDir="false" />
+    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="disco time">
+      <change afterPath="$PROJECT_DIR$/lib/pages/widgets/pending_verification_stream.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/PaymentObject.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/la_mita.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/la_mita.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/payments.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/payments.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/kyc_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/kyc_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/payment_history_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/payment_history_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/services/Firebase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/Firebase.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/FirebaseConstants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/FirebaseConstants.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +50,7 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DeliveryKnight" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -289,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649457403042</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="disco time">
+      <created>1649527101464</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1649527101465</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,7 +320,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/la_mita" />
     </ignored-roots>
-    <MESSAGE value="fixed issue with progress dialog" />
     <MESSAGE value="fixed issue with scrollbar" />
     <MESSAGE value="fixed issue with images" />
     <MESSAGE value="user details page done pretty much" />
@@ -333,7 +344,8 @@
     <MESSAGE value="final" />
     <MESSAGE value="minor changes" />
     <MESSAGE value="payment gateway added" />
-    <option name="LAST_COMMIT_MESSAGE" value="payment gateway added" />
+    <MESSAGE value="disco time" />
+    <option name="LAST_COMMIT_MESSAGE" value="disco time" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

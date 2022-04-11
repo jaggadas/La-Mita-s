@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:js';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -47,12 +48,52 @@ class FirebaseService{
    return Home();
   }
  }
+ send()async{
+
+
+
+
+ }
  sendPaymentForVerification(String date, String type, String month, String year,String mode,String amount,String remarks,String uid,BuildContext context)async{
   ProgressDialog pu=ProgressDialog(context: context);
   pu.show(max: 100, msg: 'Please Wait',progressBgColor: MyTheme.orange2,progressValueColor: Colors.grey);
   try{
-   await firestore.collection(kVerification).doc(auth.currentUser?.uid).set(
-       {kPaymentDate:date,kPaymentAmount:amount,kPaymentMode:mode,kPaymentMonth:month,kPaymentRemarks:remarks,kPaymentType:type,kPaymentYear:year,kUserId:'${auth.currentUser?.uid}'});
+   DocumentSnapshot data = await firestore
+       .collection(kPaymentVerification)
+       .doc(auth.currentUser?.uid)
+       .get();
+   var userData= await firestore.collection(kUsers).doc(auth.currentUser?.uid).get();
+   var userName=userData.get(kName);
+   var mainString=jsonEncode( {kPaymentDate:date,kPaymentAmount:amount,kPaymentMode:mode,
+    kPaymentMonth:month,kPaymentRemarks:remarks,kPaymentType:type,
+    kPaymentYear:year,kUserId:'${auth.currentUser?.uid}'
+    ,  kUserName:userName},);
+   if(data.exists){
+    print(true);
+
+   await firestore
+       .collection(kPaymentVerification)
+       .doc(auth.currentUser?.uid)
+       .update({
+    kVerification: FieldValue.arrayUnion([
+     {kPayment:mainString},
+
+    ])
+
+   });}
+   else{
+
+    await firestore
+        .collection(kPaymentVerification)
+        .doc(auth.currentUser?.uid)
+        .set({
+     kVerification: FieldValue.arrayUnion([
+      {kPayment:mainString},
+
+     ])
+
+    });
+   }
    pu.close();
   }
   catch(e){

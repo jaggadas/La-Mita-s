@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:la_mita/pages/widgets/pending_verification_stream.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
 
 class PaymentHistory extends StatefulWidget {
@@ -30,9 +31,11 @@ class _PaymentHistoryState extends State<PaymentHistory> {
   unselectedLabelColor: Colors.white70,
           tabs: [
             Tab(icon: Icon(Icons.verified_user), text: 'Verified'),
-            Tab(icon: Icon(Icons.no_accounts), text: 'Non-Verified')],
+            Tab(icon: Icon(Icons.no_accounts), text: 'Pending')],
         ),
       ),
+     body: TabBarView(children: [Container(),PaymentVerificationStream()]),
+
     )
   );
   
