@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:la_mita_admin/pages/widgets/pending_stream.dart';
 import 'package:la_mita_admin/pages/widgets/themes.dart';
 import 'package:la_mita_admin/services/Firebase.dart';
 import 'package:la_mita_admin/utils/routes.dart';
@@ -13,8 +14,10 @@ class Home extends StatelessWidget {
       appBar:
        AppBar(
           backgroundColor: MyTheme.orange2,
-           title: Text('bhook lagri h yr'),
+           title: Text('Home'),
+          leading: IconButton(onPressed: (){FirebaseService().signOut(context);}, icon: Icon(Icons.close)),
           actions: [
+
           IconButton(
             onPressed: () {},
             icon: Icon(Icons.search),
@@ -26,8 +29,8 @@ class Home extends StatelessWidget {
   labelColor: Colors.white,
   unselectedLabelColor: Colors.white70,
           tabs: [
-            Tab(icon: Icon(Icons.verified_user), text: 'Verified'),
-            Tab(icon: Icon(Icons.no_accounts), text: 'Non-Verified')],
+            Tab(icon: Icon(Icons.verified_user), text: 'Customers'),
+            Tab(icon: Icon(Icons.add_alert), text: 'Pending')],
         ),
        ),
 
@@ -51,14 +54,14 @@ class Home extends StatelessWidget {
           children: [
           
             IconButton(
-                onPressed: () => Navigator.popAndPushNamed(context, MyRoutes.mobileRoute),
+                onPressed: () => Navigator.pushNamed(context, MyRoutes.mobileRoute),
                 icon: const Icon(
                   Icons.mobile_screen_share,
                   size: 30,
                   color: Colors.white,
                 )),
             IconButton(
-                onPressed: () => Navigator.popAndPushNamed(context, MyRoutes.siteRoute) ,
+                onPressed: () => Navigator.pushNamed(context, MyRoutes.siteRoute) ,
                 icon: const Icon(
                   Icons.input,
                   size: 30,
@@ -68,9 +71,7 @@ class Home extends StatelessWidget {
         ),
       ),
        body: 
-       Container(child: Center(
-         child: TextButton(onPressed: (){
-           FirebaseService().signOut(context);}, child: Text("Sign Out")),),),
+       TabBarView(children: [Container(),PaymentVerificationStream()]),
       
   ));
   }

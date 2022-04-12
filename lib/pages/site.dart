@@ -1,58 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:la_mita_admin/pages/widgets/mobile_number_stream.dart';
+import 'package:la_mita_admin/pages/widgets/site_stream.dart';
 import 'package:la_mita_admin/pages/widgets/themes.dart';
 import 'package:la_mita_admin/pages/widgets/toast.dart';
-import 'package:la_mita_admin/services/Firebase.dart';
 import 'package:la_mita_admin/utils/constrants.dart';
 
-class mobile extends StatefulWidget {
-  const mobile({ Key? key }) : super(key: key);
+import '../services/Firebase.dart';
+
+class site extends StatefulWidget {
+  const site({ Key? key }) : super(key: key);
 
   @override
-  State<mobile> createState() => _mobileState();
+  State<site> createState() => _siteState();
 }
 
-class _mobileState extends State<mobile> {
-   String entered_phone='';
-   var phoneController=TextEditingController();
+class _siteState extends State<site> {
+  String entered_site='';
+  var siteController=TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
 
        backgroundColor: Colors.white,
   appBar: AppBar(
           backgroundColor: MyTheme.orange4,
-           title: Text('Add Mobile number'),
+           title: Text('Add Site'),
       
     ),
     body: Column(
       children: [
         Padding(
-        padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 28.0),
+    padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 28.0),
           child: TextFormField(
-            controller: phoneController,
-              keyboardType: TextInputType.number,
+            controller:siteController ,
+              keyboardType: TextInputType.text,
                        // inputFormatters: <TextInputFormatter>[
                        //   FilteringTextInputFormatter.digitsOnly
                        // ],
-            inputFormatters: <TextInputFormatter>[
-              FilteringTextInputFormatter.digitsOnly
-            ],
                         cursorColor: MyTheme.orange2,
-                        decoration: kInputDecoration.copyWith(hintText: 'Enter number without country code'),
+                        decoration: kInputDecoration.copyWith(hintText: "Enter Site",
+                         labelText: "Site",),
+
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return "Mobile Number can not be empty";
-                          } else if (value.length <= 9) {
-                            return "Mobile Number should be atleast 10 digits";
+                            return "site can not be empty";
                           }
                           return null;
                         },
                         onChanged: (value) {
                           setState(() {
-                            entered_phone = value;
+                            entered_site=value;
+                            print(entered_site);
                           });
+
                         },
                       ),
         ),
@@ -68,18 +67,19 @@ class _mobileState extends State<mobile> {
             foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
           ),
           onPressed: () async{
-            if(entered_phone.length==10){
-            await FirebaseService().addPhoneNumber(entered_phone,context);
-            phoneController.text='';
+            print(entered_site);
+            if(entered_site!=''){
+              await FirebaseService().addSite(entered_site,context);
+            siteController.text='';
             }
             else{
-              FlutterToastService().showToast('Invalid Number');
+              FlutterToastService().showToast('Invalid Name');
             }
           },
           child: Text('Submit'),
-        )
-        ,
-        MobileNumberStream()
+        ),
+        SiteStream()
+        
       ],
     ),
     
