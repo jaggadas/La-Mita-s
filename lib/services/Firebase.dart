@@ -64,10 +64,14 @@ class FirebaseService{
        .get();
    var userData= await firestore.collection(kUsers).doc(auth.currentUser?.uid).get();
    var userName=userData.get(kName);
+   var userSite=userData.get(kSite);
+   var userEmail=userData.get(kEmail);
+   var userPhone=userData.get(kPhone);
    var mainString=jsonEncode( {kPaymentDate:date,kPaymentAmount:amount,kPaymentMode:mode,
     kPaymentMonth:month,kPaymentRemarks:remarks,kPaymentType:type,
     kPaymentYear:year,kUserId:'${auth.currentUser?.uid}'
-    ,  kUserName:userName},);
+    ,  kUserName:userName,kSite:userSite,kEmail:userEmail,kPhone:userPhone},
+   );
    if(data.exists){
     print(true);
 
