@@ -18,6 +18,7 @@ import '../pages/widgets/progress_dialog.dart';
 import '../pages/widgets/themes.dart';
 import '../pages/widgets/toast.dart';
 import '../utils/FirebaseConstants.dart';
+import 'package:intl/intl.dart';
 import '../utils/UserModel.dart';
 class FirebaseService{
   FirebaseAuth auth=FirebaseAuth.instance;
@@ -115,13 +116,16 @@ class FirebaseService{
 
       if(data.exists){
         print('TestMyAss'+true.toString());
-
+        var now = new DateTime.now();
+        var formatter = new DateFormat('yyyy-MM-dd');
+        String formattedDate = formatter.format(now);
+        print(formattedDate);
         await firestore
             .collection(kVerifiedPayments)
             .doc(payObj.user_id)
             .update({
           kVerification: FieldValue.arrayUnion([
-            {kPayment:mainString,kVerificationStatus:verified},
+            {kPayment:mainString,kVerificationStatus:verified,kVerificationDate:formattedDate.toString()},
 
           ])
         });
@@ -136,12 +140,15 @@ class FirebaseService{
       }
       else{
         print('TestMyAss'+false.toString());
+        var now = new DateTime.now();
+        var formatter = new DateFormat('yyyy-MM-dd');
+        String formattedDate = formatter.format(now);
         await firestore
             .collection(kVerifiedPayments)
             .doc(payObj.user_id)
             .set({
           kVerification: FieldValue.arrayUnion([
-            {kPayment:mainString,kVerificationStatus:verified},
+            {kPayment:mainString,kVerificationStatus:verified,kVerificationDate:formattedDate},
 
           ])
 

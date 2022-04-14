@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:la_mita_admin/pages/widgets/pending_stream.dart';
 import 'package:la_mita_admin/pages/widgets/themes.dart';
+import 'package:la_mita_admin/pages/widgets/user_stream.dart';
 import 'package:la_mita_admin/services/Firebase.dart';
 import 'package:la_mita_admin/utils/routes.dart';
 
@@ -71,7 +72,7 @@ class Home extends StatelessWidget {
         ),
       ),
        body: 
-       TabBarView(children: [Container(),PaymentVerificationStream()]),
+       TabBarView(children: [UserStream(),PaymentVerificationStream()]),
       
   ));
   }

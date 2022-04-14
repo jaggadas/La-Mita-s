@@ -79,11 +79,9 @@ class PaymentElement extends StatelessWidget {
         child: Column(
             children:[
               Row(children:[Text(paymentObj.date),SizedBox(width: 5,),Text(paymentObj.payment_amount)]),
-              Row(children:[Text(paymentObj.payment_mode),SizedBox(width: 5,),Text(paymentObj.payment_month)]),
-              Row(children:[Text(paymentObj.payment_remarks),SizedBox(width: 5,),Text(paymentObj.payment_type)]),
-              Row(children:[Text(paymentObj.payment_year),SizedBox(width: 5,),Text(paymentObj.user_name),]),
+              Row(children:[Text(paymentObj.phone_number),SizedBox(width: 5,),Text(paymentObj.user_name),]),
               Row(children:[Text(paymentObj.site),SizedBox(width: 5,),Text(paymentObj.email),]),
-              Row(children:[Text(paymentObj.phone_number),SizedBox(width: 5,)]),
+
 
             ]
         ),

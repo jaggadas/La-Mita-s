@@ -32,7 +32,7 @@ class SiteStream extends StatelessWidget {
                 children: sites,
               ));
         }
-        return Expanded(child: Center(child: Text("No Dishes")));
+        return Expanded(child: Center(child: Text("No Sites")));
       },
       stream: firestore.collection(kSites).snapshots(),
     );
