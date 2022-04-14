@@ -3,6 +3,7 @@ import 'package:la_mita/pages/home.dart';
 import 'package:la_mita/pages/kyc_page.dart';
 import 'package:la_mita/pages/login.dart';
 import 'package:la_mita/pages/otp.dart';
+import 'package:la_mita/pages/payment_details_page.dart';
 import 'package:la_mita/pages/payment_history_page.dart';
 import 'package:la_mita/pages/payment_page.dart';
 import 'package:la_mita/pages/profile.dart';
@@ -55,6 +56,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.paymentRoute: (context) => Payment(),
         MyRoutes.paymentHistoryRoute: (context) => PaymentHistory(),
         MyRoutes.myprofileRoute: (context) => myprofile(),
+        MyRoutes.paymentDetailsRoute:(context)=>PaymentDetails()
       },
     );
   }

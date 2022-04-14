@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="paymentHistoryPendingBackend">
+    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="added_paymentVerificationStuff">
+      <change afterPath="$PROJECT_DIR$/lib/pages/payment_details_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/widgets/verified_stream.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/service_request_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/service_request_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/payment_history_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/payment_history_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/widgets/pending_verification_stream.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widgets/pending_verification_stream.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/services/Firebase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/Firebase.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/PaymentObject.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/PaymentObject.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/FirebaseConstants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/FirebaseConstants.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/routes.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +51,7 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../flash-chat-flutter" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -305,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649708773453</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="added_paymentVerificationStuff">
+      <created>1649792485736</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1649792485736</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -324,7 +335,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/la_mita" />
     </ignored-roots>
-    <MESSAGE value="fixed issue with images" />
     <MESSAGE value="user details page done pretty much" />
     <MESSAGE value="reset" />
     <MESSAGE value="rearrange files" />
@@ -349,7 +359,8 @@
     <MESSAGE value="payment gateway added" />
     <MESSAGE value="disco time" />
     <MESSAGE value="paymentHistoryPendingBackend" />
-    <option name="LAST_COMMIT_MESSAGE" value="paymentHistoryPendingBackend" />
+    <MESSAGE value="added_paymentVerificationStuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="added_paymentVerificationStuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

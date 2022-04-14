@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:la_mita/pages/widgets/pending_verification_stream.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
+import 'package:la_mita/pages/widgets/verified_stream.dart';
 
 class PaymentHistory extends StatefulWidget {
   const PaymentHistory({Key? key}) : super(key: key);
@@ -34,7 +35,7 @@ class _PaymentHistoryState extends State<PaymentHistory> {
             Tab(icon: Icon(Icons.no_accounts), text: 'Pending')],
         ),
       ),
-     body: TabBarView(children: [Container(),PaymentVerificationStream()]),
+     body: TabBarView(children: [VerifiedStream(),PaymentVerificationStream()]),
 
     )
   );

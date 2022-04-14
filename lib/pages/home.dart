@@ -50,14 +50,14 @@ class _HomeState extends State<Home> {
                   color: Colors.white,
                 )),
             IconButton(
-                onPressed: () => Navigator.popAndPushNamed(context, MyRoutes.paymentRoute),
+                onPressed: () => Navigator.pushNamed(context, MyRoutes.paymentRoute),
                 icon: const Icon(
                   Icons.payment_sharp,
                   size: 35,
                   color: Colors.white,
                 )),
             IconButton(
-                onPressed: () => Navigator.popAndPushNamed(context, MyRoutes.myprofileRoute) ,
+                onPressed: () => Navigator.pushNamed(context, MyRoutes.myprofileRoute) ,
                 icon: const Icon(
                   Icons.person,
                   size: 35,

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:la_mita/pages/payment_details_page.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
 import 'package:la_mita/utils/PaymentObject.dart';
 import 'package:la_mita/utils/UserModel.dart';
@@ -44,13 +45,14 @@ class _PaymentVerificationStreamState extends State<PaymentVerificationStream> {
                   jsonDecode(Details));
               payments.add(PaymentElement(paymentObj: paymentObj));
             }
-            return Expanded(child: ListView(
-              children: payments,
-            ));
-          }
-          }
-          }
+            payments=payments.reversed.toList();
+            return ListView(
 
+              children: payments,
+            );
+          }
+          }
+          }
           }
         return Expanded(child: Center(child: Text("No Payments")));
         },
@@ -75,14 +77,18 @@ class PaymentElement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(padding: EdgeInsets.symmetric(vertical: 10,horizontal: 8),
-    child: Column(
-      children:[
-      Row(children:[Text(paymentObj.date),SizedBox(width: 5,),Text(paymentObj.payment_amount)]),
-        Row(children:[Text(paymentObj.payment_mode),SizedBox(width: 5,),Text(paymentObj.payment_month)]),
-        Row(children:[Text(paymentObj.payment_remarks),SizedBox(width: 5,),Text(paymentObj.payment_type)]),
-        Row(children:[Text(paymentObj.payment_year),SizedBox(width: 5,)]),
+    child: GestureDetector(
+      onTap:(){ Navigator.push(context,MaterialPageRoute(builder: (context){
+        return PaymentDetails(paymentObject: paymentObj,);
+      }));},
+      child: Container(color: Colors.grey,
+        child: Column(
+          children:[
+          Row(children:[Text('payment Date'+paymentObj.date),SizedBox(width: 5,),Text('payment Amount'+paymentObj.payment_amount)]),
 
-      ]
+          ]
+        ),
+      ),
     ),
     );
   }
