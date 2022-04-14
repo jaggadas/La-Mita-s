@@ -1,9 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:la_mita_admin/pages/customer_details.dart';
 import 'package:la_mita_admin/pages/googleFormPage.dart';
 import 'package:la_mita_admin/pages/home.dart';
 import 'package:la_mita_admin/pages/login.dart';
 import 'package:la_mita_admin/pages/mobile.dart';
+import 'package:la_mita_admin/pages/payment_details.dart';
 import 'package:la_mita_admin/pages/widgets/themes.dart';
 import 'package:la_mita_admin/services/Firebase.dart';
 import 'package:la_mita_admin/pages/site.dart';
@@ -35,7 +37,9 @@ class MyApp extends StatelessWidget {
         MyRoutes.homeRoute: (context) => Home(),
         MyRoutes.mobileRoute:(context)=>mobile(),
         MyRoutes.siteRoute:(context)=>site(),
-        MyRoutes.googleFormRoute:(context)=>GoogleFormPage()
+        MyRoutes.googleFormRoute:(context)=>GoogleFormPage(),
+        MyRoutes.customerDetailsRoute:(context)=>CustomerDetails(),
+        MyRoutes.paymentDetailsRoute:(context)=>PaymentDetails()
 
        } );
 
