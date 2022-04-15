@@ -47,6 +47,7 @@ class _PaymentVerificationStreamState extends State<PaymentVerificationStream> {
             }
           }
         }
+        payments=payments.reversed.toList();
         return ListView(
           children: payments,
         );}
