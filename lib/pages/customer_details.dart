@@ -12,8 +12,7 @@ class CustomerDetails extends StatelessWidget {
     return Scaffold(appBar: AppBar(title: Text('Customer Details'), backgroundColor: MyTheme.orange4,),
     body: SingleChildScrollView(
       child: Column(
-        children:[
-          Container( padding: EdgeInsets.fromLTRB(20, 30, 10, 30),
+        children:[ Container( padding: EdgeInsets.fromLTRB(20, 30, 10, 30),
                       decoration: BoxDecoration(
                         gradient:  LinearGradient(
                         colors: [MyTheme.orange4, MyTheme.orange2],
@@ -24,27 +23,32 @@ class CustomerDetails extends StatelessWidget {
                           borderRadius: BorderRadius.circular(0),
                           color: MyTheme.orange2),
           child: Column(children: [
+
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              
+
                               Text(userModel!.name, style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold), ),
                               Text(userModel!.phone, style: TextStyle(fontSize: 14, color: Colors.white, ))
-                            ],),
+
+                            ],
+                          ),
                           SizedBox(height: 8,),
            Row(
             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
+
                               Text(userModel!.email, style: TextStyle(fontSize: 14, color: Colors.white, ), ),
                               Text(userModel!.site, style: TextStyle(fontSize: 14 , color: Colors.white, ))
+
                             ],
                           ),
 
            // VerifiedStream(id: userModel!.id,)
         ],),
-        
+
         ),
         SizedBox(height: 20,),
         Text('PAYMENTS', style: TextStyle(fontSize: 20, color: Colors.black54, fontWeight: FontWeight.bold), ),
