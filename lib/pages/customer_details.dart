@@ -14,14 +14,14 @@ class CustomerDetails extends StatelessWidget {
       child: Column(
         children:[ Container( padding: EdgeInsets.fromLTRB(20, 30, 10, 30),
                       decoration: BoxDecoration(
-                        gradient:  LinearGradient(
+                       /* gradient:  LinearGradient(
                         colors: [MyTheme.orange4, MyTheme.orange2],
                         begin: FractionalOffset(0, 0),
                         end: FractionalOffset(0, 1),
                         stops: [0, 1.0],
-                      ),
+                      ), */
                           borderRadius: BorderRadius.circular(0),
-                          color: MyTheme.orange2),
+                          color: Color.fromARGB(255, 63, 61, 61)),
           child: Column(children: [
 
           Row(
@@ -52,7 +52,9 @@ class CustomerDetails extends StatelessWidget {
         ),
         SizedBox(height: 20,),
         Text('PAYMENTS', style: TextStyle(fontSize: 20, color: Colors.black54, fontWeight: FontWeight.bold), ),
+       SizedBox(height: 14,),
         VerifiedStream(id: userModel!.id,)
+        
           ]  ),
 
       
