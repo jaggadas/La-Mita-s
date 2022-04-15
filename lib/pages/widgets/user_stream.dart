@@ -63,6 +63,7 @@ class UserItem extends StatelessWidget {
           onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context){
             return CustomerDetails(userModel: UserModel(phone: userPhone, email: userEmail, name: userName, site: userSite, id: userId),);
           }));},
+
           child: Material(
               elevation: 10,
               child: Container(
