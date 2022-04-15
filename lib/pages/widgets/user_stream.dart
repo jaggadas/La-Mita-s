@@ -2,12 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:la_mita_admin/pages/customer_details.dart';
+import 'package:la_mita_admin/pages/widgets/themes.dart';
 import 'package:la_mita_admin/utils/FirebaseConstants.dart';
 import 'package:la_mita_admin/utils/UserModel.dart';
-FirebaseAuth auth=FirebaseAuth.instance;
-FirebaseFirestore firestore=FirebaseFirestore.instance;
-class UserStream extends StatelessWidget {
 
+FirebaseAuth auth = FirebaseAuth.instance;
+FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+class UserStream extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
@@ -19,24 +21,29 @@ class UserStream extends StatelessWidget {
           );
         }
         final userData = snapshot.data?.docs;
-        if(userData?.length!=0){
-        for (var user in userData!) {
-
-          if (user.exists) {
-              final userName=user.get(kName);
-              final userEmail=user.get(kEmail);
-              final userPhone=user.get(kPhone);
-              final userSite=user.get(kSite);
-              final userId=user.id;
-              final userWidget =
-             UserItem(userName: userName, userPhone: userPhone, userEmail: userEmail, userSite: userSite,userId: userId,);
+        if (userData?.length != 0) {
+          for (var user in userData!) {
+            if (user.exists) {
+              final userName = user.get(kName);
+              final userEmail = user.get(kEmail);
+              final userPhone = user.get(kPhone);
+              final userSite = user.get(kSite);
+              final userId = user.id;
+              final userWidget = UserItem(
+                userName: userName,
+                userPhone: userPhone,
+                userEmail: userEmail,
+                userSite: userSite,
+                userId: userId,
+              );
               sites.add(userWidget);
+            }
           }
-
+          return Expanded(
+              child: ListView(
+            children: sites,
+          ));
         }
-        return ListView(
-          children: sites,
-        );}
 
         return Expanded(child: Center(child: Text("No Users")));
       },
@@ -46,7 +53,12 @@ class UserStream extends StatelessWidget {
 }
 
 class UserItem extends StatelessWidget {
-  UserItem({required this.userName,required this.userPhone,required this.userEmail,required this.userSite,required this.userId});
+  UserItem(
+      {required this.userName,
+      required this.userPhone,
+      required this.userEmail,
+      required this.userSite,
+      required this.userId});
   String userName;
   String userEmail;
   String userPhone;
@@ -56,42 +68,90 @@ class UserItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        padding: const EdgeInsets.all(20.0),
         child: GestureDetector(
-          onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context){
-            return CustomerDetails(userModel: UserModel(phone: userPhone, email: userEmail, name: userName, site: userSite, id: userId),);
-          }));},
-
-          child: Material(
-              elevation: 10,
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return CustomerDetails(
+                userModel: UserModel(
+                    phone: userPhone,
+                    email: userEmail,
+                    name: userName,
+                    site: userSite,
+                    id: userId),
+              );
+            }));
+          },
+          child: SingleChildScrollView(
+              child: Material(
+            elevation: 0,
+            child: InkWell(
               child: Container(
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.fromLTRB(20, 30, 20, 30),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white),
+                      gradient: LinearGradient(
+                        colors: [MyTheme.orange4, MyTheme.orange2],
+                        begin: FractionalOffset(0, 0),
+                        end: FractionalOffset(0, 1),
+                        stops: [0, 1.0],
+                      ),
+                      borderRadius: BorderRadius.circular(20),
+                      color: MyTheme.orange2),
                   child: Column(
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(userName),
-                          Text(userSite)
-
+                          Text(
+                            userName,
+                            style: TextStyle(
+                                fontSize: 23,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(userPhone,
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.white))
                         ],
                       ),
+                      SizedBox(
+                        height: 15,
+                      ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(userEmail),
-                          Text(userPhone)
+                          Text(userEmail,
+                              style:
+                                  TextStyle(fontSize: 14, color: Colors.white)),
+                          Text(userSite,
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.white))
                         ],
                       ),
                     ],
-                  ))),
-        ),
-      ),
-    );
+                  )),
+              onTap: () { Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return CustomerDetails(
+                userModel: UserModel(
+                    phone: userPhone,
+                    email: userEmail,
+                    name: userName,
+                    site: userSite,
+                    id: userId),
+              );
+            },
+            ),
+          
+               
+             );
+               } )
+             )
+             )
+              )
+                );
+              
+          
+                
   }
 }

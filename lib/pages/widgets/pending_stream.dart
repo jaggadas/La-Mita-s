@@ -120,7 +120,9 @@ class PaymentElement extends StatelessWidget {
                     ], 
                  )
                  ),
-                 onTap: (){},
+                 onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context) {
+          return GoogleFormPage(payObj: paymentObj,index: index,);
+        }));},
             ),
                
 
