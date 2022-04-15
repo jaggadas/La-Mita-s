@@ -14,7 +14,10 @@ import '../payment_details.dart';
 var firestore=FirebaseFirestore.instance;
 
 class VerifiedStream extends StatefulWidget {
-  VerifiedStream({required this.id});
+  VerifiedStream({required this.id}) {
+    print('ID$id');
+  }
+
   String id;
   @override
   State<VerifiedStream> createState() => _VerifiedStreamState();
@@ -49,10 +52,12 @@ class _VerifiedStreamState extends State<VerifiedStream> {
                   final date=paymentItem[kVerificationDate];
                   PaymentObject paymentObj = PaymentObject.fromJson(
                       jsonDecode(Details));
+
                   payments.add(VerifiedPaymentElement(paymentObj: paymentObj,verificationStatus: status,verificationDate: date,));
                 }
                 payments=payments.reversed.toList();
-                return Expanded(
+                return SizedBox(
+                  height: 600,
                   child: ListView(
                     children: payments,
                   ),
@@ -62,7 +67,7 @@ class _VerifiedStreamState extends State<VerifiedStream> {
           }
 
         }
-        return Expanded(child: Center(child: Text("No Payments")));
+        return Center(child: Text("No Payments"));
       },
 
       stream: firestore.collection(kVerifiedPayments).snapshots(),
@@ -72,11 +77,11 @@ class _VerifiedStreamState extends State<VerifiedStream> {
 
 class VerifiedPaymentElement extends StatelessWidget {
   const VerifiedPaymentElement({
-    Key? key,
+
     required this.paymentObj,
     required this.verificationStatus
     ,required this.verificationDate
-  }) : super(key: key);
+  }) ;
 
   final PaymentObject paymentObj;
   final String verificationStatus;

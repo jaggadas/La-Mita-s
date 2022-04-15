@@ -30,6 +30,7 @@ class UserStream extends StatelessWidget {
               final userPhone = user.get(kPhone);
               final userSite = user.get(kSite);
               final userId = user.id;
+
               final userWidget = UserItem(
                 userName: userName,
                 userPhone: userPhone,
@@ -40,10 +41,9 @@ class UserStream extends StatelessWidget {
               sites.add(userWidget);
             }
           }
-          return Expanded(
-              child: ListView(
+          return ListView(
             children: sites,
-          ));
+          );
         }
 
         return Expanded(child: Center(child: Text("No Users")));
@@ -59,7 +59,9 @@ class UserItem extends StatelessWidget {
       required this.userPhone,
       required this.userEmail,
       required this.userSite,
-      required this.userId});
+      required this.userId}){
+    print('UID $userId');
+  }
   String userName;
   String userEmail;
   String userPhone;
@@ -72,7 +74,7 @@ class UserItem extends StatelessWidget {
       
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          children: [   below_appbar(),
+          children: [
           Container(
           child: GestureDetector(
             onTap: () {
