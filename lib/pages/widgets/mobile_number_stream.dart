@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:la_mita_admin/pages/widgets/themes.dart';
 import 'package:la_mita_admin/utils/FirebaseConstants.dart';
 FirebaseAuth auth=FirebaseAuth.instance;
 FirebaseFirestore firestore=FirebaseFirestore.instance;
@@ -46,20 +47,27 @@ class DishItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+       padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Material(
-            elevation: 10,
+            //elevation: 10,
             child: Container(
-                padding: EdgeInsets.all(10),
+                padding:  EdgeInsets.fromLTRB(20, 20, 20, 20),
                 decoration: BoxDecoration(
+                   gradient:  LinearGradient(
+                    colors: [MyTheme.orange4, MyTheme.orange2],
+                    begin: FractionalOffset(0, 0),
+                    end: FractionalOffset(0, 1),
+                    stops: [0, 1.0],
+                  ),
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.white),
+                   // color: Colors.white
+                   ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(dishName),
+                    Text(dishName, style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
 
                     IconButton(
                         onPressed: () async {
@@ -72,7 +80,7 @@ class DishItem extends StatelessWidget {
                             ])
                           });
                         },
-                        icon: Icon(Icons.delete))
+                        icon: Icon(Icons.delete, color: Colors.white,))
                   ],
                 ))),
       ),

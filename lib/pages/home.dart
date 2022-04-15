@@ -14,7 +14,7 @@ class Home extends StatelessWidget {
     child:Scaffold(
       appBar:
        AppBar(
-          backgroundColor: MyTheme.orange2,
+          backgroundColor: MyTheme.orange4,
            title: Text('Home'),
           leading: IconButton(onPressed: (){FirebaseService().signOut(context);}, icon: Icon(Icons.close)),
           actions: [
@@ -39,7 +39,7 @@ class Home extends StatelessWidget {
         height: 60,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [MyTheme.orange2, MyTheme.orange2],
+            colors: [MyTheme.orange4, MyTheme.orange4],
             begin: FractionalOffset(0, 0),
             end: FractionalOffset(0, 1),
             stops: [0, 1.0],
