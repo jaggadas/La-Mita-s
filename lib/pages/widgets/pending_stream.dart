@@ -75,13 +75,13 @@ class PaymentElement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(5.0),
       child: SingleChildScrollView(
         child: Material(
             elevation: 0,
             child: InkWell(
               child: Container(
-                 padding: EdgeInsets.fromLTRB(20, 30, 20, 30),
+                 padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                   decoration: BoxDecoration(
                     gradient:  LinearGradient(
                     colors: [MyTheme.orange4, MyTheme.orange2],
@@ -97,31 +97,103 @@ class PaymentElement extends StatelessWidget {
                          crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+                            
+                                      Row(
+                                        // mainAxisAlignment:
+                                      //  MainAxisAlignment.spaceEvenly,
+                                           children: [
+                                      Icon(
+                                        Icons.person,
+                                        color: Colors.white,
+                                        size: 20,
+                                      ),
+                                      SizedBox(width: 8,),
+                                      Text(
+                                        paymentObj.user_name,
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                           ]
+                                           ),
+                                       
+                                      // SizedBox(width: 80,),
+                                       
+                                      Row(
+                                        children: [
+                                      Icon(
+                                        Icons.currency_rupee,
+                                        color: Colors.white,
+                                        size: 20,
+                                      ),
+                                       SizedBox(width: 5,),
+                                      Text(paymentObj.payment_amount,
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              color: Colors.white))
+                                        ]),
+                                      ],
+                                  ),
+                                  SizedBox(
+                                    height: 2,
+                                  ),
                           
-                          Text(paymentObj.user_name, style: TextStyle(fontSize: 25, color: Colors.white, fontWeight: FontWeight.bold), ),
-                          Text(paymentObj.payment_amount, style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold))
-            
-                        ],
-                      ),
-                       SizedBox(height: 15,),
+             
                       Row(
+
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                         
-                          Text(paymentObj.email, style: TextStyle(fontSize: 15, color: Colors.white)),
-                         Icon(Icons.calendar_month, color: Colors.white, size: 20,),
+                          Row(
+                        
+                            children:[
+                          Icon(Icons.mail,
+                           color: Colors.white, 
+                           size: 20,), 
+                           SizedBox(width: 4,),
+                          Text(paymentObj.email, 
+                          style:
+                           TextStyle(
+                             fontSize: 15,
+                                  color: Colors.white)),
+                            ]),
+                         Row(children: [
+                             Icon(Icons.calendar_month, color: Colors.white, size: 20,), SizedBox(width: 4,),
                           Text(paymentObj.date, style: TextStyle(fontSize: 15, color: Colors.white))
-                        ],
+                           ])   ],
                       ),
-                      SizedBox(height: 15,),
-                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                   
-                          Text(paymentObj.phone_number, style: TextStyle(fontSize: 15, color: Colors.white)),
-                          Text(paymentObj.site, style: TextStyle(fontSize: 15, color: Colors.white))
-                        ],
-                      ),
+                      SizedBox(height:5,),
+                       Row( 
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children:[Row(children: [
+                                      Icon(
+                                        Icons.phone,
+                                        color: Colors.white,
+                                        size: 18,
+                                      ),
+                                      SizedBox(width: 8,),
+                                      Text(paymentObj.phone_number,
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              color: Colors.white)),
+                                                // SizedBox(width: 65,),
+                            
+                                            ]),   
+
+                                            Row(
+                                              children:[
+                                                 Text('Site:', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+ SizedBox(width: 4,),
+                                      Text(paymentObj.site,
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              color: Colors.white))
+                                      ]), 
+               
+                          ])
+                     
+                     
+                     
                     ], 
                  )
                  ),
