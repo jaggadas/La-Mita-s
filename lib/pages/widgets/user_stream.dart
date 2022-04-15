@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:la_mita_admin/pages/widgets/themes.dart';
 import 'package:la_mita_admin/utils/FirebaseConstants.dart';
 FirebaseAuth auth=FirebaseAuth.instance;
 FirebaseFirestore firestore=FirebaseFirestore.instance;
@@ -52,37 +53,67 @@ class UserItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: Material(
-            elevation: 10,
-            child: Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(userName),
-                        Text(userSite)
 
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(userEmail),
-                        Text(userPhone)
-                      ],
-                    ),
-                  ],
-                ))),
-      ),
+    return 
+    Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: SingleChildScrollView(
+        child: Material(
+            elevation: 0,
+            child: InkWell(
+              child: Container(
+                
+                 padding: EdgeInsets.fromLTRB(20, 30, 20, 30),
+                  decoration: BoxDecoration(
+                    gradient:  LinearGradient(
+                    colors: [MyTheme.orange4, MyTheme.orange2],
+                    begin: FractionalOffset(0, 0),
+                    end: FractionalOffset(0, 1),
+                    stops: [0, 1.0],
+                  ),
+                      borderRadius: BorderRadius.circular(20),
+                      color: MyTheme.orange2),
+                  child: Column(
+               children: [
+                      Row(
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          
+                          Text(userName, style: TextStyle(fontSize: 23, color: Colors.white, fontWeight: FontWeight.bold),),
+                          Text(userPhone, style: TextStyle(fontSize: 16, color: Colors.white))
+            
+                        ],
+                      ),
+                      SizedBox(height: 15,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(userEmail, style: TextStyle(fontSize: 14, color: Colors.white)),
+                          Text(userSite, style: TextStyle(fontSize: 16, color: Colors.white))
+                        ],
+                      ),
+                    ], 
+                 )
+                 ),
+                 onTap: (){},
+            ),
+               
+
+   )
+    
+      
+     ) ); 
+  }
+}
+
+class userCards extends StatelessWidget {
+  const userCards({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
     );
   }
 }
