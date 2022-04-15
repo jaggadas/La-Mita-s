@@ -107,7 +107,9 @@ class PaymentElement extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+                         
                           Text(paymentObj.email, style: TextStyle(fontSize: 15, color: Colors.white)),
+                         Icon(Icons.calendar_month, color: Colors.white, size: 20,),
                           Text(paymentObj.date, style: TextStyle(fontSize: 15, color: Colors.white))
                         ],
                       ),
@@ -115,6 +117,7 @@ class PaymentElement extends StatelessWidget {
                        Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+                   
                           Text(paymentObj.phone_number, style: TextStyle(fontSize: 15, color: Colors.white)),
                           Text(paymentObj.site, style: TextStyle(fontSize: 15, color: Colors.white))
                         ],
