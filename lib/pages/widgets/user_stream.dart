@@ -16,58 +16,91 @@ class UserStream extends StatefulWidget {
   State<UserStream> createState() => _UserStreamState();
 }
 TextEditingController searchController=TextEditingController();
+String searchResult = '';
 class _UserStreamState extends State<UserStream> {
-  // List<UserItem> mainDataList=[];
-  // List<UserItem> newDataList = List.from(mainDataList);
-  //
-  //
-  // void onSearchChanged(String value){
-  //   print(searchController.text);
-  //   setState(() {
-  //     newDataList = mainDataList
-  //         .where((string) => string.userSite.toLowerCase().contains(value.toLowerCase())|| string.userName.toLowerCase().contains(value.toLowerCase()))
-  //         .toList();
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
 
       builder: (context, snapshot) {
-        List<Widget> sites = [];
-        sites.add(below_appbar());
+
+
         if (!snapshot.hasData) {
           return const Center(
             child: CircularProgressIndicator(),
           );
-        }
+        }else{
         final userData = snapshot.data?.docs;
         if (userData?.length != 0) {
-          for (var user in userData!) {
-            if (user.exists) {
-              final userName = user.get(kName);
-              final userEmail = user.get(kEmail);
-              final userPhone = user.get(kPhone);
-              final userSite = user.get(kSite);
-              final userId = user.id;
 
-              final userWidget = UserItem(
-                userName: userName,
-                userPhone: userPhone,
-                userEmail: userEmail,
-                userSite: userSite,
-                userId: userId,
-              );
-              sites.add(userWidget);
-            }
-          }
-          return ListView(
-            children: sites,
+          return Column(
+            children: [
+              //search bar do not extract into new widget
+          Container(
+          margin: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
+        height: 52,
+        decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [
+        BoxShadow(
+        offset: Offset(0, 4.5), blurRadius: 12, color: MyTheme.orange2)
+        ]),
+        child: Container(
+        child: Row(children: [
+        Expanded(
+        child: TextField(
+        controller: searchController,
+        onChanged: (value){
+        setState(() {
+        searchResult=value;
+        });
+        print(searchResult);
+        },
+        decoration: InputDecoration(
+        contentPadding: const EdgeInsets.only(left: 30),
+        hintText: "Search",
+        hintStyle: TextStyle(
+        fontSize: 18,
+        color: Colors.grey,
+        ),
+        enabledBorder: InputBorder.none,
+        focusedBorder: InputBorder.none,
+        ),
+        ),
+        ),
+        Icon(
+        CupertinoIcons.search,
+        color: Colors.grey,
+        size: 30,
+        ),
+        Padding(padding: EdgeInsets.only(right: 18))
+        ]),
+        ),
+        ),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: userData!.length,
+                    itemBuilder: (BuildContext context ,int index){
+                      DocumentSnapshot user = userData[index];
+                      String userName=user.get(kName) ;
+                      String userSite= user.get(kSite);
+                      if (userName.toLowerCase().contains(searchResult.toLowerCase())||
+                         userSite.toLowerCase().contains(searchResult.toLowerCase())){
+                        return UserItem(userName: user.get(kName), userPhone: user.get(kPhone), userEmail: user.get(kEmail), userSite: user.get(kSite), userId: user.id);
+                      }else {
+                        return
+                        Center(
+                          child: Container()
+                        );
+                      }
+                }),
+              ),
+            ],
           );
-        }
-
-        return Expanded(child: Center(child: Text("No Users")));
+        }else{
+        return Expanded(child: Center(child: Text("No Users")));}}
       },
       stream: firestore.collection(kUsers).orderBy(kSite).snapshots(),
     );
@@ -88,9 +121,6 @@ class UserItem extends StatelessWidget {
   String userPhone;
   String userSite;
   String userId;
-
-
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -233,53 +263,3 @@ class UserItem extends StatelessWidget {
   }
 }
 
-class below_appbar extends StatefulWidget {
-  // below_appbar(this.onSearchChanged);
-  // VoidCallback onSearchChanged;
-
-  @override
-  State<below_appbar> createState() => _below_appbarState();
-}
-
-class _below_appbarState extends State<below_appbar> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-      height: 52,
-      decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(24),
-          boxShadow: [
-            BoxShadow(
-                offset: Offset(0, 4.5), blurRadius: 12, color: MyTheme.orange2)
-          ]),
-      child: Container(
-        child: Row(children: [
-          Expanded(
-            child: TextField(
-              controller: searchController,
-              //onChanged: (value){widget.onSearchChanged;},
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.only(left: 30),
-                hintText: "Search",
-                hintStyle: TextStyle(
-                  fontSize: 18,
-                  color: Colors.grey,
-                ),
-                enabledBorder: InputBorder.none,
-                focusedBorder: InputBorder.none,
-              ),
-            ),
-          ),
-          Icon(
-            CupertinoIcons.search,
-            color: Colors.grey,
-            size: 30,
-          ),
-          Padding(padding: EdgeInsets.only(right: 18))
-        ]),
-      ),
-    );
-  }
-}
