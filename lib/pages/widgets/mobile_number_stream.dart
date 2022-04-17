@@ -47,13 +47,13 @@ class DishItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-       padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+       padding: const EdgeInsets.fromLTRB(0, 5, 5, 0),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Material(
             //elevation: 10,
             child: Container(
-                padding:  EdgeInsets.fromLTRB(20, 20, 20, 20),
+                padding:  EdgeInsets.fromLTRB(10, 10, 10, 10),
                 decoration: BoxDecoration(
                    gradient:  LinearGradient(
                     colors: [MyTheme.orange4, MyTheme.orange2],

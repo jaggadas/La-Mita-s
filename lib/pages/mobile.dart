@@ -79,6 +79,7 @@ class _mobileState extends State<mobile> {
           child: Text('Submit'),
         )
         ,
+        SizedBox(height: 10,),
         MobileNumberStream()
       ],
     ),

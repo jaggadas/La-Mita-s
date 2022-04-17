@@ -78,6 +78,7 @@ class _siteState extends State<site> {
           },
           child: Text('Submit'),
         ),
+        SizedBox(height: 10,),
         SiteStream()
         
       ],

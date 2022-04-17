@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:la_mita_admin/pages/widgets/themes.dart';
+import 'package:la_mita_admin/pages/widgets/user_stream.dart';
 import 'package:la_mita_admin/utils/PaymentObject.dart';
 import 'package:la_mita_admin/utils/UserModel.dart';
 
@@ -106,6 +107,7 @@ class VerifiedPaymentElement extends StatelessWidget {
         
           child: Column(
               children:[
+
                  Row(
                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                      children:[

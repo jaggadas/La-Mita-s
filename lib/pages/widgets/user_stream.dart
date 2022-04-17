@@ -10,12 +10,33 @@ import 'package:la_mita_admin/utils/UserModel.dart';
 FirebaseAuth auth = FirebaseAuth.instance;
 FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-class UserStream extends StatelessWidget {
+class UserStream extends StatefulWidget {
+
+  @override
+  State<UserStream> createState() => _UserStreamState();
+}
+TextEditingController searchController=TextEditingController();
+class _UserStreamState extends State<UserStream> {
+  // List<UserItem> mainDataList=[];
+  // List<UserItem> newDataList = List.from(mainDataList);
+  //
+  //
+  // void onSearchChanged(String value){
+  //   print(searchController.text);
+  //   setState(() {
+  //     newDataList = mainDataList
+  //         .where((string) => string.userSite.toLowerCase().contains(value.toLowerCase())|| string.userName.toLowerCase().contains(value.toLowerCase()))
+  //         .toList();
+  //   });
+  // }
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
+
       builder: (context, snapshot) {
-        List<UserItem> sites = [];
+        List<Widget> sites = [];
+        sites.add(below_appbar());
         if (!snapshot.hasData) {
           return const Center(
             child: CircularProgressIndicator(),
@@ -68,6 +89,8 @@ class UserItem extends StatelessWidget {
   String userSite;
   String userId;
 
+
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -106,12 +129,12 @@ class UserItem extends StatelessWidget {
                                   color: MyTheme.orange2),
                               child: Column(
                                 children: [
-                                  Row( 
+                                  Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                          mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
-                                 
+
                                     children: [
                                       Row(
                                         // mainAxisAlignment:
@@ -132,9 +155,9 @@ class UserItem extends StatelessWidget {
                                       ),
                                            ]
                                            ),
-                                       
+
                                       // SizedBox(width: 80,),
-                                       
+
                                       Row(
                                         children: [
                                       Icon(
@@ -170,7 +193,7 @@ class UserItem extends StatelessWidget {
                                               fontSize: 12,
                                               color: Colors.white)),
                                                 // SizedBox(width: 65,),
-                                             
+
                                             ]),    SizedBox(width: 8,),
 
                                             Row(
@@ -211,7 +234,8 @@ class UserItem extends StatelessWidget {
 }
 
 class below_appbar extends StatefulWidget {
-  const below_appbar({Key? key}) : super(key: key);
+  // below_appbar(this.onSearchChanged);
+  // VoidCallback onSearchChanged;
 
   @override
   State<below_appbar> createState() => _below_appbarState();
@@ -221,7 +245,7 @@ class _below_appbarState extends State<below_appbar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20.0),
+      margin: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
       height: 52,
       decoration: BoxDecoration(
           color: Colors.white,
@@ -234,7 +258,8 @@ class _below_appbarState extends State<below_appbar> {
         child: Row(children: [
           Expanded(
             child: TextField(
-              onChanged: (value) {},
+              controller: searchController,
+              //onChanged: (value){widget.onSearchChanged;},
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.only(left: 30),
                 hintText: "Search",
