@@ -8,6 +8,7 @@ import 'package:la_mita/utils/routes.dart';
 import 'package:la_mita/utils/Constants.dart';
 import 'package:date_field/date_field.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 
 class Payment extends StatefulWidget {
   const Payment({Key? key}) : super(key: key);
@@ -40,7 +41,7 @@ class _MypaymentformState extends State<Mypaymentform> {
   var _result;
   var _result1;
   var _result2;
-  String date='';
+
   String paymentType='';
   String paymentMonth='January';
   String year='';
@@ -55,10 +56,8 @@ class _MypaymentformState extends State<Mypaymentform> {
   bool changeButton = true;
   String dropdownValue = 'January';
   validateForm(){
-    if(date==''){
-      FlutterToastService().showToast('Please Enter Valid Date');
-      return false;}
-    else if(paymentType==''){
+
+    if(paymentType==''){
       FlutterToastService().showToast('Please Enter Valid Payment Type');
       return false;}
     else if(paymentMonth==''){
@@ -101,33 +100,6 @@ class _MypaymentformState extends State<Mypaymentform> {
           padding: EdgeInsets.symmetric(horizontal: 28, vertical: 40),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const Text('Date of Payment', style: TextStyle(fontSize: 22)),
-
-            SizedBox(height: 20),
-
-                DateTimeFormField(
-
-                  initialDate: DateTime.now(),
-                  decoration: InputDecoration(
-                    hintStyle: TextStyle(color: MyTheme.orange2),
-                    errorStyle: TextStyle(color: Colors.redAccent),
-                    border: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 1.0),
-                      borderRadius: BorderRadius.all(Radius.circular(14)),),
-                    suffixIcon: Icon(Icons.event_note),
-                    labelText: 'Date',
-                  ),
-
-                  mode: DateTimeFieldPickerMode.date,
-
-                  autovalidateMode: AutovalidateMode.always,
-                  validator: (e) => (e?.day ?? 0) == 1 ? 'Please not the first day' : null,
-                  onDateSelected: (DateTime value) {
-                    date=value.toString().split(' ')[0];
-                  },
-                ),
-            SizedBox(
-              height: 40,
-            ),
 
             // ListTile(
             // title:
@@ -420,6 +392,9 @@ class _MypaymentformState extends State<Mypaymentform> {
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
               ),
               onPressed: () async{
+                var now = new DateTime.now();
+                var formatter = new DateFormat('yyyy-MM-dd');
+                String date = formatter.format(now);
 
                 if (validateForm()){
                 await FirebaseService().sendPaymentForVerification(date, paymentType, paymentMonth, year, paymentMode, paymentAmount, paymentRemarks, authId, context);

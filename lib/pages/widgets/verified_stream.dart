@@ -67,11 +67,11 @@ class _VerifiedStreamState extends State<VerifiedStream> {
 
 class VerifiedPaymentElement extends StatelessWidget {
   const VerifiedPaymentElement({
-    Key? key,
+
     required this.paymentObj,
     required this.verificationStatus
     ,required this.verificationDate
-  }) : super(key: key);
+  }) ;
 
   final PaymentObject paymentObj;
   final String verificationStatus;
@@ -83,18 +83,31 @@ class VerifiedPaymentElement extends StatelessWidget {
   // "user_id":"l4NPCwcSaqQURmEDLbkeBg0OROy1","user_name":"jayakarthi"}
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.symmetric(vertical: 10,horizontal: 8),
+    return Padding(padding:  EdgeInsets.all(5.0),
       child: GestureDetector(
         onTap: (){ Navigator.push(context,MaterialPageRoute(builder: (context){
           return PaymentDetails(paymentObject: paymentObj,);
         }));},
         child: Container(
-          color: verificationStatus==kAccepted?Colors.green:Colors.red,
+          padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+          decoration: BoxDecoration(
+            color: verificationStatus==kAccepted?Colors.green.shade400:Colors.red.shade400,
+            borderRadius: BorderRadius.circular(10),),
+
           child: Column(
               children:[
-                Row(children:[Text('Payment Date :'+paymentObj.date),SizedBox(width: 5,),Text('Payment amount :'+paymentObj.payment_amount)]),
-                Row(children:[Text('verified on :'+verificationDate),SizedBox(width: 5,),Text('status :'+verificationStatus)]),
 
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children:[
+
+                      Row(children:[Text('Payment Date :'+paymentObj.date, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),SizedBox(height: 5,)]),
+                      Row(children:[ Text('Payment amount :'+paymentObj.payment_amount, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)]),
+                    ]),   Row(  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children:[
+                      Row(children:[Text('verified on :'+verificationDate, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),SizedBox(height: 5,)]),
+                      Row(children:[ Text('status :'+verificationStatus, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),)]),
+                    ]),
               ]
           ),
         ),
