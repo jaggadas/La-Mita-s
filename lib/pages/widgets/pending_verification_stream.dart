@@ -76,20 +76,93 @@ class PaymentElement extends StatelessWidget {
   // "user_id":"l4NPCwcSaqQURmEDLbkeBg0OROy1","user_name":"jayakarthi"}
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.symmetric(vertical: 10,horizontal: 8),
-    child: GestureDetector(
-      onTap:(){ Navigator.push(context,MaterialPageRoute(builder: (context){
-        return PaymentDetails(paymentObject: paymentObj,);
-      }));},
-      child: Container(color: Colors.grey,
-        child: Column(
-          children:[
-          Row(children:[Text('payment Date'+paymentObj.date),SizedBox(width: 5,),Text('payment Amount'+paymentObj.payment_amount)]),
+    return Padding(padding:const EdgeInsets.all(5.0),
+    child: SingleChildScrollView(
+      child: GestureDetector(
+        onTap:(){ Navigator.push(context,MaterialPageRoute(builder: (context){
+          return PaymentDetails(paymentObject: paymentObj,);
+        }));},
 
-          ]
-        ),
-      ),
-    ),
+         child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                    Container(
+                      child: InkWell(
+                          child: Container(
+                              padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [MyTheme.orange4, MyTheme.orange2],
+                                    begin: FractionalOffset(0, 0),
+                                    end: FractionalOffset(0, 1),
+                                    stops: [0, 1.0],
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: MyTheme.orange2),
+                              child: Column(
+                                children: [
+                                  Row( 
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                         mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                 
+                                    children: [
+                                      Row(
+                                        // mainAxisAlignment:
+                                      //  MainAxisAlignment.spaceEvenly,
+                                           children: [
+                                      Icon(
+                                        Icons.calendar_month,
+                                        color: Colors.white,
+                                        size: 20,
+                                      ),
+                                      SizedBox(width: 8,),
+                                      Text(
+                                        'payment Date: '+paymentObj.date,
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.normal),
+                                      ),
+                                           ]
+                                           ),
+                                       
+                                      // SizedBox(width: 80,),
+                                       
+                                      Row(
+                                        children: [
+                                      Icon(
+                                        Icons.currency_rupee,
+                                        color: Colors.white,
+                                        size: 20,
+                                      ),
+                                       SizedBox(width: 5,),
+                                      Text('payment Amount: Rs '+paymentObj.payment_amount,
+                                          style: TextStyle(
+                                              fontSize: 15,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.normal))
+                                        ]),
+                                      ],
+                                  ),
+                                  SizedBox(
+                                    height: 2,
+                                  ),
+                             
+                                ],
+                              )),
+                   
+                                  )
+                                
+                              ),
+                            
+                          ])    
+                    )
+                  )
+      
     );
+    
+    
   }
 }
