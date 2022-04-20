@@ -72,10 +72,10 @@ class _SiteStreamState extends State<SiteStream> {
                   borderSide: BorderSide(color: MyTheme.orange2)),
             ),
             items: sites,value: selected_site,
-             onChanged:widget.enabled? (String? value) { setState(() {
-            selected_site=value.toString();
-            print(selected_site);
-          }); }:null, );
+            onChanged:widget.enabled? (String? value) { setState(() {
+              selected_site=value.toString();
+              print(selected_site);
+            }); }:null, );
         }
         return Expanded(child: Center(child: Text("No Sites")));
       },

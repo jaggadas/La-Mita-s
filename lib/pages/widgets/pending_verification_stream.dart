@@ -89,7 +89,7 @@ class PaymentElement extends StatelessWidget {
                     Container(
                       child: InkWell(
                           child: Container(
-                              padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                              padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
                               decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     colors: [MyTheme.orange4, MyTheme.orange2],
@@ -97,7 +97,7 @@ class PaymentElement extends StatelessWidget {
                                     end: FractionalOffset(0, 1),
                                     stops: [0, 1.0],
                                   ),
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(10),
                                   color: MyTheme.orange2),
                               child: Column(
                                 children: [

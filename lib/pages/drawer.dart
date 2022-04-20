@@ -47,19 +47,7 @@ class MyDrawer extends StatelessWidget {
                       color: Colors.white, fontSize: 16,
                     )),
               ),
-              ListTile(
-                onTap: () {},
-                leading: Icon(
-                  CupertinoIcons.mail,
-                  size: 35,
-                  color: Colors.white,
-                ),
-                title: Text("Contact us",
-                    textScaleFactor: 1.2,
-                    style: TextStyle(
-                      color: Colors.white,fontSize: 16
-                    )),
-              ),
+
               ListTile(
                 onTap: () {
                   FirebaseService().signOut(context);

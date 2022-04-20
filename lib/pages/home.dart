@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:la_mita/pages/ChatPage.dart';
 import 'package:la_mita/pages/appbody.dart';
 import 'package:la_mita/pages/below_appbar.dart';
 import 'package:la_mita/pages/drawer.dart';
@@ -7,6 +8,7 @@ import 'package:la_mita/pages/widgets/themes.dart';
 import 'package:la_mita/utils/routes.dart';
 
 import '../services/Firebase.dart';
+import '../utils/UserModel.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -50,7 +52,13 @@ class _HomeState extends State<Home> {
                   color: Colors.white,
                 )),
             IconButton(
-                onPressed: () {},
+                onPressed: ()async {
+                  UserModel user=await FirebaseService().getUserDetails();
+
+                  Navigator.push(context,MaterialPageRoute(builder: (context){
+                    return ChatPage(userSite: user.site,);
+                  }));
+                },
                 icon: const Icon(
                   Icons.chat,
                   size: 30,

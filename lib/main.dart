@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:la_mita/pages/ChatPage.dart';
 import 'package:la_mita/pages/home.dart';
 import 'package:la_mita/pages/kyc_page.dart';
 import 'package:la_mita/pages/login.dart';
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
         accentColor: MyTheme.orange2,
       ),
 
-      home: FirebaseService().getInitialScreen(),
+      home: loginPage(),
       routes: {
         // "/":(context) => userdetails(),
         MyRoutes.loginRoute: (context) => loginPage(),
@@ -56,7 +57,8 @@ class MyApp extends StatelessWidget {
         MyRoutes.paymentRoute: (context) => Payment(),
         MyRoutes.paymentHistoryRoute: (context) => PaymentHistory(),
         MyRoutes.myprofileRoute: (context) => myprofile(),
-        MyRoutes.paymentDetailsRoute:(context)=>PaymentDetails()
+        MyRoutes.paymentDetailsRoute:(context)=>PaymentDetails(),
+        MyRoutes.chatPageRoute:(context)=>ChatPage()
       },
     );
   }
