@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:la_mita_admin/pages/chat_page.dart';
+import 'package:la_mita_admin/pages/chat_site_selection_page.dart';
 import 'package:la_mita_admin/pages/customer_details.dart';
 import 'package:la_mita_admin/pages/googleFormPage.dart';
 import 'package:la_mita_admin/pages/home.dart';
@@ -39,7 +41,9 @@ class MyApp extends StatelessWidget {
         MyRoutes.siteRoute:(context)=>site(),
         MyRoutes.googleFormRoute:(context)=>GoogleFormPage(),
         MyRoutes.customerDetailsRoute:(context)=>CustomerDetails(),
-        MyRoutes.paymentDetailsRoute:(context)=>PaymentDetails()
+        MyRoutes.paymentDetailsRoute:(context)=>PaymentDetails(),
+        MyRoutes.ChatSelectionRoute:(context)=>ChatSiteSelection(),
+        MyRoutes.ChatRoute:(context)=>ChatPage(),
 
        } );
 

@@ -62,7 +62,9 @@ class Home extends StatelessWidget {
                   color: Colors.white,
                 )),
                   IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, MyRoutes.ChatSelectionRoute);
+                },
                 icon: const Icon(
                   Icons.chat,
                   size: 30,

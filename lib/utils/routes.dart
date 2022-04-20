@@ -6,4 +6,6 @@ class MyRoutes{
      static String googleFormRoute='/googleForm';
   static String customerDetailsRoute='/customerDetailsRoute';
   static String paymentDetailsRoute='/paymentDetailsRoute';
+  static String ChatSelectionRoute='/ChatSelectionRoute';
+  static String ChatRoute='/ChatRoute';
 }

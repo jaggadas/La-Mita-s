@@ -68,6 +68,7 @@ class _siteState extends State<site> {
           ),
           onPressed: () async{
             print(entered_site);
+
             if(entered_site!=''){
               await FirebaseService().addSite(entered_site,context);
             siteController.text='';

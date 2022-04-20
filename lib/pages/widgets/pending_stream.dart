@@ -207,27 +207,6 @@ class PaymentElement extends StatelessWidget {
     
       
      ) ); 
-                
-    /*  child: GestureDetector(
-        onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context) {
-          return GoogleFormPage(payObj: paymentObj,index: index,);
-        }));},
-        child: Column(
-            children:[
-              Row(children:[
-                Text(paymentObj.date),
-                
-                SizedBox(width: 5,),
-                
-                Text(
-                  paymentObj.payment_amount)]),
-              Row(children:[Text(paymentObj.phone_number),SizedBox(width: 5,),Text(paymentObj.user_name),]),
-              Row(children:[Text(paymentObj.site),SizedBox(width: 5,),Text(paymentObj.email),]),
 
-
-            ]
-        ),
-      ),
-    ); */
   }
 }

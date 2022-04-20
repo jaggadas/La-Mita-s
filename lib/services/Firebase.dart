@@ -87,6 +87,12 @@ class FirebaseService{
         ])
 
       });
+      var tempsite=site.replaceAll('.', ' ');
+      await firestore.collection(kChat).doc('th1QmoQ5FL7uDg1VZlRW').update(
+          {tempsite: FieldValue.arrayUnion([
+            'Welcome to La Mita\'s'
+          ])});
+
       pu.close();}
     catch(e){
       FlutterToastService().showToast('$e');
@@ -95,7 +101,18 @@ class FirebaseService{
 
 
   }
+  sendMessage(String siteName,String message)async{
+    try{
+    await firestore.collection(kChat).doc('th1QmoQ5FL7uDg1VZlRW').update(
+        {siteName: FieldValue.arrayUnion([
+          message
+        ])});}
+        catch(e){
+      FlutterToastService().showToast('$e');
+      print(e);
+        }
 
+  }
   signOut(BuildContext context){
     auth.signOut();
     Navigator.popAndPushNamed(context, MyRoutes.loginRoute);
@@ -169,6 +186,27 @@ class FirebaseService{
       print(e);
       FlutterToastService().showToast('$e');
     }
+  }
+  deleteUser(String userId,BuildContext context)async {
+    ProgressDialog pu=ProgressDialog(context: context);
+    pu.show(max: 100, msg: 'Please Wait',progressBgColor: MyTheme.orange2,progressValueColor: Colors.grey);
+    try{
+    await firestore
+        .collection(kUsers).doc(userId)
+        .delete();
+    await firestore
+        .collection(kPaymentVerification).doc(userId)
+        .delete();
+    await firestore
+        .collection(kVerifiedPayments).doc(userId)
+        .delete();
+    pu.close();
+    }
+        catch(e){
+          pu.close();
+          print(e);
+          FlutterToastService().showToast('$e');
+        }
   }
   printMessage(String msg) {
     debugPrint(msg);

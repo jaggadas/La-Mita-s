@@ -23,3 +23,4 @@ const kVerificationStatus='verification_status';
 const kAccepted='Accepted';
 const kRejected='Rejected';
 const kVerificationDate='verification_date';
+const kChat='chat';
