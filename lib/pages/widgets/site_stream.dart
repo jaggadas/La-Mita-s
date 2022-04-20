@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:la_mita_admin/pages/site.dart';
 import 'package:la_mita_admin/pages/widgets/themes.dart';
 import 'package:la_mita_admin/utils/FirebaseConstants.dart';
 FirebaseAuth auth=FirebaseAuth.instance;
@@ -82,6 +83,7 @@ class SiteItem extends StatelessWidget {
                               siteText
                             ])
                           });
+                          await firestore.collection(kChat).doc('th1QmoQ5FL7uDg1VZlRW').update({siteText:FieldValue.delete()});
                         },
                         icon: Icon(Icons.delete, color: Colors.white,))
                   ],
