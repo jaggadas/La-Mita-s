@@ -24,3 +24,7 @@ const kAccepted='Accepted';
 const kRejected='Rejected';
 const kVerificationDate='verification_date';
 const kChat='chat';
+const kMerchantCode='merchant_code';
+const kQrImage='qr_image';
+const kUpiId='upi_id';
+const kPaymentDetails='payment_details';

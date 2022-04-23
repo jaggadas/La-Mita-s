@@ -26,7 +26,7 @@ class MessagesStream extends StatelessWidget {
         for (var doc in docs) {
           final messages=doc.get(siteName);
           for(var message in messages){
-            messageWidgets.add(MessageBubble(text: message));
+            messageWidgets.add(MessageBubble(text:message.keys.elementAt(0)));
           }
           messageWidgets=messageWidgets.reversed.toList();
           return Expanded(

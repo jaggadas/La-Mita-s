@@ -1,9 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:la_mita/pages/below_appbar.dart';
+import 'package:la_mita/pages/payment_page.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
 import 'package:la_mita/services/Firebase.dart';
 import 'package:la_mita/services/getLinks.dart';
+import 'package:la_mita/utils/paymentDetailsModel.dart';
 import 'package:la_mita/utils/routes.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -72,8 +74,11 @@ class _AppBodyState extends State<AppBody> {
         image: 'assets/images/cashless-payment.png',
         title: '     Payment        ',
         product: ' ',
-        onPressed: () {
-          Navigator.pushNamed(context, MyRoutes.paymentRoute);
+        onPressed: ()async {
+          PaymentDetailsModel paymentDetails=await FirebaseService().getPaymentDetails();
+          Navigator.push(context, MaterialPageRoute(builder: (context){
+            return Payment(paymentDetails: paymentDetails,);
+          }));
         },
       ),
       optCards(

@@ -1,23 +1,25 @@
+import 'dart:html';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:la_mita/pages/payments.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
 import 'package:la_mita/pages/widgets/toast.dart';
 import 'package:la_mita/services/Firebase.dart';
+import 'package:la_mita/utils/paymentDetailsModel.dart';
 import 'package:la_mita/utils/routes.dart';
 import 'package:la_mita/utils/Constants.dart';
 import 'package:date_field/date_field.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:la_mita/UiFake.dart' if (dart.library.html) 'dart:ui' as ui;
 
-class Payment extends StatefulWidget {
-  const Payment({Key? key}) : super(key: key);
 
-  @override
-  _PaymentState createState() => _PaymentState();
-}
+class Payment extends StatelessWidget {
+  PaymentDetailsModel? paymentDetails;
+  Payment({this.paymentDetails});
 
-class _PaymentState extends State<Payment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,13 +27,17 @@ class _PaymentState extends State<Payment> {
         backgroundColor: MyTheme.orange4,
         title: Text('Payment'),
       ),
-      body: Mypaymentform(),
+      body: Mypaymentform(paymentDetails:paymentDetails,),
     );
   }
 }
 
+
 class Mypaymentform extends StatefulWidget {
-  const Mypaymentform({Key? key}) : super(key: key);
+  PaymentDetailsModel? paymentDetails;
+  Mypaymentform({this.paymentDetails}){
+    print(paymentDetails!.image);
+  }
 
   @override
   State<Mypaymentform> createState() => _MypaymentformState();
@@ -52,6 +58,17 @@ class _MypaymentformState extends State<Mypaymentform> {
   String authId=FirebaseService().getAuthId().toString();
   var amountController=TextEditingController();
   var remarksController=TextEditingController();
+
+  getPlatform(){
+    if(kIsWeb && (defaultTargetPlatform == TargetPlatform.android)){
+      return 'Android';
+    } else if(kIsWeb && (defaultTargetPlatform == TargetPlatform.iOS)){
+      return 'iOS';
+    }   else{
+      return 'Desktop';
+    }
+  }
+
 
   bool changeButton = true;
   String dropdownValue = 'January';
@@ -92,6 +109,8 @@ class _MypaymentformState extends State<Mypaymentform> {
 
   String? value;
   final _formKey = GlobalKey<FormState>();
+
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -382,7 +401,9 @@ class _MypaymentformState extends State<Mypaymentform> {
             ),
 
             SizedBox(height: 45),
-
+                Image.asset('assets/images/upi_qr_image.jpeg'),
+                // Image(image: NetworkImage('${widget.paymentDetails!.image}')),
+                SizedBox(height: 45),
             TextButton(
               style: ButtonStyle(
                 alignment: Alignment.center,

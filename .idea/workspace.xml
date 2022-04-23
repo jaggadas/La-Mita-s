@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="made changes">
-      <change afterPath="$PROJECT_DIR$/lib/pages/ChatPage.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/widgets/messagesStream.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/upi_qr_image.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/paymentDetailsModel.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/drawer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/drawer.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/payment_details_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/payment_details_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/widgets/DropDownWidgetStream.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widgets/DropDownWidgetStream.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/widgets/pending_verification_stream.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widgets/pending_verification_stream.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/appbody.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/appbody.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/payment_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/payment_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/widgets/messagesStream.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widgets/messagesStream.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/services/Firebase.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/Firebase.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/utils/FirebaseConstants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/FirebaseConstants.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/routes.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -339,7 +336,21 @@
       <option name="project" value="LOCAL" />
       <updated>1650225405293</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="made changes">
+      <created>1650481001232</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1650481001232</updated>
+    </task>
+    <task id="LOCAL-00039" summary="made changes">
+      <created>1650481073719</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1650481073719</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
