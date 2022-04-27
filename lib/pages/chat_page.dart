@@ -27,13 +27,15 @@ class _ChatPageState extends State<ChatPage> {
     bool? permissionsGranted = await telephony.requestPhoneAndSmsPermissions;
   }
   sendSMS(String message,String number){
+    print("Sending message to :$number");
     telephony.sendSms(
         to: number,
         message: message
     );
   }
   sendSMStoBatch(String message)async{
-   List numbers=await FirebaseService().getSiteNumberList(widget.siteName!, context);
+   List numbers=await FirebaseService().getSiteNumberList(widget.siteName!.replaceAll(' ', '.'), context);
+   print("numbers $numbers");
    for (String number in numbers){
      sendSMS(message, number);
    }
