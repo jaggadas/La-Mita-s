@@ -26,62 +26,64 @@ class _mobileState extends State<mobile> {
            title: Text('Add Mobile number'),
       
     ),
-    body: Column(
-      children: [
-        Padding(
-        padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 28.0),
-          child: TextFormField(
-            controller: phoneController,
-              keyboardType: TextInputType.number,
-                       // inputFormatters: <TextInputFormatter>[
-                       //   FilteringTextInputFormatter.digitsOnly
-                       // ],
-            inputFormatters: <TextInputFormatter>[
-              FilteringTextInputFormatter.digitsOnly
-            ],
-                        cursorColor: MyTheme.orange2,
-                        decoration: kInputDecoration.copyWith(hintText: 'Enter number without country code'),
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return "Mobile Number can not be empty";
-                          } else if (value.length <= 9) {
-                            return "Mobile Number should be atleast 10 digits";
-                          }
-                          return null;
-                        },
-                        onChanged: (value) {
-                          setState(() {
-                            entered_phone = value;
-                          });
-                        },
-                      ),
-        ),
-        TextButton(
-
-          style: ButtonStyle(
-
-            alignment: Alignment.center,
-
-            padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
-            backgroundColor:
-            MaterialStateProperty.all<Color>(MyTheme.orange4),
-            foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+    body: SingleChildScrollView(
+      child: Column(
+        children: [
+          Padding(
+          padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 28.0),
+            child: TextFormField(
+              controller: phoneController,
+                keyboardType: TextInputType.number,
+                         // inputFormatters: <TextInputFormatter>[
+                         //   FilteringTextInputFormatter.digitsOnly
+                         // ],
+              inputFormatters: <TextInputFormatter>[
+                FilteringTextInputFormatter.digitsOnly
+              ],
+                          cursorColor: MyTheme.orange2,
+                          decoration: kInputDecoration.copyWith(hintText: 'Enter number without country code'),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Mobile Number can not be empty";
+                            } else if (value.length <= 9) {
+                              return "Mobile Number should be atleast 10 digits";
+                            }
+                            return null;
+                          },
+                          onChanged: (value) {
+                            setState(() {
+                              entered_phone = value;
+                            });
+                          },
+                        ),
           ),
-          onPressed: () async{
-            if(entered_phone.length==10){
-            await FirebaseService().addPhoneNumber(entered_phone,context);
-            phoneController.text='';
-            }
-            else{
-              FlutterToastService().showToast('Invalid Number');
-            }
-          },
-          child: Text('Submit'),
-        )
-        ,
-        SizedBox(height: 10,),
-        MobileNumberStream()
-      ],
+          TextButton(
+
+            style: ButtonStyle(
+
+              alignment: Alignment.center,
+
+              padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
+              backgroundColor:
+              MaterialStateProperty.all<Color>(MyTheme.orange4),
+              foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+            ),
+            onPressed: () async{
+              if(entered_phone.length==10){
+              await FirebaseService().addPhoneNumber(entered_phone,context);
+              phoneController.text='';
+              }
+              else{
+                FlutterToastService().showToast('Invalid Number');
+              }
+            },
+            child: Text('Submit'),
+          )
+          ,
+          SizedBox(height: 10,),
+          MobileNumberStream()
+        ],
+      ),
     ),
     
     );

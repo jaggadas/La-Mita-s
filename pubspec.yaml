@@ -47,6 +47,7 @@ dependencies:
   markdown: ^4.0.0
   permission_handler: ^8.1.6
   webview_flutter: ^2.1.0
+  telephony: ^0.1.4
 
 dev_dependencies:
   flutter_test:

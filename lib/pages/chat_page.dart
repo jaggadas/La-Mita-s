@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:la_mita_admin/pages/widgets/messages_stream.dart';
 import 'package:la_mita_admin/pages/widgets/themes.dart';
 import 'package:la_mita_admin/services/Firebase.dart';
+import 'package:telephony/telephony.dart';
 class ChatPage extends StatefulWidget {
   ChatPage({this.siteName});
   String? siteName  ;
@@ -15,7 +16,28 @@ class _ChatPageState extends State<ChatPage> {
 
   String text='';
   var messageTextController=TextEditingController();
-
+  final Telephony telephony = Telephony.instance;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    requestAccess();
+  }
+  requestAccess()async{
+    bool? permissionsGranted = await telephony.requestPhoneAndSmsPermissions;
+  }
+  sendSMS(String message,String number){
+    telephony.sendSms(
+        to: number,
+        message: message
+    );
+  }
+  sendSMStoBatch(String message)async{
+   List numbers=await FirebaseService().getSiteNumberList(widget.siteName!, context);
+   for (String number in numbers){
+     sendSMS(message, number);
+   }
+  }
   @override
   Widget build(BuildContext context) {
     widget.siteName=widget.siteName!.replaceAll('.', ' ');
@@ -50,6 +72,7 @@ class _ChatPageState extends State<ChatPage> {
                         messageTextController.clear();
                         //Implement send functionality.
                         FirebaseService().sendMessage(widget.siteName!, text);
+                        sendSMStoBatch(text);
                       }
                   },
                   child: Text(

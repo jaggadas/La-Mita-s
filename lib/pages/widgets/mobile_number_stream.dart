@@ -1,48 +1,113 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:la_mita_admin/pages/widgets/themes.dart';
 import 'package:la_mita_admin/utils/FirebaseConstants.dart';
 FirebaseAuth auth=FirebaseAuth.instance;
 FirebaseFirestore firestore=FirebaseFirestore.instance;
-class MobileNumberStream extends StatelessWidget {
+class MobileNumberStream extends StatefulWidget {
 
+  @override
+  State<MobileNumberStream> createState() => _MobileNumberStreamState();
+}
+
+class _MobileNumberStreamState extends State<MobileNumberStream> {
+  var searchController=TextEditingController();
+  String searchResult = '';
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
       builder: (context, snapshot) {
-        List<DishItem> numbers = [];
+        List<NumberItem> numbers = [];
         if (!snapshot.hasData) {
           return const Center(
             child: CircularProgressIndicator(),
           );
         }
-        final numbersData = snapshot.data?.docs;
-        for (var number in numbersData!) {
-              List numbersList = number.get(kNumber);
-              if (numbersList.isNotEmpty) {
-                for (var numberItem in numbersList) {
-                 final mobile=numberItem.toString();
-                  final dishWidget =
-                  DishItem(dishName: mobile);
-                  numbers.add(dishWidget);
-                }
-              }
-              return Expanded(
-                  child: ListView(
-                    children: numbers,
-                  ));
-        }
-        return Expanded(child: Center(child: Text("No Dishes")));
-      },
+        else{
+          final numberData = snapshot.data?.docs;
+
+          final numberDoc=numberData![0];
+          final numberList=numberDoc.get(kNumber);
+          if (numberList.length != 0) {
+
+            return Column(
+              children: [
+                //search bar do not extract into new widget
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
+                  height: 52,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(24),
+                      boxShadow: [
+                        BoxShadow(
+                            offset: Offset(0, 4.5), blurRadius: 12, color: MyTheme.orange2)
+                      ]),
+                  child: Container(
+                    child: Row(children: [
+                      Expanded(
+                        child: TextField(
+                          controller: searchController,
+                          onChanged: (value){
+                            setState(() {
+                              searchResult=value;
+                            });
+                            print(searchResult);
+                          },
+                          decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.only(left: 30),
+                            hintText: "Search",
+                            hintStyle: TextStyle(
+                              fontSize: 18,
+                              color: Colors.grey,
+                            ),
+                            enabledBorder: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                          ),
+                        ),
+                      ),
+                      Icon(
+                        CupertinoIcons.search,
+                        color: Colors.grey,
+                        size: 30,
+                      ),
+                      Padding(padding: EdgeInsets.only(right: 18))
+                    ]),
+                  ),
+                ),
+                SizedBox(
+                  height: 500,
+                  child: ListView.builder(
+                      itemCount: numberList.length,
+                      itemBuilder: (BuildContext context ,int index){
+
+                        var userNumber=numberList[index] ;
+
+                        if (userNumber.contains(searchResult.toLowerCase())){
+                          return NumberItem(phoneNumber: numberList[index]);
+                        }else {
+                          return
+                            Center(
+                                child: Container()
+                            );
+                        }
+                      }),
+                ),
+              ],
+            );
+          }else{
+            return Expanded(child: Center(child: Text("No Users")));}
+      }},
       stream: firestore.collection(kNumber).snapshots(),
     );
   }
 }
 
-class DishItem extends StatelessWidget {
-  DishItem({required this.dishName});
-  String dishName;
+class NumberItem extends StatelessWidget {
+  NumberItem({required this.phoneNumber});
+  String phoneNumber;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +132,7 @@ class DishItem extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(dishName, style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                    Text(phoneNumber, style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
 
                     IconButton(
                         onPressed: () async {
@@ -76,7 +141,7 @@ class DishItem extends StatelessWidget {
                               .doc('QKLKZkSNh4tZcqdOgCQ0')
                               .update({
                             kNumber: FieldValue.arrayRemove([
-                              dishName
+                              phoneNumber
                             ])
                           });
                         },

@@ -73,7 +73,29 @@ class FirebaseService{
 
 
   }
+  getSiteNumberList(String site,BuildContext context)async{
+    ProgressDialog pu=ProgressDialog(context: context);
+    pu.show(max: 100, msg: 'Please Wait',progressBgColor: MyTheme.orange2,progressValueColor: Colors.grey);
+    try{
+      List<String>phoneNumbers=[];
+      QuerySnapshot<Map<String,dynamic>> querySnapshot=await firestore.collection(kUsers).get();
+      for (int i = 0; i < querySnapshot.docs.length; i++) {
+        var a = querySnapshot.docs[i];
 
+        if(a.get(kSite)==site){
+          phoneNumbers.add(a.get(kPhone));
+        }
+      }
+
+      pu.close();
+      print(phoneNumbers);
+      return phoneNumbers;
+    }
+    catch(e){
+      FlutterToastService().showToast('$e');
+      pu.close();
+    }
+  }
   addSite(String site,BuildContext context)async{
     ProgressDialog pu=ProgressDialog(context: context);
     pu.show(max: 100, msg: 'Please Wait',progressBgColor: MyTheme.orange2,progressValueColor: Colors.grey);
@@ -90,7 +112,7 @@ class FirebaseService{
       var tempsite=site.replaceAll('.', ' ');
       await firestore.collection(kChat).doc('th1QmoQ5FL7uDg1VZlRW').update(
           {tempsite: FieldValue.arrayUnion([
-            'Welcome to La Mita\'s'
+            {'Welcome to La Mita\'s':DateTime.now()}
           ])});
 
       pu.close();}
@@ -104,9 +126,13 @@ class FirebaseService{
   sendMessage(String siteName,String message)async{
     try{
     await firestore.collection(kChat).doc('th1QmoQ5FL7uDg1VZlRW').update(
-        {siteName: FieldValue.arrayUnion([
-          message
-        ])});}
+        {siteName: FieldValue.arrayUnion([{
+          message:DateTime.now()}
+        ])});
+
+
+
+    }
         catch(e){
       FlutterToastService().showToast('$e');
       print(e);

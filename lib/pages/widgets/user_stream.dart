@@ -27,9 +27,11 @@ class _UserStreamState extends State<UserStream> {
       builder: (context, snapshot) {
 
 
+
         if (!snapshot.hasData) {
           return const Center(
             child: CircularProgressIndicator(),
+
           );
         }else{
         final userData = snapshot.data?.docs;
