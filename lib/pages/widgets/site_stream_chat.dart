@@ -50,7 +50,7 @@ class SiteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 5, 5, 0),
+      padding: const EdgeInsets.fromLTRB(0, 10, 10, 0),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child:  GestureDetector(
@@ -62,7 +62,7 @@ class SiteItem extends StatelessWidget {
             // elevation: 10,
 
               child: Container(
-                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  padding: EdgeInsets.fromLTRB(18, 18, 18, 18),
                   decoration: BoxDecoration(
                     gradient:  LinearGradient(
                       colors: [MyTheme.orange4, MyTheme.orange2],
@@ -75,8 +75,10 @@ class SiteItem extends StatelessWidget {
                   ),
                   child: Row(
                     //  crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                     children: [
+                      Icon(Icons.location_city,color: Colors.white,),
+                      SizedBox(width: 10,),
                       Text(siteText, style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
 
                     ],
