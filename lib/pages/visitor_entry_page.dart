@@ -1,6 +1,7 @@
 import 'package:la_mita/easy_web_view.dart';
 import 'package:flutter/material.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
+import 'package:la_mita/pages/widgets/toast.dart';
 import 'package:la_mita/services/getLinks.dart';
 
 import '../services/Firebase.dart';
@@ -39,6 +40,7 @@ class _VisitorEntryPageState extends State<VisitorEntryPage> {
       isNotLoaded=false;
       print(isNotLoaded);
     });
+    FlutterToastService().showToast('This page may take some time to load...') ;
   }
 
   @override
