@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="made changes">
+    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="finalised app">
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGRcd2Vi.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGRcd2Vi.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/payment_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/payment_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/kyc_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/kyc_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/service_request_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/service_request_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/visitor_entry_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/visitor_entry_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/widgets/pending_verification_stream.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/widgets/pending_verification_stream.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -352,7 +355,21 @@
       <option name="project" value="LOCAL" />
       <updated>1650713259222</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="finalised app">
+      <created>1651061771956</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1651061771956</updated>
+    </task>
+    <task id="LOCAL-00042" summary="finalised app">
+      <created>1651061795852</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1651061795852</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -371,7 +388,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/la_mita" />
     </ignored-roots>
-    <MESSAGE value="rearrange files" />
     <MESSAGE value="party time" />
     <MESSAGE value="changes in drawer" />
     <MESSAGE value="restructure" />
@@ -396,7 +412,8 @@
     <MESSAGE value="added" />
     <MESSAGE value="changed" />
     <MESSAGE value="made changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="made changes" />
+    <MESSAGE value="finalised app" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalised app" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -408,107 +425,107 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>418</line>
+          <line>419</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>433</line>
+          <line>434</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>434</line>
+          <line>435</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>435</line>
+          <line>436</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>437</line>
+          <line>438</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>436</line>
+          <line>437</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>438</line>
+          <line>439</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>439</line>
+          <line>440</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>440</line>
+          <line>441</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>441</line>
+          <line>442</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>442</line>
+          <line>443</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>444</line>
+          <line>445</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>445</line>
+          <line>446</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>443</line>
+          <line>444</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>446</line>
+          <line>447</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>447</line>
+          <line>448</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>448</line>
+          <line>449</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>405</line>
+          <line>406</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>488</line>
+          <line>489</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>487</line>
+          <line>488</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/pages/payment_page.dart</url>
-          <line>489</line>
+          <line>490</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>

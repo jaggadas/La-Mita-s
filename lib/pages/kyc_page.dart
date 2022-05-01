@@ -63,7 +63,7 @@ class _KycPageState extends State<KycPage> {
                     child: EasyWebView(
                       src:  GetLinks().getKYClink(email, name, site),
                       onLoaded: () {
-                        print('hi');
+                        print('loaded');
                       },
                       isHtml: _isHtml,
                       isMarkdown: _isMarkdown,

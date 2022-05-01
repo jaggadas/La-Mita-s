@@ -43,7 +43,10 @@ class _ServiceRequestPageState extends State<ServiceRequestPage> {
 
   @override
   Widget build(BuildContext context) {
-
+    // var snackBar = SnackBar(
+    //   content: Text('This page may take some time to load'),
+    // );
+    // ScaffoldMessenger.of(context).showSnackBar(snackBar);
     return Scaffold(
         appBar: AppBar(
           title: Text('Service Request'),

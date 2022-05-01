@@ -101,7 +101,7 @@ class PaymentElement extends StatelessWidget {
                                   color: MyTheme.orange2),
                               child: Column(
                                 children: [
-                                  Row( 
+                                  Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                          mainAxisAlignment:
@@ -119,7 +119,7 @@ class PaymentElement extends StatelessWidget {
                                       ),
                                       SizedBox(width: 8,),
                                       Text(
-                                        'payment Date: '+paymentObj.date,
+                                       paymentObj.date,
                                         style: TextStyle(
                                             fontSize: 15,
                                             color: Colors.white,
@@ -138,7 +138,7 @@ class PaymentElement extends StatelessWidget {
                                         size: 20,
                                       ),
                                        SizedBox(width: 5,),
-                                      Text('payment Amount: Rs '+paymentObj.payment_amount,
+                                      Text(paymentObj.payment_amount,
                                           style: TextStyle(
                                               fontSize: 15,
                                               color: Colors.white,

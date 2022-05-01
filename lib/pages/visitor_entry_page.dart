@@ -61,7 +61,7 @@ class _VisitorEntryPageState extends State<VisitorEntryPage> {
                     child: EasyWebView(
                       src:  GetLinks().getVisitorEntryLink(name),
                       onLoaded: () {
-
+                        print('loaded');
                       },
                       isHtml: _isHtml,
                       isMarkdown: _isMarkdown,
