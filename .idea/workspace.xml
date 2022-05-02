@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="finalised app" />
+    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="disco">
+      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGRcd2Vi.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGRcd2Vi.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -369,7 +372,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651392002276</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="finalised app">
+      <created>1651392415326</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1651392415326</updated>
+    </task>
+    <task id="LOCAL-00045" summary="disco">
+      <created>1651392459026</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1651392459026</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -388,7 +405,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/la_mita" />
     </ignored-roots>
-    <MESSAGE value="party time" />
     <MESSAGE value="changes in drawer" />
     <MESSAGE value="restructure" />
     <MESSAGE value="restructure1" />
@@ -413,7 +429,8 @@
     <MESSAGE value="changed" />
     <MESSAGE value="made changes" />
     <MESSAGE value="finalised app" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalised app" />
+    <MESSAGE value="disco" />
+    <option name="LAST_COMMIT_MESSAGE" value="disco" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
