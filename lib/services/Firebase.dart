@@ -41,6 +41,7 @@ class FirebaseService{
     ProgressDialog pu=ProgressDialog(context: context);
     pu.show(max: 100, msg: 'Please Wait',progressBgColor: MyTheme.orange2,progressValueColor: Colors.grey);
     try{
+      email=email.trim();
       print("disco${email}disco");
     final loggedInUser=await auth.signInWithEmailAndPassword(email: email.trim(), password: password);
     if(loggedInUser!=null){
@@ -73,6 +74,47 @@ class FirebaseService{
 
 
   }
+  deleteNumbersAutomatically()async {
+
+      // ProgressDialog pu = ProgressDialog(context: context);
+      // pu.show(max: 100,
+      //     msg: 'Please Wait',
+      //     progressBgColor: MyTheme.orange2,
+      //     progressValueColor: Colors.grey);
+      try {
+
+        QuerySnapshot<Map<String, dynamic>> querySnapshot = await firestore
+            .collection(kUsers).get();
+        for (int i = 0; i < querySnapshot.docs.length; i++) {
+          var a = querySnapshot.docs[i];
+          var now = new DateTime.now();
+          var formatter = new DateFormat('yyyy-MM-dd');
+          var curdate = formatter.format(now);
+          String leavingdate = a.get(kLeavingDate);
+          print('hello loser');
+          if (leavingdate != '') {
+            print('hey sexy');
+            if (leavingdate.compareTo(curdate) == -1) {
+              print('hello sexy');
+              String phone = a.get(kPhone);
+              await firestore
+                  .collection(kNumber)
+                  .doc('QKLKZkSNh4tZcqdOgCQ0')
+                  .update({
+                kNumber: FieldValue.arrayRemove([
+                  phone.trim()
+                ])});
+            }
+          }
+        }
+       // pu.close();
+
+      }
+      catch (e) {
+        FlutterToastService().showToast('$e');
+       // pu.close();
+      }
+    }
   getSiteNumberList(String site,BuildContext context)async{
     ProgressDialog pu=ProgressDialog(context: context);
     pu.show(max: 100, msg: 'Please Wait',progressBgColor: MyTheme.orange2,progressValueColor: Colors.grey);

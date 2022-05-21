@@ -5,26 +5,34 @@ import 'package:la_mita_admin/pages/widgets/user_stream.dart';
 import 'package:la_mita_admin/services/Firebase.dart';
 import 'package:la_mita_admin/utils/routes.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({ Key? key }) : super(key: key);
 
   @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    FirebaseService().deleteNumbersAutomatically();
+    print('initstate started boii');
+  }
+
+
+  @override
   Widget build(BuildContext context) => DefaultTabController(
-    length: 2, 
+    length: 2,
     child:Scaffold(
       appBar:
        AppBar(
           backgroundColor: MyTheme.orange4,
            title: Text('Home'),
           leading: IconButton(onPressed: (){FirebaseService().signOut(context);}, icon: Icon(Icons.close)),
-          actions: [
 
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.search),
-            iconSize: 28,
-          )
-        ],
         bottom: TabBar(
            indicatorColor: Colors.white,
   labelColor: Colors.white,
@@ -53,7 +61,7 @@ class Home extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-          
+
             IconButton(
                 onPressed: () => Navigator.pushNamed(context, MyRoutes.mobileRoute),
                 icon: const Icon(
@@ -80,8 +88,8 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-       body: 
+       body:
        TabBarView(children: [UserStream(),PaymentVerificationStream()]),
-      
+
   ));
-  }
+}

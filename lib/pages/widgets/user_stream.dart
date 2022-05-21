@@ -7,7 +7,8 @@ import 'package:la_mita_admin/pages/widgets/themes.dart';
 import 'package:la_mita_admin/services/Firebase.dart';
 import 'package:la_mita_admin/utils/FirebaseConstants.dart';
 import 'package:la_mita_admin/utils/UserModel.dart';
-
+import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 FirebaseAuth auth = FirebaseAuth.instance;
 FirebaseFirestore firestore = FirebaseFirestore.instance;
 
@@ -22,6 +23,7 @@ class _UserStreamState extends State<UserStream> {
 
   @override
   Widget build(BuildContext context) {
+    FirebaseService().deleteNumbersAutomatically();
     return StreamBuilder<QuerySnapshot>(
 
       builder: (context, snapshot) {
@@ -89,9 +91,31 @@ class _UserStreamState extends State<UserStream> {
                       DocumentSnapshot user = userData[index];
                       String userName=user.get(kName) ;
                       String userSite= user.get(kSite);
-                      if (userName.toLowerCase().contains(searchResult.toLowerCase())||
-                         userSite.toLowerCase().contains(searchResult.toLowerCase())){
-                        return UserItem(userName: user.get(kName), userPhone: user.get(kPhone), userEmail: user.get(kEmail), userSite: user.get(kSite), userId: user.id);
+                      String userLeavingDate='';
+                      if(user.get(kLeavingDate)!=null){
+                         userLeavingDate=user.get(kLeavingDate);
+                      }
+                      var now = new DateTime.now();
+                      var formatter = new DateFormat('yyyy-MM-dd');
+                      var curdate=formatter.format(now);
+
+
+                      if ((userName.toLowerCase().contains(searchResult.toLowerCase())||
+                         userSite.toLowerCase().contains(searchResult.toLowerCase()))){
+                        //&&(userLeavingDate.compareTo(curdate)==1&&userLeavingDate!='')
+                        if(userLeavingDate==''){
+                        return UserItem(userName: user.get(kName), userPhone: user.get(kPhone), userEmail: user.get(kEmail), userSite: user.get(kSite), userId: user.id);}
+                        else{
+
+                          if(userLeavingDate.compareTo(curdate)==1) {
+                            return UserItem(userName: user.get(kName),
+                                userPhone: user.get(kPhone),
+                                userEmail: user.get(kEmail),
+                                userSite: user.get(kSite),
+                                userId: user.id);
+                          }
+                        else{return Container();}
+                        }
                       }else {
                         return
                         Center(
@@ -117,7 +141,7 @@ class UserItem extends StatelessWidget {
       required this.userEmail,
       required this.userSite,
       required this.userId}) {
-    print('UID $userId');
+
   }
   String userName;
   String userEmail;
