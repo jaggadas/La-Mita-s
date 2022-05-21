@@ -408,6 +408,31 @@ class _MypaymentformState extends State<Mypaymentform> {
                 Center(child: Image.asset('assets/images/upi_qr_image.jpeg',height: 300,)),
                 // Image(image: NetworkImage('${widget.paymentDetails!.image}')),
                 SizedBox(height: 45),
+
+                GestureDetector(
+                  onTap: (){
+                    Clipboard.setData(new ClipboardData(text: kUpiIdValue)).then((_){
+                      ScaffoldMessenger.of(context)
+                          .showSnackBar(SnackBar(content: Text('Copied to your clipboard !')));
+                    });
+                  },
+                  child: TextFormField(
+                    cursorColor: MyTheme.orange2,
+                    initialValue: kUpiIdValue,
+                    enabled: false,
+                    decoration: kInputDecoration.copyWith(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black, width: 1.0),
+                        borderRadius: BorderRadius.all(Radius.circular(14)),
+                      ),
+                      //icon: const Icon(Icons.calendar_month),
+                      iconColor: Colors.black,
+
+                      labelText: "UPI Id(tap to copy)",
+                    ),
+                  ),
+                ),
+                SizedBox(height: 45),
             TextButton(
               style: ButtonStyle(
                 alignment: Alignment.center,
@@ -418,12 +443,20 @@ class _MypaymentformState extends State<Mypaymentform> {
               ),
               onPressed: () async{
                // if(getPlatform()=='Desktop'||getPlatform()=='iOS'){
+
+
+
                 var now = new DateTime.now();
                 var formatter = new DateFormat('yyyy-MM-dd');
                 String date = formatter.format(now);
                 if (validateForm()){
                 await FirebaseService().sendPaymentForVerification(date, paymentType, paymentMonth, year, paymentMode, paymentAmount, paymentRemarks, authId, context);
                 FlutterToastService().showToast('Payment Sent for verification');
+
+
+
+
+
                 // if(paymentMode!='Cash'&&paymentMode!='Cheque'&&paymentMode!='Security Deposit Use up'){
                 // Navigator.pop(context);
                 // await Navigator.push(context,MaterialPageRoute(builder: (context){

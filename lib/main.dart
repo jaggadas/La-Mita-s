@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:la_mita/pages/ChatPage.dart';
+import 'package:la_mita/pages/LeaveIssuePage.dart';
 import 'package:la_mita/pages/home.dart';
 import 'package:la_mita/pages/kyc_page.dart';
 import 'package:la_mita/pages/login.dart';
@@ -58,7 +59,8 @@ class MyApp extends StatelessWidget {
         MyRoutes.paymentHistoryRoute: (context) => PaymentHistory(),
         MyRoutes.myprofileRoute: (context) => myprofile(),
         MyRoutes.paymentDetailsRoute:(context)=>PaymentDetails(),
-        MyRoutes.chatPageRoute:(context)=>ChatPage()
+        MyRoutes.chatPageRoute:(context)=>ChatPage(),
+        MyRoutes.leaveIssueRoute:(context)=>LeaveIssuePage()
       },
     );
   }

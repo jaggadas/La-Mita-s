@@ -12,4 +12,5 @@ class MyRoutes{
   static String myprofileRoute='/myprofile';
   static String paymentDetailsRoute='/paymentdetails';
   static String chatPageRoute='/chatPage';
+  static String leaveIssueRoute='/leaveIssue';
 }

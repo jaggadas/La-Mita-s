@@ -10,3 +10,4 @@ var kInputDecoration=InputDecoration(
   focusedBorder: OutlineInputBorder(
       borderSide: BorderSide(color: MyTheme.orange2)),
 );
+var kUpiIdValue='7620780585-1@okbizaxis';

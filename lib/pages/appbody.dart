@@ -88,6 +88,14 @@ class _AppBodyState extends State<AppBody> {
         onPressed: () {
           Navigator.pushNamed(context, MyRoutes.paymentHistoryRoute);
         },
+      ),
+      optCards(
+        image: 'assets/images/payment.png',
+        title: '     Issue Leaving Period    ',
+        product: ' disco',
+        onPressed: () {
+          Navigator.pushNamed(context, MyRoutes.leaveIssueRoute);
+        },
       )
     ]);
   }

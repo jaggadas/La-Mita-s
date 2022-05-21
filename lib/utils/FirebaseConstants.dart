@@ -28,3 +28,4 @@ const kMerchantCode='merchant_code';
 const kQrImage='qr_image';
 const kUpiId='upi_id';
 const kPaymentDetails='payment_details';
+const kLeavingDate='leaving_date';

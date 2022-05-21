@@ -181,6 +181,19 @@ class FirebaseService{
       await firestore.collection(kPaymentDetails).doc('YzSF2kBdEh03kDBC7lwL').get();
   return PaymentDetailsModel(upi_id: paymentData.get(kUpiId), merchant_code: paymentData.get(kMerchantCode), image: paymentData.get(kQrImage));
  }
+ leavingDate(String date,BuildContext context)async{
+  ProgressDialog pu=ProgressDialog(context: context);
+  pu.show(max: 100, msg: 'Please Wait',progressBgColor: MyTheme.orange2,progressValueColor: Colors.grey);
+  try{
+   await firestore.collection(kUsers).doc(auth.currentUser?.uid).update(
+       {kLeavingDate:date});
+  pu.close();
+  }
+  catch(e){
+   pu.close();
+   FlutterToastService().showToast('$e');
+  }
+ }
  authenticateMe(ConfirmationResult confirmationResult, String otp,BuildContext context) async {
   ProgressDialog ps = ProgressDialog(context: context);
   ps.show(max: 100, msg: 'Please Wait',progressBgColor: MyTheme.orange2,progressValueColor: Colors.grey);

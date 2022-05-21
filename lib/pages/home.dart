@@ -52,7 +52,7 @@ class _HomeState extends State<Home> {
                   color: Colors.white,
                 )),
             IconButton(
-                onPressed: ()async {
+                onPressed: () async {
                   UserModel user=await FirebaseService().getUserDetails();
 
                   Navigator.push(context,MaterialPageRoute(builder: (context){
