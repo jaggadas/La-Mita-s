@@ -26,6 +26,17 @@ class _LeaveIssuePageState extends State<LeaveIssuePage> {
       leavingDate;
     });
   }
+  getMinDate(){
+
+    var month = new DateTime.now().month;
+    var year = new DateTime.now().year;
+    var date = new DateTime.now().day;
+    // var formatter = new DateFormat('yyyy-MM-dd');
+    // String date = formatter.format(now);
+    DateTime minDate=DateTime(year,month,date+30);
+    print(minDate.toString());
+    return minDate;
+  }
   @override
   Widget build(BuildContext context) {
     FirebaseService().autoReturnToHomePage(context);
@@ -37,6 +48,8 @@ class _LeaveIssuePageState extends State<LeaveIssuePage> {
         Text("Current Leaving Date :$leavingDate"),
         SizedBox(height: 2,),
         DateTimeFormField(
+          firstDate: getMinDate(),
+          initialDate: getMinDate(),
           dateFormat:DateFormat('yyyy-MM-dd'),
           decoration:
            InputDecoration(
@@ -52,7 +65,7 @@ class _LeaveIssuePageState extends State<LeaveIssuePage> {
           ),
           mode: DateTimeFieldPickerMode.date,
           autovalidateMode: AutovalidateMode.always,
-          validator: (e) => (e?.day ?? 0) == 1 ? 'Please not the first day' : null,
+
           onDateSelected: (value) {
             String formattedDate = DateFormat('yyyy-MM-dd').format(value);
             print(formattedDate);
