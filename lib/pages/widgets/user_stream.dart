@@ -104,7 +104,7 @@ class _UserStreamState extends State<UserStream> {
                          userSite.toLowerCase().contains(searchResult.toLowerCase()))){
                         //&&(userLeavingDate.compareTo(curdate)==1&&userLeavingDate!='')
                         if(userLeavingDate==''){
-                        return UserItem(userName: user.get(kName), userPhone: user.get(kPhone), userEmail: user.get(kEmail), userSite: user.get(kSite), userId: user.id);}
+                        return UserItem(userName: user.get(kName), userPhone: user.get(kPhone), userEmail: user.get(kEmail), userSite: user.get(kSite), userId: user.id,leavingDate: user.get(kLeavingDate),);}
                         else{
 
                           if(userLeavingDate.compareTo(curdate)==1) {
@@ -112,7 +112,9 @@ class _UserStreamState extends State<UserStream> {
                                 userPhone: user.get(kPhone),
                                 userEmail: user.get(kEmail),
                                 userSite: user.get(kSite),
-                                userId: user.id);
+                                userId: user.id,
+                                leavingDate:user.get(kLeavingDate)
+                            );
                           }
                         else{return Container();}
                         }
@@ -140,7 +142,9 @@ class UserItem extends StatelessWidget {
       required this.userPhone,
       required this.userEmail,
       required this.userSite,
-      required this.userId}) {
+      required this.userId,
+      required this.leavingDate
+      }) {
 
   }
   String userName;
@@ -148,6 +152,7 @@ class UserItem extends StatelessWidget {
   String userPhone;
   String userSite;
   String userId;
+  String leavingDate;
   RelativeRect buttonMenuPosition(BuildContext context) {
     final bool isEnglish =
       true;
@@ -216,7 +221,9 @@ class UserItem extends StatelessWidget {
                         email: userEmail,
                         name: userName,
                         site: userSite,
-                        id: userId),
+                        id: userId,
+                      leavingDate:leavingDate
+                    ),
                   );
                 }));
               },
@@ -329,7 +336,8 @@ class UserItem extends StatelessWidget {
                                         email: userEmail,
                                         name: userName,
                                         site: userSite,
-                                        id: userId),
+                                        id: userId,
+                                    leavingDate: leavingDate),
                                   );
                                 },
                               ),

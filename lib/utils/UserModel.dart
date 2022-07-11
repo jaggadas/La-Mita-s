@@ -5,5 +5,6 @@ class UserModel{
   String name;
   String site;
   String id;
-  UserModel({required this.phone,required this.email,required this.name,required this.site,required this.id});
+  String leavingDate;
+  UserModel({required this.phone,required this.email,required this.name,required this.site,required this.id,required this.leavingDate});
 }

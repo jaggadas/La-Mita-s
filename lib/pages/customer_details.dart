@@ -45,6 +45,16 @@ class CustomerDetails extends StatelessWidget {
 
                             ],
                           ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+
+                Text("leaving date :${userModel!.leavingDate==""?"NIL":userModel!.leavingDate}", style: TextStyle(fontSize: 14, color: Colors.white, ), ),
+
+
+              ],
+            ),
 
            // VerifiedStream(id: userModel!.id,)
         ],),
