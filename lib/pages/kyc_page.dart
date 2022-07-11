@@ -47,6 +47,7 @@ class _KycPageState extends State<KycPage> {
 
   @override
   Widget build(BuildContext context) {
+    FirebaseService().autoReturnToHomePage(context);
     //initialiseDetails();
     return Scaffold(
         appBar: AppBar(

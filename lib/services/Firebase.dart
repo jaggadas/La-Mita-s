@@ -50,10 +50,11 @@ class FirebaseService{
   }
  }
  send()async{
-
-
-
-
+ }
+ getLeavingDate()async {
+  var userData= await firestore.collection(kUsers).doc(auth.currentUser?.uid).get();
+  var leavingDate= userData.get(kLeavingDate);
+  return leavingDate;
  }
  sendPaymentForVerification(String date, String type, String month, String year,String mode,String amount,String remarks,String uid,BuildContext context)async{
   ProgressDialog pu=ProgressDialog(context: context);
@@ -133,7 +134,7 @@ class FirebaseService{
   pu.show(max: 100, msg: 'Please Wait',progressBgColor: MyTheme.orange2,progressValueColor: Colors.grey);
   try{
   await firestore.collection(kUsers).doc(auth.currentUser?.uid).set(
-      {kName: username, kPhone: '${auth.currentUser?.phoneNumber}',kSite:site,kEmail:email});}
+      {kName: username, kPhone: '${auth.currentUser?.phoneNumber}',kSite:site,kEmail:email,kLeavingDate:""});}
       catch(e){
    pu.close();
    FlutterToastService().showToast('$e');
@@ -175,7 +176,13 @@ class FirebaseService{
   print(userData.get(kSites)[0]);
   return userData.get(kSites)[0];
  }
+ autoReturnToHomePage(BuildContext context){
 
+  User? currentUser=auth.currentUser;
+  if(currentUser==null){
+   Navigator.pushNamed(context, MyRoutes.loginRoute);
+  }
+ }
  getPaymentDetails()async{
   var paymentData =
       await firestore.collection(kPaymentDetails).doc('YzSF2kBdEh03kDBC7lwL').get();

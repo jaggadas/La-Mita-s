@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
 import 'package:la_mita/utils/PaymentObject.dart';
+
+import '../services/Firebase.dart';
 class PaymentDetails extends StatelessWidget {
   PaymentDetails({this.paymentObject});
   PaymentObject? paymentObject;
   @override
   Widget build(BuildContext context) {
+    FirebaseService().autoReturnToHomePage(context);
     return Scaffold(appBar: AppBar(title: Text('payment details'), backgroundColor: MyTheme.orange4,),
         body: Padding(padding: const EdgeInsets.all(20.0),
           child: SingleChildScrollView(child:

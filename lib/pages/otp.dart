@@ -14,6 +14,7 @@ class otp extends StatelessWidget {
   late String enteredOTP;
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
        resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,

@@ -14,7 +14,7 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   Widget build(BuildContext context) {
-
+    FirebaseService().autoReturnToHomePage(context);
     return Scaffold(
       appBar: AppBar(title: Text('Chat'),backgroundColor: MyTheme.orange2,),
       body: Column(

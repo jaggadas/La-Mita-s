@@ -3,6 +3,8 @@ import 'package:la_mita/pages/widgets/pending_verification_stream.dart';
 import 'package:la_mita/pages/widgets/themes.dart';
 import 'package:la_mita/pages/widgets/verified_stream.dart';
 
+import '../services/Firebase.dart';
+
 class PaymentHistory extends StatefulWidget {
   const PaymentHistory({Key? key}) : super(key: key);
 
@@ -13,7 +15,9 @@ class PaymentHistory extends StatefulWidget {
 class _PaymentHistoryState extends State<PaymentHistory> {
   @override
    
-  Widget build(BuildContext context) => DefaultTabController(
+  Widget build(BuildContext context){
+    FirebaseService().autoReturnToHomePage(context);
+    return DefaultTabController(
     length: 2, 
     child:  Scaffold(
       appBar: AppBar(
@@ -38,6 +42,6 @@ class _PaymentHistoryState extends State<PaymentHistory> {
      body: TabBarView(children: [VerifiedStream(),PaymentVerificationStream()]),
 
     )
-  );
+  );}
   
 }

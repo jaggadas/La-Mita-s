@@ -67,7 +67,8 @@ class userdetails extends StatefulWidget {
   }
 
   @override
-  Widget build(BuildContext context) { 
+  Widget build(BuildContext context) {
+
     // Size size = MediaQuery.of(context).size;
     return Material(
          child: SingleChildScrollView(

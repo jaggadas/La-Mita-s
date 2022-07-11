@@ -49,6 +49,7 @@ class _myprofileState extends State<myprofile> {
   }
   @override
   Widget build(BuildContext context) {
+    FirebaseService().autoReturnToHomePage(context);
     return Scaffold(
 
         backgroundColor: Colors.white,

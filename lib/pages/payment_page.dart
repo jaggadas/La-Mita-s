@@ -135,6 +135,7 @@ class _MypaymentformState extends State<Mypaymentform> {
 
   @override
   Widget build(BuildContext context) {
+    FirebaseService().autoReturnToHomePage(context);
     return SingleChildScrollView(
         key: _formKey,
         child: Container(

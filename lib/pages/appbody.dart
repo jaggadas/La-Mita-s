@@ -43,6 +43,7 @@ class _AppBodyState extends State<AppBody> {
 
   @override
   Widget build(BuildContext context) {
+    FirebaseService().autoReturnToHomePage(context);
     initialiseDetails();
     // Size size = MediaQuery.of(context).size;
     return Column(children: [
@@ -90,7 +91,7 @@ class _AppBodyState extends State<AppBody> {
         },
       ),
       optCards(
-        image: 'assets/images/payment.png',
+        image: 'assets/images/dd1.png',
         title: '     Issue Leaving Period    ',
         product: ' disco',
         onPressed: () {

@@ -46,6 +46,7 @@ class _ServiceRequestPageState extends State<ServiceRequestPage> {
 
   @override
   Widget build(BuildContext context) {
+    FirebaseService().autoReturnToHomePage(context);
     // var snackBar = SnackBar(
     //   content: Text('This page may take some time to load'),
     // );
