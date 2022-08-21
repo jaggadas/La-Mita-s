@@ -4,3 +4,4 @@ Customer web portal developed for a small business in pune. A complete data entr
 
 
 replace google-services.json
+replace index.html
