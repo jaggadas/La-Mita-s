@@ -1,16 +1,6 @@
 # la_mita
 
-A new Flutter project.
+Customer web portal developed for a small business in pune. A complete data entry and rent payment app/web app. Web app developed for customers to login easily and make their rent payments, schedule guest visits, etc. Admin app developed for verifying payments , generating and sending receipts and customer management
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+replace google-services.json
