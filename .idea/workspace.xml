@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="fubak" />
+    <list default="true" id="1cea00a6-5431-4e60-9a63-cc4e1da71d88" name="Default Changelist" comment="LaMita's customer">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +20,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -44,7 +51,7 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../la_mita_admin" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -71,13 +78,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1647929740394</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Firebase added&#10;Login Service added&#10;Few Ui Changes&#10;ProgressDialog added">
-      <created>1648058392193</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1648058392193</updated>
     </task>
     <task id="LOCAL-00002" summary="fixed issue with progress dialog">
       <created>1648060675739</created>
@@ -415,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657539215488</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="LaMita's customer">
+      <created>1661098995731</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1661098995731</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -435,7 +442,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/la_mita" />
     </ignored-roots>
-    <MESSAGE value="restructure" />
     <MESSAGE value="restructure1" />
     <MESSAGE value="first show up" />
     <MESSAGE value="formfacade" />
@@ -460,7 +466,8 @@
     <MESSAGE value="finalised app" />
     <MESSAGE value="disco" />
     <MESSAGE value="fubak" />
-    <option name="LAST_COMMIT_MESSAGE" value="fubak" />
+    <MESSAGE value="LaMita's customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="LaMita's customer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
